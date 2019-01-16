@@ -1,0 +1,398 @@
+[
+	{
+		"Level": 1,
+		"RewardXp": 0
+	},
+	{
+		"Level": 2,
+		"RewardXp": 12744
+	},
+	{
+		"Level": 3,
+		"RewardXp": 17640
+	},
+	{
+		"Level": 4,
+		"RewardXp": 43560
+	},
+	{
+		"Level": 5,
+		"RewardXp": 65610
+	},
+	{
+		"Level": 6,
+		"RewardXp": 92160
+	},
+	{
+		"Level": 7,
+		"RewardXp": 144000
+	},
+	{
+		"Level": 8,
+		"RewardXp": 182250
+	},
+	{
+		"Level": 9,
+		"RewardXp": 234090
+	},
+	{
+		"Level": 10,
+		"RewardXp": 292410
+	},
+	{
+		"Level": 11,
+		"RewardXp": 357210
+	},
+	{
+		"Level": 12,
+		"RewardXp": 416160
+	},
+	{
+		"Level": 13,
+		"RewardXp": 506250
+	},
+	{
+		"Level": 14,
+		"RewardXp": 605160
+	},
+	{
+		"Level": 15,
+		"RewardXp": 681210
+	},
+	{
+		"Level": 16,
+		"RewardXp": 778410
+	},
+	{
+		"Level": 17,
+		"RewardXp": 882090
+	},
+	{
+		"Level": 18,
+		"RewardXp": 992250
+	},
+	{
+		"Level": 19,
+		"RewardXp": 1108890
+	},
+	{
+		"Level": 20,
+		"RewardXp": 1232010
+	},
+	{
+		"Level": 21,
+		"RewardXp": 1339560
+	},
+	{
+		"Level": 22,
+		"RewardXp": 1521000
+	},
+	{
+		"Level": 23,
+		"RewardXp": 1640250
+	},
+	{
+		"Level": 24,
+		"RewardXp": 1764000
+	},
+	{
+		"Level": 25,
+		"RewardXp": 1971360
+	},
+	{
+		"Level": 26,
+		"RewardXp": 2079360
+	},
+	{
+		"Level": 27,
+		"RewardXp": 2304000
+	},
+	{
+		"Level": 28,
+		"RewardXp": 2450250
+	},
+	{
+		"Level": 29,
+		"RewardXp": 2631690
+	},
+	{
+		"Level": 30,
+		"RewardXp": 2819610
+	},
+	{
+		"Level": 31,
+		"RewardXp": 3014010
+	},
+	{
+		"Level": 32,
+		"RewardXp": 3214890
+	},
+	{
+		"Level": 33,
+		"RewardXp": 3422250
+	},
+	{
+		"Level": 34,
+		"RewardXp": 3636090
+	},
+	{
+		"Level": 35,
+		"RewardXp": 3856410
+	},
+	{
+		"Level": 36,
+		"RewardXp": 4083210
+	},
+	{
+		"Level": 37,
+		"RewardXp": 4316490
+	},
+	{
+		"Level": 38,
+		"RewardXp": 4556250
+	},
+	{
+		"Level": 39,
+		"RewardXp": 4802490
+	},
+	{
+		"Level": 40,
+		"RewardXp": 5055210
+	},
+	{
+		"Level": 41,
+		"RewardXp": 5314410
+	},
+	{
+		"Level": 42,
+		"RewardXp": 5535360
+	},
+	{
+		"Level": 43,
+		"RewardXp": 5852250
+	},
+	{
+		"Level": 44,
+		"RewardXp": 6177960
+	},
+	{
+		"Level": 45,
+		"RewardXp": 6416010
+	},
+	{
+		"Level": 46,
+		"RewardXp": 6707610
+	},
+	{
+		"Level": 47,
+		"RewardXp": 6955560
+	},
+	{
+		"Level": 48,
+		"RewardXp": 7310250
+	},
+	{
+		"Level": 49,
+		"RewardXp": 7673760
+	},
+	{
+		"Level": 50,
+		"RewardXp": 7938810
+	},
+	{
+		"Level": 51,
+		"RewardXp": 8262810
+	},
+	{
+		"Level": 52,
+		"RewardXp": 8537760
+	},
+	{
+		"Level": 53,
+		"RewardXp": 8987040
+	},
+	{
+		"Level": 54,
+		"RewardXp": 9273690
+	},
+	{
+		"Level": 55,
+		"RewardXp": 9623610
+	},
+	{
+		"Level": 56,
+		"RewardXp": 9980010
+	},
+	{
+		"Level": 57,
+		"RewardXp": 10342890
+	},
+	{
+		"Level": 58,
+		"RewardXp": 10712250
+	},
+	{
+		"Level": 59,
+		"RewardXp": 11088090
+	},
+	{
+		"Level": 60,
+		"RewardXp": 11470410
+	},
+	{
+		"Level": 61,
+		"RewardXp": 11859210
+	},
+	{
+		"Level": 62,
+		"RewardXp": 12254490
+	},
+	{
+		"Level": 63,
+		"RewardXp": 12656250
+	},
+	{
+		"Level": 64,
+		"RewardXp": 13064490
+	},
+	{
+		"Level": 65,
+		"RewardXp": 13479210
+	},
+	{
+		"Level": 66,
+		"RewardXp": 13900410
+	},
+	{
+		"Level": 67,
+		"RewardXp": 14328090
+	},
+	{
+		"Level": 68,
+		"RewardXp": 14762250
+	},
+	{
+		"Level": 69,
+		"RewardXp": 15202890
+	},
+	{
+		"Level": 70,
+		"RewardXp": 15650010
+	},
+	{
+		"Level": 71,
+		"RewardXp": 16103610
+	},
+	{
+		"Level": 72,
+		"RewardXp": 16563690
+	},
+	{
+		"Level": 73,
+		"RewardXp": 17030250
+	},
+	{
+		"Level": 74,
+		"RewardXp": 17503290
+	},
+	{
+		"Level": 75,
+		"RewardXp": 17982810
+	},
+	{
+		"Level": 76,
+		"RewardXp": 18468810
+	},
+	{
+		"Level": 77,
+		"RewardXp": 18961290
+	},
+	{
+		"Level": 78,
+		"RewardXp": 19460250
+	},
+	{
+		"Level": 79,
+		"RewardXp": 19965690
+	},
+	{
+		"Level": 80,
+		"RewardXp": 20477610
+	},
+	{
+		"Level": 81,
+		"RewardXp": 20996010
+	},
+	{
+		"Level": 82,
+		"RewardXp": 21520890
+	},
+	{
+		"Level": 83,
+		"RewardXp": 22052250
+	},
+	{
+		"Level": 84,
+		"RewardXp": 22500000
+	},
+	{
+		"Level": 85,
+		"RewardXp": 23225760
+	},
+	{
+		"Level": 86,
+		"RewardXp": 23592960
+	},
+	{
+		"Level": 87,
+		"RewardXp": 24336000
+	},
+	{
+		"Level": 88,
+		"RewardXp": 24806250
+	},
+	{
+		"Level": 89,
+		"RewardXp": 25281000
+	},
+	{
+		"Level": 90,
+		"RewardXp": 26049960
+	},
+	{
+		"Level": 91,
+		"RewardXp": 26438760
+	},
+	{
+		"Level": 92,
+		"RewardXp": 27225000
+	},
+	{
+		"Level": 93,
+		"RewardXp": 27722250
+	},
+	{
+		"Level": 94,
+		"RewardXp": 28224000
+	},
+	{
+		"Level": 95,
+		"RewardXp": 29036160
+	},
+	{
+		"Level": 96,
+		"RewardXp": 29446560
+	},
+	{
+		"Level": 97,
+		"RewardXp": 30276000
+	},
+	{
+		"Level": 98,
+		"RewardXp": 30800250
+	},
+	{
+		"Level": 99,
+		"RewardXp": 31329000
+	}
+]
