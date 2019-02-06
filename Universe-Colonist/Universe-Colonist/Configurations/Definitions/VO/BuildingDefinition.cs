@@ -2,7 +2,7 @@
 {
     public class BuildingDefinition
     {
-        public int Level;
+        public int Level { get; set; } = 0;
         public int RewardXp;
     }
 }

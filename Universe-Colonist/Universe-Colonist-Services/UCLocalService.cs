@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Game.Services
 {
-    public class UCService
+    public class UCLocalService
     {
 
         public string Load(string path)

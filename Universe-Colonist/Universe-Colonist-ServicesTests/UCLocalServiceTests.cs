@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Game.Services.Tests
 {
-    public class UCServiceTests
+    public class UCLocalServiceTests
     {
-        [Fact()]
+        [Fact]
         public void Load_ProgressDefinition()
         {
             // Arrange
-            var service = new UCService();
+            var service = new UCLocalService();
 
             // Act
-            string text = service.Load("https://raw.githubusercontent.com/codepath/android_guides/master/LICENSE.md");
+            string text = service.Load("Data/Definitions/Progress.json");
 
             // Assert
             Assert.NotNull(text);

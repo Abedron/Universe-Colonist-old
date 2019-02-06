@@ -12,11 +12,6 @@ namespace Game
     {
         public int Xp { get; private set; }
 
-        public UniverseColonistModel()
-        {
-            
-        }
-
         public void AddXp(int xp)
         {
             Xp += xp;

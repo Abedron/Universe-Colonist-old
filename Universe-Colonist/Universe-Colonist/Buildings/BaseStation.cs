@@ -1,26 +1,46 @@
-﻿using System.Linq;
+﻿using System;
 using Game.Configurations.Definitions;
 
 namespace Game.Buildings
 {
-    public class BaseStation
+    public class BaseStation : IBuilding
     {
-        public int Level => 1;
+        public int Level { get; private set; }
 
-        private readonly ProgressDefinition[] progressDefinition;
-        private readonly BuildingDefinition[] buildingDefinition;
+        private readonly BuildingDefinition[] buildingDefinitions;
 
-        public BaseStation(ProgressDefinition[] progressDefinition, BuildingDefinition[] buildingDefinition)
+        public BaseStation(BuildingDefinition[] buildingDefinition)
         {
-            this.progressDefinition = progressDefinition;
-            this.buildingDefinition = buildingDefinition;
+            this.buildingDefinitions = buildingDefinition;
         }
 
         public bool TryRaiseLevel(int xp)
         {
-            BuildingDefinition buildingDefinition = this.buildingDefinition.FirstOrDefault(d => d.RewardXp < xp);
+            BuildingDefinition definition = null;
+            int length = buildingDefinitions.Length;
+            for (int i = 0; i < length; i++)
+            {
+                definition = buildingDefinitions[i];
+                if (definition.RewardXp > xp)
+                {
+                    definition = buildingDefinitions[Math.Max(0, i - 1)];
+                    Level = definition.Level;
+                    return true;
+                }
+
+                if (i == length - 1)
+                {
+                    Level = definition.Level;
+                    return true;
+                }
+            }
 
             return false;
         }
+    }
+
+    public interface IBuilding
+    {
+        int Level { get; }
     }
 }
