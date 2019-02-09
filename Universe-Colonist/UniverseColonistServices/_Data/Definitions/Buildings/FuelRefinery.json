@@ -1,41 +1,41 @@
 [
   {
-     "XpDepend":1600
+     "Xp":1600
     ,"Level":1
     ,"Value":"0.8"
   },
   {
-     "XpDepend":2100
+     "Xp":2100
     ,"Level":2
     ,"Value":"1.2"
   },
   {
-     "XpDepend":2500
+     "Xp":2500
     ,"Level":3
     ,"Value":"2"
   },
   {
-     "XpDepend":3400
+     "Xp":3400
     ,"Level":4
     ,"Value":"3.2"
   },
   {
-     "XpDepend":7400
+     "Xp":7400
     ,"Level":5
     ,"Value":"5.2"
   },
   {
-     "XpDepend":25500
+     "Xp":25500
     ,"Level":6
     ,"Value":"8.4"
   },
   {
-     "XpDepend":189000
+     "Xp":189000
     ,"Level":7
     ,"Value":"13.6"
   },
   {
-     "XpDepend":4830000
+     "Xp":4830000
     ,"Level":8
     ,"Value":"22"
   }]

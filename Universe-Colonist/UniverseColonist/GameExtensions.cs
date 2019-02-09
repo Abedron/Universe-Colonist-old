@@ -10,7 +10,7 @@ public static class GameExtensions
         {
             ILeveling definition = null;
             definition = leveling[i];
-            if (definition.RewardXp > xp)
+            if (definition.Xp > xp)
             {
                 definition = leveling[Math.Max(0, i - 1)];
                 return definition.Level;

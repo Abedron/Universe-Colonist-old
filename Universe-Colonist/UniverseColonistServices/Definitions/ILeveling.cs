@@ -2,7 +2,8 @@
 {
     public interface ILeveling
     {
-        int Level { get; set; }
-        int RewardXp { get; }
+        int Xp { get; }
+        int Level { get; }
+        string Value { get; }
     }
 }
