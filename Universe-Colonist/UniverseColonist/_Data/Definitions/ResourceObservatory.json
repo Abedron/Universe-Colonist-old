@@ -1,0 +1,22 @@
+[
+ {
+   "XpDepend": 1100,
+   "Level": 1,
+   "Value": "Mars,Venus"
+ },
+ {
+   "XpDepend": 1300,
+   "Level": 2,
+   "Value": "Mercury,Vesta"
+ },
+ {
+   "XpDepend": 1600,
+   "Level": 3,
+   "Value": "Ceres,Asteroids"
+ },
+ {
+   "XpDepend": 2100,
+   "Level": 4,
+   "Value": "Jupiter,Antuel"
+ }
+]

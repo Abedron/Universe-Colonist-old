@@ -1,0 +1,12 @@
+{
+	"DefinitionPaths": {
+		"Game": "/_Data/Definitions/Game.json",
+		"BaseStation": "/_Data/Definitions/BaseStation.json",
+		"AntimatterCatcher": "/_Data/Definitions/AntimatterCatcher.json",
+		"FuelRefinery": "/_Data/Definitions/FuelRefinery.json",
+		"LaunchTowerRockets": "/_Data/Definitions/LaunchTowerRockets.json",
+		"RecruitmentOfColonist": "/_Data/Definitions/RecruitmentOfColonist.json",
+		"ResearchLaboratory": "/_Data/Definitions/ResearchLaboratory.json",
+		"ResourceObservatory": "/_Data/Definitions/ResourceObservatory.json"
+	}
+}

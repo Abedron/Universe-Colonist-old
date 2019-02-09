@@ -1,0 +1,26 @@
+[
+  {
+     "XpDepend":1100
+    ,"Level":1
+    ,"Value":"1"
+  },
+  {
+     "XpDepend":1600
+    ,"Level":2
+    ,"Value":"2"
+  },
+  {
+     "XpDepend":7400
+    ,"Level":3
+    ,"Value":"3"
+  },
+  {
+     "XpDepend":189000
+    ,"Level":4
+    ,"Value":"5"
+  },
+  {
+     "XpDepend":4830000
+    ,"Level":5
+    ,"Value":"8"
+  }]
