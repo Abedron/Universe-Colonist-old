@@ -1,4 +1,4 @@
-﻿namespace Game.Configurations
+﻿namespace Game.Services
 {
     public sealed class Config
     {
