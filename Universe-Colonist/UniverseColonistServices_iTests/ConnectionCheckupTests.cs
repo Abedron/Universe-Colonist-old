@@ -9,7 +9,7 @@ namespace UniverseColonistServicesTests
         [Fact]
         public void Check_PcIsConnectToInternet_IpStatusIsSuccess()
         {
-            var connectionCheckup = new ConnectionCheckup();
+            var connectionCheckup = new ConnectionCheckupService();
             var ping = connectionCheckup.Check();
 
             Assert.True(ping.Result?.Status == IPStatus.Success);

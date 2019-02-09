@@ -5,34 +5,26 @@ namespace UniverseColonistServicesTests
 {
     public class LocalServiceTests
     {
-        [Fact]
-        public void CtorLoaderService_ConstructorLoadedConfig_VersionIsNotNullInConfigI()
-        {
-            // Act
-            var localService = new DefinitionsService();
-
-            // Assert
-            Assert.NotNull(localService.Config.Version);
-        }
 
         [Fact]
         public void LoadAllDefinitions()
         {
             // Arrange
-            var localService = new DefinitionsService();
+            var localService = new LocalDefinitionsService();
 
             // Act
             localService.LoadAllDefinitions();
 
             // Assert
-            Assert.NotEmpty(localService.GameDefinitions.Game);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.AntimatterCatcher);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.BaseStation);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.FuelRefinery);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.LaunchTowerRockets);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.RecruitmentOfColonist);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.ResearchLaboratory);
-            Assert.NotEmpty(localService.GameDefinitions.Buildings.ResourceObservatory);
+            Assert.NotNull(localService.ConfigDefinitions.Version);
+            Assert.NotEmpty(localService.AllDefinitions.Game);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.AntimatterCatcher);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.BaseStation);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.FuelRefinery);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.LaunchTowerRockets);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.RecruitmentOfColonist);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.ResearchLaboratory);
+            Assert.NotEmpty(localService.AllDefinitions.Buildings.ResourceObservatory);
         }
     }
 }
