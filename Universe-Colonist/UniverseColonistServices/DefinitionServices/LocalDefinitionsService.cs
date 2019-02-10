@@ -19,8 +19,8 @@ namespace Game.Services
             ConfigDefinitions = JsonConvert.DeserializeObject<ConfigDefinitions>(json);
             AllDefinitions.Version = ConfigDefinitions.Version;
 
-            json = Load(ConfigDefinitions.DefinitionPaths.Game);
-            AllDefinitions.Game = JsonConvert.DeserializeObject<GameDefinition[]>(json).ToArray<IRaiseDefinition>();
+            json = Load(ConfigDefinitions.DefinitionPaths.Player);
+            AllDefinitions.Player = JsonConvert.DeserializeObject<GameDefinition[]>(json).ToArray<IRaiseDefinition>();
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.BaseStation);
             AllDefinitions.Buildings.BaseStation = JsonConvert.DeserializeObject<BaseStationDefinition[]>(json).ToArray<IRaiseDefinition>();
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.AntimatterCatcher);

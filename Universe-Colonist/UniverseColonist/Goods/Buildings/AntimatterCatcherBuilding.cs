@@ -4,7 +4,7 @@ namespace Game.Goods.Buildings
 {
     public class AntimatterCatcherBuilding : Raising
     {
-        public AntimatterCatcherBuilding(int level, IRaiseDefinition[] buildingDefinition) : base(level, buildingDefinition)
+        public AntimatterCatcherBuilding(int level, IRaiseDefinition[] raiseDefinition) : base(level, raiseDefinition)
         {
         }
     }

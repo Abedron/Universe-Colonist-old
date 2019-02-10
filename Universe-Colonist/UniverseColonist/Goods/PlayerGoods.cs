@@ -2,11 +2,11 @@
 
 namespace Game.Goods
 {
-    public class GameGoods : Raising
+    public class PlayerGoods : Raising
     {
-        public int Xp { get; private set; }
+        public int Xp { get; internal set; }
 
-        public GameGoods(int level, IRaiseDefinition[] buildingDefinition) : base(level, buildingDefinition)
+        public PlayerGoods(int level, IRaiseDefinition[] raiseDefinition) : base(level, raiseDefinition)
         {
         }
 

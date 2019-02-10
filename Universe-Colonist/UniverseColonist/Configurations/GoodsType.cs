@@ -6,7 +6,7 @@ namespace Game.Configurations
     public enum GoodsType
     {
         None = 0,
-        Game = 1,
+        Player = 1,
         BaseStation = 2,
         LaunchTower = 4,
         RecruitmentOfColonist = 8,

@@ -3,62 +3,72 @@ using System.Linq;
 using Game.Configurations;
 using Game.Goods;
 using Game.Goods.Buildings;
+using Game.PlayDataService;
 using Game.Services;
-using Game.StockService;
 
 namespace Game.Models
 {
     public class GameModel
     {
-        public IConfigurationStock ConfigurationStock { get; }
-        public GameGoods GameGoods { get; internal set; }
+        public PlayerGoods PlayerGoods { get; internal set; }
+        public Dictionary<GoodsType, IRaising> AllGoods { get; set; } = new Dictionary<GoodsType, IRaising>();
 
-        public Dictionary<GoodsType, IRaising> Buildings { get; set; } = new Dictionary<GoodsType, IRaising>();
+        private IPlayData PlayData { get; }
+        private AllDefinitions Definitions { get; }
 
-        private readonly AllDefinitions definitions;
-
-        public GameModel(IConfigurationStock configurationStock, AllDefinitions definitions)
+        public GameModel(IPlayData playData, AllDefinitions definitions)
         {
-            ConfigurationStock = configurationStock;
-            this.definitions = definitions;
+            PlayData = playData;
+            Definitions = definitions;
 
-            InitBuildings();
+            InitGoods();
         }
 
-        private void InitBuildings()
+        public GoodsType[] TryGoodsRaiseLevel(int xp)
         {
-            int level = GetLevel(GoodsType.Game);
-            GameGoods = new GameGoods(level, definitions.Game);
+            var raisedGoods = AllGoods.Where(d => d.Value.TryRaiseLevel(xp));
+
+            return raisedGoods.Select(d => d.Key).ToArray();
+        }
+
+        private void InitGoods()
+        {
+            int level = GetLevel(GoodsType.Player);
+            PlayerGoods = new PlayerGoods(level, Definitions.Player);
+            PlayerGoods.Xp = PlayData?.Xp ?? 0;
+            AllGoods.Add(GoodsType.Player, PlayerGoods);
+
             level = GetLevel(GoodsType.BaseStation);
-            Buildings.Add(GoodsType.BaseStation, new BaseStationBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.BaseStation, new BaseStationBuilding(level, Definitions.Buildings.BaseStation));
+
             level = GetLevel(GoodsType.AntimatterCatcher);
-            Buildings.Add(GoodsType.AntimatterCatcher, new AntimatterCatcherBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.AntimatterCatcher, new AntimatterCatcherBuilding(level, Definitions.Buildings.AntimatterCatcher));
+
             level = GetLevel(GoodsType.FuelRefinery);
-            Buildings.Add(GoodsType.FuelRefinery, new FuelRefineryBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.FuelRefinery, new FuelRefineryBuilding(level, Definitions.Buildings.FuelRefinery));
+
             level = GetLevel(GoodsType.LaunchTower);
-            Buildings.Add(GoodsType.LaunchTower, new LaunchTowerRocketsBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.LaunchTower, new LaunchTowerRocketsBuilding(level, Definitions.Buildings.LaunchTowerRockets));
+
             level = GetLevel(GoodsType.RecruitmentOfColonist);
-            Buildings.Add(GoodsType.RecruitmentOfColonist, new RecruitmentOfColonistBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.RecruitmentOfColonist, new RecruitmentOfColonistBuilding(level, Definitions.Buildings.RecruitmentOfColonist));
+
             level = GetLevel(GoodsType.ResearchLaboratory);
-            Buildings.Add(GoodsType.ResearchLaboratory, new ResearchLaboratoryBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.ResearchLaboratory, new ResearchLaboratoryBuilding(level, Definitions.Buildings.ResearchLaboratory));
+
             level = GetLevel(GoodsType.ResourceObservatory);
-            Buildings.Add(GoodsType.ResourceObservatory, new ResourceObservatoryBuilding(level, definitions.Buildings.BaseStation));
+            AllGoods.Add(GoodsType.ResourceObservatory, new ResourceObservatoryBuilding(level, Definitions.Buildings.ResourceObservatory));
         }
 
-        private int GetLevel(GoodsType goodsType)
+        internal int GetLevel(GoodsType goodsType)
         {
-            IGoods goods = ConfigurationStock?.Goods.FirstOrDefault(d => d.BuildingType == (int) goodsType);
+            IGoods goods = PlayData?.Goods.FirstOrDefault(d => d.BuildingType == (int) goodsType);
             if (goods == null)
             {
                 return 0;
             }
 
             return goods.Level;
-        }
-
-        public int GetGoodsLevel(GoodsType goodsType)
-        {
-            return Buildings.FirstOrDefault(d => d.Key == goodsType).Value.Level;
         }
     }
 }

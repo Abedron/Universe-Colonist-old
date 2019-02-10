@@ -5,7 +5,7 @@ namespace Game.Services
     public sealed class AllDefinitions
     {
         public string Version { get; internal set; }
-        public IRaiseDefinition[] Game { get; internal set; }
+        public IRaiseDefinition[] Player { get; internal set; }
         public Buildings Buildings { get; } = new Buildings();
     }
 

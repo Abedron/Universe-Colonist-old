@@ -17,7 +17,7 @@ namespace UniverseColonistServicesTests
 
             // Assert
             Assert.NotNull(localService.ConfigDefinitions.Version);
-            Assert.NotEmpty(localService.AllDefinitions.Game);
+            Assert.NotEmpty(localService.AllDefinitions.Player);
             Assert.NotEmpty(localService.AllDefinitions.Buildings.AntimatterCatcher);
             Assert.NotEmpty(localService.AllDefinitions.Buildings.BaseStation);
             Assert.NotEmpty(localService.AllDefinitions.Buildings.FuelRefinery);

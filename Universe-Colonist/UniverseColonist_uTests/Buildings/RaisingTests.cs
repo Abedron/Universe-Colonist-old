@@ -19,7 +19,7 @@ namespace Game.Buildings.Tests
         [InlineData(1190, 1, false)]
         [InlineData(9999, 1, true)]
         [InlineData(99999, 6, false)]
-        public void TryRaiseLevel_WithRelevantDefinitions_IsLevelUpByXp(int xp, int currentLevel, bool isLevelUpExpected)
+        public void TryRaiseLevel_WithBaseStationDefinitions_IsLevelUpByXp(int xp, int currentLevel, bool isLevelUpExpected)
         {
             // Arrange
             var baseStation = new Raising(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
@@ -33,14 +33,14 @@ namespace Game.Buildings.Tests
 
         [Theory]
         [InlineData(1000, 0, 0)]
-        [InlineData(1110, 0, 1)]
-        [InlineData(1190, 1, 1)]
-        [InlineData(9999, 1, 6)]
-        [InlineData(99999, 6, 6)]
-        public void TryRaiseLevel_WithRelevantDefinitions_RaiseLevelUpByXp(int xp, int currentLevel, int expectedLevel)
+        [InlineData(1600, 0, 1)]
+        [InlineData(3400, 1, 4)]
+        [InlineData(9999, 1, 5)]
+        [InlineData(9990000, 3, 8)]
+        public void TryRaiseLevel_WithFuelRefineryDefinitions_RaiseLevelUpByXp(int xp, int currentLevel, int expectedLevel)
         {
             // Arrange
-            var baseStation = new Raising(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
+            var baseStation = new Raising(currentLevel, TestEnvironment.AllDefinitionsFake.Buildings.FuelRefinery);
 
             // Act
             baseStation.TryRaiseLevel(xp);
@@ -54,8 +54,8 @@ namespace Game.Buildings.Tests
         [InlineData(1099, 0)]
         [InlineData(1100, 1)]
         [InlineData(1199, 1)]
-        [InlineData(1999, 6)]
-        [InlineData(9999, 6)]
+        [InlineData(1999, 2)]
+        [InlineData(9999, 3)]
         public void TryRaiseLevel_WithRelevantDefinitions_LevelsCorrespondOfXp(int xp, int expectedLevel)
         {
             // Arrange

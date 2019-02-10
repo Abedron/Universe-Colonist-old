@@ -1,7 +1,7 @@
 {
 	"Version": "2019.41.20",
 	"DefinitionPaths": {
-		"Game": "_Data/Definitions/Game.json",
+		"Player": "_Data/Definitions/Player.json",
 		"BuildingsPaths": {
 			"BaseStation": "_Data/Definitions/Buildings/BaseStation.json",
 			"AntimatterCatcher": "_Data/Definitions/Buildings/AntimatterCatcher.json",

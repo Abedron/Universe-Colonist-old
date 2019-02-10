@@ -4,7 +4,7 @@ namespace Game.Goods.Buildings
 {
     public class ResearchLaboratoryBuilding : Raising
     {
-        public ResearchLaboratoryBuilding(int level, IRaiseDefinition[] buildingDefinition) : base(level, buildingDefinition)
+        public ResearchLaboratoryBuilding(int level, IRaiseDefinition[] raiseDefinition) : base(level, raiseDefinition)
         {
         }
     }

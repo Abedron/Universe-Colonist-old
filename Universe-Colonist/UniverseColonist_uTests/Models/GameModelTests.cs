@@ -1,27 +1,109 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Game.Configurations;
+using Game.Models;
+using Game.PlayDataService;
 using Game.Services;
-using Game.StockService;
-using UniverseColonistTests;
+using Moq;
+using Xunit;
 
-namespace Game.Models.Tests
+namespace UniverseColonistTests.Models
 {
     public class GameModelTests
     {
         [Theory]
-        [InlineData(0, 0)]
-        [InlineData(2000, 4)]
-        [InlineData(1800000, 123)]
-        public void LevelBuilding(int expectedXp, int expectedLevel)
+        [InlineData(0)]
+        [InlineData(4)]
+        [InlineData(123)]
+        public void CtorGameModel_InitializeGameGoods_LevelAndXpIsInitialized(int expectedLevel)
         {
             // Arrange
-            IConfigurationStock configurationStock = TestEnvironment.SetupConfigurationStock(expectedXp, expectedLevel);
+            IPlayData playData = TestEnvironment.SetupPlayData(expectedLevel);
             AllDefinitions allDefinitions = TestEnvironment.AllDefinitionsFake;
 
             // Act
-            var gameModel = new GameModel(configurationStock, allDefinitions);
+            var gameModel = new GameModel(playData, allDefinitions);
 
             // Assert
-            Assert.Equal(expectedLevel, gameModel.GameGoods.Level);
+            Assert.Equal(expectedLevel, gameModel.PlayerGoods.Level);
+        }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1300)]
+        [InlineData(1800000)]
+        public void CtorGameModel_InitializeXp_XpIsInitialized(int expectedXp)
+        {
+            // Arrange
+            IPlayData playData = TestEnvironment.SetupPlayDataXp(expectedXp);
+            AllDefinitions allDefinitions = TestEnvironment.AllDefinitionsFake;
+
+            // Act
+            var gameModel = new GameModel(playData, allDefinitions);
+
+            // Assert
+            Assert.Equal(expectedXp, gameModel.PlayerGoods.Xp);
+        }
+
+        [Theory]
+        [InlineData((int)GoodsType.Player, 12)]
+        [InlineData((int)GoodsType.BaseStation, 23)]
+        [InlineData((int)GoodsType.LaunchTower, 34)]
+        [InlineData((int)GoodsType.RecruitmentOfColonist, 45)]
+        [InlineData((int)GoodsType.FuelRefinery, 56)]
+        [InlineData((int)GoodsType.ResearchLaboratory, 67)]
+        [InlineData((int)GoodsType.AntimatterCatcher, 78)]
+        [InlineData((int)GoodsType.ResourceObservatory, 89)]
+        public void GetLevel_InitializePlayData_ReturnExpectedLevel(int goodsType, int expectedLevel)
+        {
+            // Arrange
+            IPlayData playData = TestEnvironment.SetupPlayData(0);
+            IGoods goods = playData.Goods.FirstOrDefault(d => d.BuildingType == goodsType);
+            Mock.Get(goods).Setup(d => d.Level).Returns(expectedLevel);
+
+            var gameModel = new GameModel(playData, TestEnvironment.AllDefinitionsFake);
+
+            // Act
+            int level = gameModel.GetLevel((GoodsType) goodsType);
+
+            // Assert
+            Assert.Equal(expectedLevel, level);
+        }
+
+        [Fact]
+        public void GetLevel_InitializePlayData_ReturnZeroLevel()
+        {
+            // Arrange
+            var gameModel = new GameModel(TestEnvironment.SetupPlayData(0), TestEnvironment.AllDefinitionsFake);
+
+            // Act
+            int level = gameModel.GetLevel(GoodsType.None);
+
+            // Assert
+            Assert.Equal(0, level);
+        }
+
+        [Fact]
+        public void TryGoodsRaiseLevel_InitializePlayData_ReturnZeroLevel()
+        {
+            // Arrange
+            var expected = new GoodsType[]
+            {
+                GoodsType.Player,
+                GoodsType.BaseStation,
+                GoodsType.AntimatterCatcher,
+                GoodsType.LaunchTower,
+                GoodsType.RecruitmentOfColonist,
+                GoodsType.ResourceObservatory
+            };
+
+            var gameModel = new GameModel(TestEnvironment.SetupPlayData(0), TestEnvironment.AllDefinitionsFake);
+
+            // Act 
+            var goodsRaiseLevel = gameModel.TryGoodsRaiseLevel(1100);
+
+            // Assert
+            Assert.Equal(expected, goodsRaiseLevel);
+            
         }
     }
 }

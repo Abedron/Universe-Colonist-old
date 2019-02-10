@@ -13,7 +13,7 @@ namespace Game.Services
     internal sealed class DefinitionPaths
     {
         [JsonProperty]
-        public string Game { get; internal set; }
+        public string Player { get; internal set; }
         [JsonProperty]
         public BuildingsPaths BuildingsPaths { get; internal set; }
     }
