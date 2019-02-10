@@ -131,8 +131,23 @@ namespace UniverseColonistTests
 
             var configurationPlayData = SetupPlayDataXp(0);
             Mock.Get(configurationPlayData).Setup(d => d.Goods).Returns(goods.ToArray);
+            Mock.Get(configurationPlayData).Setup(d => d.Wallet).Returns(SetupWalletData(1000));
 
             return configurationPlayData;
+        }
+
+        public static IWallet SetupWalletData(int money)
+        {
+            var walletData = MockRepository.Create<IWallet>();
+            walletData.Setup(d => d.Stars).Returns(money);
+            walletData.Setup(d => d.HyperMetal).Returns(money);
+            walletData.Setup(d => d.Fuel).Returns(money);
+            walletData.Setup(d => d.Ore).Returns(money);
+            walletData.Setup(d => d.Minerals).Returns(money);
+            walletData.Setup(d => d.Food).Returns(money);
+            walletData.Setup(d => d.Colonist).Returns(money);
+
+            return walletData.Object;
         }
 
         public static IPlayData SetupPlayDataXp(int xp)

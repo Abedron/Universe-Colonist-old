@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace Game.Configurations
+﻿namespace Game.Configurations
 {
-    [Flags]
     public enum GoodsType
     {
         None,

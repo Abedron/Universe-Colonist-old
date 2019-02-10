@@ -1,5 +1,4 @@
 ﻿using System;
-using Game.Configurations;
 
 namespace Game.Goods
 {
@@ -7,7 +6,7 @@ namespace Game.Goods
     {
         event EventHandler<LevelUpArgs> OnLevelUp;
         bool Enabled { get; }
-        bool IsBuilt { get; }
+        bool IsBuilt { get; set; }
         int Level { get; }
         bool TryRaiseLevel(int xp);
     }

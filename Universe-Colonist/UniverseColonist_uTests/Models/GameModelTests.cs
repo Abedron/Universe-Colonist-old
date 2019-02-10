@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Game.Configurations;
+using Game.Goods;
 using Game.Models;
 using Game.PlayDataService;
 using Game.Services;
@@ -27,6 +28,44 @@ namespace UniverseColonistTests.Models
             Assert.Equal(expectedLevel, gameModel.PlayerGoods.Level);
         }
 
+        [Fact]
+        public void AddXp_InitializeDefinitions_IncreaseXp()
+        {
+            // Arrange
+            int initialXp = 200;
+            int increaseXp = 1200;
+            int expectedXp = initialXp + increaseXp;
+            var gameModel = new GameModel(null, TestEnvironment.AllDefinitionsFake);
+            gameModel.PlayerGoods.Xp = initialXp;
+
+            // Act
+            gameModel.AddXp(increaseXp);
+
+            // Assert
+            Assert.Equal(expectedXp, gameModel.PlayerGoods.Xp);
+        }
+
+        [Theory]
+        [InlineData(GoodsType.BaseStation)]
+        [InlineData(GoodsType.LaunchTower)]
+        [InlineData(GoodsType.RecruitmentOfColonist)]
+        [InlineData(GoodsType.FuelRefinery)]
+        [InlineData(GoodsType.ResearchLaboratory)]
+        [InlineData(GoodsType.AntimatterCatcher)]
+        [InlineData(GoodsType.ResourceObservatory)]
+        public void Build_InitializeDefinitions_IsBuilt(GoodsType goodsType)
+        {
+            // Arrange
+            var gameModel = new GameModel(null, TestEnvironment.AllDefinitionsFake);
+            IRaising expectedGoodsRaising = gameModel.AllGoods[goodsType];
+
+            // Act
+            gameModel.Build(goodsType);
+
+            // Assert
+            Assert.True(expectedGoodsRaising.IsBuilt);
+        }
+
         [Theory]
         [InlineData(0)]
         [InlineData(1300)]
@@ -45,25 +84,25 @@ namespace UniverseColonistTests.Models
         }
 
         [Theory]
-        [InlineData((int)GoodsType.Player, 12)]
-        [InlineData((int)GoodsType.BaseStation, 23)]
-        [InlineData((int)GoodsType.LaunchTower, 34)]
-        [InlineData((int)GoodsType.RecruitmentOfColonist, 45)]
-        [InlineData((int)GoodsType.FuelRefinery, 56)]
-        [InlineData((int)GoodsType.ResearchLaboratory, 67)]
-        [InlineData((int)GoodsType.AntimatterCatcher, 78)]
-        [InlineData((int)GoodsType.ResourceObservatory, 89)]
-        public void GetLevel_InitializePlayData_ReturnExpectedLevel(int goodsType, int expectedLevel)
+        [InlineData(GoodsType.Player, 12)]
+        [InlineData(GoodsType.BaseStation, 23)]
+        [InlineData(GoodsType.LaunchTower, 34)]
+        [InlineData(GoodsType.RecruitmentOfColonist, 45)]
+        [InlineData(GoodsType.FuelRefinery, 56)]
+        [InlineData(GoodsType.ResearchLaboratory, 67)]
+        [InlineData(GoodsType.AntimatterCatcher, 78)]
+        [InlineData(GoodsType.ResourceObservatory, 89)]
+        public void GetLevel_InitializePlayData_ReturnExpectedLevel(GoodsType goodsType, int expectedLevel)
         {
             // Arrange
             IPlayData playData = TestEnvironment.SetupPlayData(0);
-            IGoods goods = playData.Goods.FirstOrDefault(d => d.BuildingType == goodsType);
+            IGoods goods = playData.Goods.FirstOrDefault(d => d.BuildingType == (int)goodsType);
             Mock.Get(goods).Setup(d => d.Level).Returns(expectedLevel);
 
             var gameModel = new GameModel(playData, TestEnvironment.AllDefinitionsFake);
 
             // Act
-            int level = gameModel.GetLevel((GoodsType) goodsType);
+            int level = gameModel.GetLevel(goodsType);
 
             // Assert
             Assert.Equal(expectedLevel, level);
@@ -103,7 +142,6 @@ namespace UniverseColonistTests.Models
 
             // Assert
             Assert.Equal(expected, goodsRaiseLevel);
-            
         }
     }
 }

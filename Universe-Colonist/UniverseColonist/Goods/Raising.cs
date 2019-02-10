@@ -9,7 +9,16 @@ namespace Game.Goods
         public event EventHandler<LevelUpArgs> OnLevelUp;
         public bool Enabled => Level > 0;
         public bool IsBuilt { get; set; }
-        public int Level { get; internal set; }
+
+        public int Level { get; private set; }
+
+        internal void SetToLevel(int level)
+        {
+            int levelDifference = level - Level;
+            Level = level;
+
+            OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
+        }
 
         protected IRaiseDefinition[] RaiseDefinitions { get; }
 
@@ -24,6 +33,7 @@ namespace Game.Goods
             int level = GetCalculateLevel(RaiseDefinitions, xp);
             if (Level < level)
             {
+                SetToLevel(level);
                 int levelDifference = level - Level;
                 Level = level;
                 OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
