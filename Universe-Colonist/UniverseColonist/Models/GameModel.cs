@@ -24,7 +24,28 @@ namespace Game.Models
             InitGoods();
         }
 
-        public GoodsType[] TryGoodsRaiseLevel(int xp)
+        public bool AddLevel(GoodsType goodsType)
+        {
+
+
+            return false;
+        }
+
+        public bool Build(GoodsType goodsType)
+        {
+
+
+            return false;
+        }
+
+        public void AddXp(int xp)
+        {
+            PlayerGoods.Xp += xp;
+
+            TryGoodsRaiseLevel(PlayerGoods.Xp);
+        }
+
+        internal GoodsType[] TryGoodsRaiseLevel(int xp)
         {
             var raisedGoods = AllGoods.Where(d => d.Value.TryRaiseLevel(xp));
 

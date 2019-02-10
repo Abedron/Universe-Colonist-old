@@ -1,15 +1,8 @@
-﻿using Xunit;
-using Game.Buildings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Game.Goods;
+﻿using Game.Goods;
 using Game.Services.Definitions;
-using UniverseColonistTests;
+using Xunit;
 
-namespace Game.Buildings.Tests
+namespace UniverseColonistTests.Buildings
 {
     public class RaisingTests
     {
@@ -29,6 +22,32 @@ namespace Game.Buildings.Tests
 
             // Assert
             Assert.Equal(isLevelUpExpected, isLevelUp);
+        }
+
+        [Theory]
+        [InlineData(1000, 0, 0, false)]
+        [InlineData(1110, 0, 1, true)]
+        [InlineData(1190, 1, 0, false)]
+        [InlineData(9999, 1, 2, true)]
+        [InlineData(99999, 6, 0, false)]
+        public void TryRaiseLevel_WithBaseStationDefinitions_OnLevelUpInvoke(int xp, int currentLevel, int levelDiffExpected, bool isLevelUpExpected)
+        {
+            // Arrange
+            var raising = new Raising(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
+            bool raisingLevelUp = false;
+            int levelDifference = 0;
+            raising.OnLevelUp += (sender, arg) => {
+                raisingLevelUp = true;
+                levelDifference = arg.LevelDifference;
+            };
+            
+            // Act
+            bool isLevelUp = raising.TryRaiseLevel(xp);
+
+            // Assert
+            Assert.True(isLevelUp == raisingLevelUp);
+            Assert.Equal(isLevelUpExpected, raisingLevelUp);
+            Assert.Equal(levelDiffExpected, levelDifference);
         }
 
         [Theory]

@@ -8,12 +8,7 @@ namespace Game.Goods
 
         public PlayerGoods(int level, IRaiseDefinition[] raiseDefinition) : base(level, raiseDefinition)
         {
-        }
-
-        public override bool TryRaiseLevel(int xp)
-        {
-            Xp = xp;
-            return base.TryRaiseLevel(xp);
+            IsBuilt = true;
         }
     }
 }
