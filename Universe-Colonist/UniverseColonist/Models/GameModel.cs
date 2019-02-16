@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.Configurations;
+using Game.Data.Runtime;
 using Game.Goods;
 using Game.Goods.Buildings;
-using Game.PlayDataService;
 using Game.Services;
 
 namespace Game.Models

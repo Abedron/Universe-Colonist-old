@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Game.Configurations;
-using Game.PlayDataService;
+using Game.Data.Runtime;
 using Game.Services;
 using Game.Services.Definitions;
 using Game.Services.Definitions.Buildings;
@@ -138,16 +138,18 @@ namespace UniverseColonistTests
 
         public static IWallet SetupWalletData(int money)
         {
-            var walletData = MockRepository.Create<IWallet>();
-            walletData.Setup(d => d.Stars).Returns(money);
-            walletData.Setup(d => d.HyperMetal).Returns(money);
-            walletData.Setup(d => d.Fuel).Returns(money);
-            walletData.Setup(d => d.Ore).Returns(money);
-            walletData.Setup(d => d.Minerals).Returns(money);
-            walletData.Setup(d => d.Food).Returns(money);
-            walletData.Setup(d => d.Colonist).Returns(money);
+            var wallet = new Wallet()
+            {
+                Stars = money,
+                Colonist = money,
+                HyperMetal = money,
+                Minerals = money,
+                Ore = money,
+                Food = money,
+                Fuel = money
+            };
 
-            return walletData.Object;
+            return wallet;
         }
 
         public static IPlayData SetupPlayDataXp(int xp)

@@ -12,14 +12,6 @@ namespace Game.Goods
 
         public int Level { get; private set; }
 
-        internal void SetToLevel(int level)
-        {
-            int levelDifference = level - Level;
-            Level = level;
-
-            OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
-        }
-
         protected IRaiseDefinition[] RaiseDefinitions { get; }
 
         public Raising(int level, IRaiseDefinition[] raiseDefinition)
@@ -34,9 +26,6 @@ namespace Game.Goods
             if (Level < level)
             {
                 SetToLevel(level);
-                int levelDifference = level - Level;
-                Level = level;
-                OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
                 return true;
             }
 
@@ -71,6 +60,14 @@ namespace Game.Goods
             }
 
             return 0;
+        }
+
+        internal void SetToLevel(int level)
+        {
+            int levelDifference = level - Level;
+            Level = level;
+
+            OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Game.PlayDataService
+﻿namespace Game.Data.Runtime
 {
     public interface IPlayDataService
     {
