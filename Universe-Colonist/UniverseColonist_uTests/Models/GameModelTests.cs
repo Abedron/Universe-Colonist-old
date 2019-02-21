@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Game.Configurations;
-using Game.Data.Runtime;
+using Game.DataModel.Runtime;
 using Game.Goods;
-using Game.Models;
+using Game.GameModels;
 using Game.Services;
 using Moq;
 using Xunit;

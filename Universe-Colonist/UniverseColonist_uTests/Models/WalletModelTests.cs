@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Xunit;
 using Game.Configurations;
-using Game.Data.Runtime;
+using Game.DataModel.Runtime;
 using UniverseColonistTests;
 
-namespace Game.Models.Tests
+namespace Game.GameModels.Tests
 {
     public class WalletModelTests
     {
