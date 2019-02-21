@@ -1,6 +1,6 @@
 ﻿namespace Game.Services.Definitions
 {
-    public class LaunchTowerRocketsDefinition : BuildingDefinitionBase
+    public class LaunchTowerDefinition : BuildingDefinitionBase
     {
         public int FlyingRocketCount { get; internal set; }
     }

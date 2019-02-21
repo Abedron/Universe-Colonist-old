@@ -1,6 +1,6 @@
 ﻿namespace Game.Data.Storage
 {
-    public class Play
+    public class GameplayStorage
     {
         public Player Player { get; set; } = new Player();
         public Buildings Buildings { get; } = new Buildings();

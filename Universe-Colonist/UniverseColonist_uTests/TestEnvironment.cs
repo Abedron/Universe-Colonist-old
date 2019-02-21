@@ -56,7 +56,7 @@ namespace UniverseColonistTests
                     new FuelRefineryDefinition() {Xp = 189000, Level = 7, Value = "13.6"},
                     new FuelRefineryDefinition() {Xp = 4830000, Level = 8, Value = "22"}
                 },
-                LaunchTowerRockets = new []
+                LaunchTower = new []
                 {
                     new FuelRefineryDefinition() {Xp = 1100, Level = 1, Value = "1"},
                     new FuelRefineryDefinition() {Xp = 1300, Level = 2, Value = "2"},
@@ -70,7 +70,7 @@ namespace UniverseColonistTests
                 },
                 ResearchLaboratory = new []
                 {
-                    new LaunchTowerRocketsDefinition() {Xp = 7400, Level = 1}
+                    new LaunchTowerDefinition() {Xp = 7400, Level = 1}
                 },
                 ResourceObservatory = new []
                 {
