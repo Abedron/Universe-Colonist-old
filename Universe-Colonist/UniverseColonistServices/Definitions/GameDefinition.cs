@@ -1,6 +1,6 @@
 ﻿using Game.Services.Definitions;
 
-namespace Game.Services
+namespace Game.Services.Definitions
 {
     public class GameDefinition: IRaiseDefinition
     {

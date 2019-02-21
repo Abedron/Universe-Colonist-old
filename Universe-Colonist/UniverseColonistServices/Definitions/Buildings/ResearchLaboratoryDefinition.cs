@@ -1,9 +1,6 @@
-﻿namespace Game.Services.Definitions.Buildings
+﻿namespace Game.Services.Definitions
 {
-    public class ResearchLaboratoryDefinition : IRaiseDefinition
+    public class ResearchLaboratoryDefinition : BuildingDefinitionBase
     {
-        public int Xp { get; internal set; }
-        public int Level { get; internal set; }
-        public string Value { get; internal set; }
     }
 }

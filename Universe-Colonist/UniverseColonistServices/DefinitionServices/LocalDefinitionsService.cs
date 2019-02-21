@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using Game.Services.Definitions;
-using Game.Services.Definitions.Buildings;
 using Newtonsoft.Json;
 
 namespace Game.Services
@@ -20,21 +18,21 @@ namespace Game.Services
             AllDefinitions.Version = ConfigDefinitions.Version;
 
             json = Load(ConfigDefinitions.DefinitionPaths.Player);
-            AllDefinitions.Player = JsonConvert.DeserializeObject<GameDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Player = JsonConvert.DeserializeObject<PlayerDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.BaseStation);
-            AllDefinitions.Buildings.BaseStation = JsonConvert.DeserializeObject<BaseStationDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.BaseStation = JsonConvert.DeserializeObject<BaseStationDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.AntimatterCatcher);
-            AllDefinitions.Buildings.AntimatterCatcher = JsonConvert.DeserializeObject<AntimatterCatcherDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.AntimatterCatcher = JsonConvert.DeserializeObject<AntimatterCatcherDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.FuelRefinery);
-            AllDefinitions.Buildings.FuelRefinery = JsonConvert.DeserializeObject<FuelRefineryDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.FuelRefinery = JsonConvert.DeserializeObject<FuelRefineryDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.LaunchTowerRockets);
-            AllDefinitions.Buildings.LaunchTowerRockets = JsonConvert.DeserializeObject<LaunchTowerRocketsDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.LaunchTowerRockets = JsonConvert.DeserializeObject<LaunchTowerRocketsDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.RecruitmentOfColonist);
-            AllDefinitions.Buildings.RecruitmentOfColonist = JsonConvert.DeserializeObject<RecruitmentOfColonistDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.RecruitmentOfColonist = JsonConvert.DeserializeObject<RecruitmentOfColonistDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.ResearchLaboratory);
-            AllDefinitions.Buildings.ResearchLaboratory = JsonConvert.DeserializeObject<ResearchLaboratoryDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.ResearchLaboratory = JsonConvert.DeserializeObject<ResearchLaboratoryDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.ResourceObservatory);
-            AllDefinitions.Buildings.ResourceObservatory = JsonConvert.DeserializeObject<ResourceObservatoryDefinition[]>(json).ToArray<IRaiseDefinition>();
+            AllDefinitions.Buildings.ResourceObservatory = JsonConvert.DeserializeObject<ResourceObservatoryDefinition[]>(json);
         }
 
         public string Load(string path)

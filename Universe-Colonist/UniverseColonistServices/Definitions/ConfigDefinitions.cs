@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Game.Services
+namespace Game.Services.Definitions
 {
     internal sealed class ConfigDefinitions
     {

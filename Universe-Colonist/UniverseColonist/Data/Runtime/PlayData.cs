@@ -1,9 +1,13 @@
 ﻿namespace Game.Data.Runtime
 {
-    public class PlayData : IPlayData
+    public class PlayData
     {
-        public int Xp { get; set; }
-        public IGoods[] Goods { get; set; }
-        public IWallet Wallet { get; set; }
+        public PlayerData PlayerData { get; } = new PlayerData();
+        public BuildingsData BuildingsData { get; } = new BuildingsData();
+        public CashData Cash { get; } = new CashData();
+
+        // Items
+        public PlanetsData Planets { get; } = new PlanetsData();
+        public RocketData[] Rockets { get; } = new RocketData[0];
     }
 }

@@ -1,9 +1,6 @@
-﻿namespace Game.Services.Definitions.Buildings
+﻿namespace Game.Services.Definitions
 {
-    public class FuelRefineryDefinition : IRaiseDefinition
+    public class FuelRefineryDefinition : BuildingDefinitionBase
     {
-        public int Xp { get; internal set; }
-        public int Level { get; internal set; }
-        public string Value { get; internal set; }
     }
 }

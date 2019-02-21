@@ -1,9 +1,7 @@
-﻿namespace Game.Services.Definitions.Buildings
+﻿namespace Game.Services.Definitions
 {
-    public class AntimatterCatcherDefinition : IRaiseDefinition
+    public class AntimatterCatcherDefinition : BuildingDefinitionBase
     {
-        public int Xp { get; internal set; }
-        public int Level { get; internal set; }
-        public string Value { get; internal set; }
+        public int HarvesterCount { get; internal set; }
     }
 }

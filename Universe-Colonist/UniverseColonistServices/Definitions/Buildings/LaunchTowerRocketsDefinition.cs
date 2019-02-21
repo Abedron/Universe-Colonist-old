@@ -1,9 +1,7 @@
-﻿namespace Game.Services.Definitions.Buildings
+﻿namespace Game.Services.Definitions
 {
-    public class LaunchTowerRocketsDefinition : IRaiseDefinition
+    public class LaunchTowerRocketsDefinition : BuildingDefinitionBase
     {
-        public int Xp { get; internal set; }
-        public int Level { get; internal set; }
-        public string Value { get; internal set; }
+        public int FlyingRocketCount { get; internal set; }
     }
 }

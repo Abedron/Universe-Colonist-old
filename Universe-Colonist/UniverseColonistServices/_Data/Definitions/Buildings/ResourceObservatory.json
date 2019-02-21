@@ -2,21 +2,21 @@
  {
    "Xp": 1100,
    "Level": 1,
-   "Value": "Mars,Venus"
+   "Planets": "Mars,Venus"
  },
  {
    "Xp": 1300,
    "Level": 2,
-   "Value": "Mercury,Vesta"
+   "Planets": "Mercury,Vesta"
  },
  {
    "Xp": 1600,
    "Level": 3,
-   "Value": "Ceres,Asteroids"
+   "Planets": "Ceres,Asteroids"
  },
  {
    "Xp": 2100,
    "Level": 4,
-   "Value": "Jupiter,Antuel"
+   "Planets": "Jupiter,Antuel"
  }
 ]

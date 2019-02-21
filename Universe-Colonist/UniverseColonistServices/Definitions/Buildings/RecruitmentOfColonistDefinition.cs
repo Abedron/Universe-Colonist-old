@@ -1,9 +1,7 @@
-﻿namespace Game.Services.Definitions.Buildings
+﻿namespace Game.Services.Definitions
 {
-    public class RecruitmentOfColonistDefinition : IRaiseDefinition
+    public class RecruitmentOfColonistDefinition : BuildingDefinitionBase
     {
-        public int Xp { get; internal set; }
-        public int Level { get; internal set; }
-        public string Value { get; internal set; }
+        public int RecruitmentPerMinute { get; internal set; }
     }
 }

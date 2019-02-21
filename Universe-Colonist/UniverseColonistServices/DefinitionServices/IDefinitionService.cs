@@ -1,4 +1,6 @@
-﻿namespace Game.Services
+﻿using Game.Services.Definitions;
+
+namespace Game.Services
 {
     public interface IDefinitionService
     {

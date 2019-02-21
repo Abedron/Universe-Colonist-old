@@ -2,25 +2,25 @@
   {
      "Xp":1100
     ,"Level":1
-    ,"Value":"1"
+    ,"RecruitmentPerMinute":"1"
   },
   {
      "Xp":1600
     ,"Level":2
-    ,"Value":"2"
+    ,"RecruitmentPerMinute":"2"
   },
   {
      "Xp":7400
     ,"Level":3
-    ,"Value":"3"
+    ,"RecruitmentPerMinute":"3"
   },
   {
      "Xp":189000
     ,"Level":4
-    ,"Value":"5"
+    ,"RecruitmentPerMinute":"5"
   },
   {
      "Xp":4830000
     ,"Level":5
-    ,"Value":"8"
+    ,"RecruitmentPerMinute":"8"
   }]

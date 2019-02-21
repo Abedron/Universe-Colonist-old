@@ -1,22 +1,20 @@
-﻿using Game.Services.Definitions;
-
-namespace Game.Services
+﻿namespace Game.Services.Definitions
 {
     public sealed class AllDefinitions
     {
         public string Version { get; internal set; }
-        public IRaiseDefinition[] Player { get; internal set; }
+        public PlayerDefinition[] Player { get; internal set; }
         public Buildings Buildings { get; } = new Buildings();
     }
 
     public sealed class Buildings
     {
-        public IRaiseDefinition[] BaseStation { get; internal set; }
-        public IRaiseDefinition[] AntimatterCatcher { get; internal set; }
-        public IRaiseDefinition[] FuelRefinery { get; internal set; }
-        public IRaiseDefinition[] LaunchTowerRockets { get; internal set; }
-        public IRaiseDefinition[] RecruitmentOfColonist { get; internal set; }
-        public IRaiseDefinition[] ResearchLaboratory { get; internal set; }
-        public IRaiseDefinition[] ResourceObservatory { get; internal set; }
+        public BaseStationDefinition[] BaseStation { get; internal set; }
+        public AntimatterCatcherDefinition[] AntimatterCatcher { get; internal set; }
+        public FuelRefineryDefinition[] FuelRefinery { get; internal set; }
+        public LaunchTowerRocketsDefinition[] LaunchTowerRockets { get; internal set; }
+        public RecruitmentOfColonistDefinition[] RecruitmentOfColonist { get; internal set; }
+        public ResearchLaboratoryDefinition[] ResearchLaboratory { get; internal set; }
+        public ResourceObservatoryDefinition[] ResourceObservatory { get; internal set; }
     }
 }

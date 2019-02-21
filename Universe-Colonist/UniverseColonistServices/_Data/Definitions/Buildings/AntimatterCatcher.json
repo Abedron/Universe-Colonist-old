@@ -1,31 +1,31 @@
 [
   {
-     "Xp":1100
-    ,"Level":1
-    ,"Value":"0"
+    "Xp": 1100,
+    "Level": 1,
+    "HarvesterCount": "1"
   },
   {
      "Xp":1300
     ,"Level":2
-    ,"Value":"0"
+    ,"HarvesterCount":"2"
   },
   {
      "Xp":1600
     ,"Level":3
-    ,"Value":"0"
+    ,"HarvesterCount":"3"
   },
   {
      "Xp":2100
     ,"Level":4
-    ,"Value":"0"
+    ,"HarvesterCount":"4"
   },
   {
      "Xp":3400
     ,"Level":5
-    ,"Value":"0"
+    ,"HarvesterCount":"5"
   },
   {
      "Xp":7400
     ,"Level":6
-    ,"Value":"0"
+    ,"HarvesterCount":"6"
   }]
