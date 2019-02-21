@@ -1,6 +1,6 @@
 ﻿using Game.Services.Definitions;
 
-namespace Game.Goods.Buildings
+namespace Game.GameModel.Buildings
 {
     public class ResearchLaboratoryBuilding : Raising
     {

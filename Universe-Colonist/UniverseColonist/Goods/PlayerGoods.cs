@@ -1,6 +1,6 @@
 ﻿using Game.Services.Definitions;
 
-namespace Game.Goods
+namespace Game.GameModel
 {
     public class PlayerGoods : Raising
     {

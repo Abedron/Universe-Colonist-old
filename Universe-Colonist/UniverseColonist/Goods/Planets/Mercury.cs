@@ -1,4 +1,4 @@
-﻿namespace Game.Goods.Planets
+﻿namespace Game.GameModel.Planets
 {
     public class Mercury : Planet
     {

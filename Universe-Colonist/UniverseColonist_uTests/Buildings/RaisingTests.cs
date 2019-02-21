@@ -1,4 +1,4 @@
-﻿using Game.Goods;
+﻿using Game.GameModel;
 using Game.Services.Definitions;
 using Xunit;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.Goods
+namespace Game.GameModel
 {
     public class LevelUpArgs : EventArgs
     {

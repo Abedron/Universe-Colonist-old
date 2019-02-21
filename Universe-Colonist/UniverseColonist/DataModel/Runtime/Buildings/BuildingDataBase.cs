@@ -1,17 +1,14 @@
-﻿namespace Game.DataModel.Runtime
+﻿using Game.DataModel.Storage;
+using Game.GameModel;
+using Game.Services.Definitions;
+
+namespace Game.DataModel.Runtime
 {
-    public class BuildingDataBase<TDefinition, TStorage>
+    public class BuildingDataBase<TDefinition, TStorage> : Raising<TDefinition, TStorage> where TDefinition : IBuildingDefinition where TStorage : IBuildingStorage
     {
-        protected TDefinition[] Definition { get; }
-        protected TStorage Storage { get; }
-
-        public bool IsActivated { get; set; }
-        public int Level { get; set; }
-
-        public BuildingDataBase(TDefinition[] definition, TStorage storage)
+        public bool IsActivate { get; set; }
+        public BuildingDataBase(TDefinition[] definitions, TStorage storage):base(definitions, storage)
         {
-            Definition = definition;
-            Storage = storage;
         }
     }
 }

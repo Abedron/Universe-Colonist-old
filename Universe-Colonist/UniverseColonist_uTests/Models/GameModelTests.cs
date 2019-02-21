@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Game.Configurations;
 using Game.DataModel.Runtime;
-using Game.Goods;
+using Game.GameModel;
 using Game.GameModels;
 using Game.Services;
 using Moq;

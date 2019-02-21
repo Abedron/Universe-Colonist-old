@@ -1,7 +1,7 @@
 ﻿using Game.Configurations;
 using Game.Services.Definitions;
 
-namespace Game.Goods.Buildings
+namespace Game.GameModel.Buildings
 {
     public class FuelRefineryBuilding : Raising
     {

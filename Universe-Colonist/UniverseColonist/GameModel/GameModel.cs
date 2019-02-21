@@ -2,9 +2,9 @@
 using System.Linq;
 using Game.Configurations;
 using Game.DataModel.Runtime;
-using Game.Goods;
-using Game.Goods.Buildings;
-using Game.Services;
+using Game.GameModel;
+using Game.GameModel.Buildings;
+using Game.Services.Definitions;
 
 namespace Game.GameModels
 {
@@ -13,10 +13,10 @@ namespace Game.GameModels
         public PlayerGoods PlayerGoods { get; internal set; }
         public Dictionary<GoodsType, IRaising> AllGoods { get; }
 
-        private IPlayData PlayData { get; }
+        private PlayData PlayData { get; }
         private AllDefinitions Definitions { get; }
 
-        public GameModel(IPlayData playData, AllDefinitions definitions)
+        public GameModel(PlayData playData, AllDefinitions definitions)
         {
             PlayData = playData;
             Definitions = definitions;

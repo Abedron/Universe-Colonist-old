@@ -17,7 +17,7 @@ namespace Game
 
             AllDefinitions = DefinitionsService.AllDefinitions;
 
-            GameModel = new GameModel(null, AllDefinitions);
+            GameModel = new GameModels.GameModel(null, AllDefinitions);
         }
     }
 }

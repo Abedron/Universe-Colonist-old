@@ -1,29 +1,25 @@
 ﻿using System;
 using System.Linq;
+using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
-namespace Game.Goods
+namespace Game.GameModel
 {
-    public class Raising : IRaising
+    public class Raising<TDefinition, TStorage> : IRaising where TDefinition : IBuildingDefinition where TStorage : IBuildingStorage
     {
-        public event EventHandler<LevelUpArgs> OnLevelUp;
-        public bool Enabled => Level > 0;
-        public bool IsBuilt { get; set; }
+        protected TDefinition[] Definitions { get; }
+        protected TStorage Storage { get; }
 
-        public int Level { get; private set; }
-
-        protected IRaiseDefinition[] RaiseDefinitions { get; }
-
-        public Raising(int level, IRaiseDefinition[] raiseDefinition)
+        public Raising(TDefinition[] definitions, TStorage storage)
         {
-            Level = level;
-            RaiseDefinitions = raiseDefinition;
+            Definitions = definitions;
+            Storage = storage;
         }
 
         public virtual bool TryRaiseLevel(int xp)
         {
-            int level = GetCalculateLevel(RaiseDefinitions, xp);
-            if (Level < level)
+            int level = GetCalculateLevel(Definitions, xp);
+            if (Storage.Level < level)
             {
                 SetToLevel(level);
                 return true;
@@ -32,7 +28,7 @@ namespace Game.Goods
             return false;
         }
 
-        internal static int GetCalculateLevel(IRaiseDefinition[] definitions, int xp)
+        internal static int GetCalculateLevel(TDefinition[] definitions, int xp)
         {
             int minXp = definitions.Min(d => d.Xp);
             if (minXp > xp)
@@ -43,7 +39,7 @@ namespace Game.Goods
             int length = definitions.Length;
             for (int i = 0; i < length; i++)
             {
-                IRaiseDefinition definition = null;
+                IBuildingDefinition definition = null;
                 definition = definitions[i];
 
                 if (definition.Xp > xp)
@@ -64,10 +60,8 @@ namespace Game.Goods
 
         internal void SetToLevel(int level)
         {
-            int levelDifference = level - Level;
-            Level = level;
-
-            OnLevelUp?.Invoke(this, new LevelUpArgs(levelDifference));
+            int levelDifference = level - Storage.Level;
+            Storage.Level = level;
         }
     }
 }

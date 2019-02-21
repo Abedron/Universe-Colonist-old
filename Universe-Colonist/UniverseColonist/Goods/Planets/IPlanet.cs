@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.Goods.Planets
+namespace Game.GameModel.Planets
 {
     public interface IPlanet
     {
