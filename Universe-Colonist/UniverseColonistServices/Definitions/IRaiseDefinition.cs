@@ -4,6 +4,5 @@
     {
         int Xp { get; }
         int Level { get; }
-        string Value { get; }
     }
 }

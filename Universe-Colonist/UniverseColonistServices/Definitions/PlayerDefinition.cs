@@ -1,6 +1,6 @@
 ﻿namespace Game.Services.Definitions
 {
-    public class PlayerDefinition : IRaisingDefinition
+    public class PlayerDefinition : IRaiseDefinition
     {
         public int Xp { get; internal set; }
         public int Level { get; internal set; }

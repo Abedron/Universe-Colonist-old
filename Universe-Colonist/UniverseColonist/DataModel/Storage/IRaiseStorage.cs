@@ -1,6 +1,6 @@
 ﻿namespace Game.DataModel.Storage
 {
-    public interface IRaisingStorage
+    public interface IRaiseStorage
     {
         int Level { get; set; }
     }

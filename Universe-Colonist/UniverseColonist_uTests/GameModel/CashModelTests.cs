@@ -6,7 +6,7 @@ using UniverseColonistTests;
 
 namespace Game.GameModels.Tests
 {
-    public class WalletModelTests
+    public class CashModelTests
     {
         [Theory]
         [InlineData(CurrencyType.Stars)]
@@ -40,8 +40,8 @@ namespace Game.GameModels.Tests
         public void AddMoney(CurrencyType currencyType)
         {
             // Arrange
-            IWallet wallet = TestEnvironment.SetupWalletData(0);
-            var walletModel = new CasheModel(wallet);
+            ICashData cashData = TestEnvironment.SetupWalletData(0);
+            var walletModel = new CasheModel(cashData);
 
             // Act
             walletModel.AddMoney(currencyType, 1000);
@@ -62,8 +62,8 @@ namespace Game.GameModels.Tests
         public void DrawMoney_1000Currency_RemainMoney(CurrencyType currencyType, int money, int expected)
         {
             // Arrange
-            IWallet wallet = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new CasheModel(wallet);
+            ICashData cashData = TestEnvironment.SetupWalletData(1000);
+            var walletModel = new CasheModel(cashData);
 
             // Act
             walletModel.TryDrawMoney(currencyType, money);
@@ -82,8 +82,8 @@ namespace Game.GameModels.Tests
         public void DrawMoney_1000Currency_WasDraw(int money, bool expected)
         {
             // Arrange
-            IWallet wallet = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new CasheModel(wallet);
+            ICashData cashData = TestEnvironment.SetupWalletData(1000);
+            var walletModel = new CasheModel(cashData);
 
             // Act
             bool wasDraw = walletModel.TryDrawMoney(CurrencyType.Stars, money);

@@ -3,32 +3,30 @@ using System.Linq;
 using Game.Items;
 using Game.DataModel.Runtime;
 using Game.GameModel;
-using Game.GameModel.Buildings;
 using Game.Services.Definitions;
 
 namespace Game.GameModels
 {
     public class GameModel
     {
-        public PlayerGoods PlayerGoods { get; internal set; }
         public Dictionary<RaisingType, IRaising> AllGoods { get; }
 
-        private GameplayData PlayData { get; }
-        private AllDefinitions Definitions { get; }
+        private GameplayData GameplayData { get; }
+        private AllDefinitions AllDefinitions { get; }
 
-        public GameModel(GameplayData playData, AllDefinitions definitions)
+        public GameModel(GameplayData gameplayData, AllDefinitions definitions)
         {
-            PlayData = playData;
-            Definitions = definitions;
+            GameplayData = gameplayData;
+            AllDefinitions = definitions;
 
-            AllGoods = GetAllGoods();
+            //AllGoods = GetAllGoods();
         }
 
         public bool AddLevel(RaisingType goodsType)
         {
             IRaising goodsRaising = AllGoods.FirstOrDefault(d => d.Key == goodsType).Value;
 
-            ((Raising)goodsRaising).SetToLevel(goodsRaising.Level + 1);
+            //((Raising)goodsRaising).SetToLevel(goodsRaising.Level + 1);
 
             return false;
         }
@@ -36,29 +34,29 @@ namespace Game.GameModels
         public void Build(RaisingType goodsType)
         {
             IRaising goodsRaising = AllGoods.FirstOrDefault(d => d.Key == goodsType).Value;
-            goodsRaising.IsBuilt = true;
+            //goodsRaising.IsBuilt = true;
         }
 
         public void AddXp(int xp)
         {
-            PlayerGoods.Xp += xp;
+            GameplayData.PlayerData.Xp += xp;
 
-            TryGoodsRaiseLevel(PlayerGoods.Xp);
+            //TryGoodsRaiseLevel(PlayerGoods.Xp);
         }
 
-        internal RaisingType[] TryGoodsRaiseLevel(int xp)
+        internal RaisingType[] TryRaiseLevel(int xp)
         {
             var raisedGoods = AllGoods.Where(d => d.Value.TryRaiseLevel(xp));
 
             return raisedGoods.Select(d => d.Key).ToArray();
         }
-
+        /*
         private Dictionary<RaisingType, IRaising> GetAllGoods()
         {
             var allGoods = new Dictionary<RaisingType, IRaising>();
             int level = GetLevel(RaisingType.Player);
             PlayerGoods = new PlayerGoods(level, Definitions.Player);
-            PlayerGoods.Xp = PlayData?.Xp ?? 0;
+            PlayerGoods.Xp = GameplayData?.Xp ?? 0;
             allGoods.Add(RaisingType.Player, PlayerGoods);
 
             level = GetLevel(RaisingType.BaseStation);
@@ -87,13 +85,13 @@ namespace Game.GameModels
 
         internal int GetLevel(RaisingType goodsType)
         {
-            IGoods goods = PlayData?.Goods.FirstOrDefault(d => d.BuildingType == (int) goodsType);
+            IGoods goods = GameplayData?.Goods.FirstOrDefault(d => d.BuildingType == (int) goodsType);
             if (goods == null)
             {
                 return 0;
             }
 
             return goods.Level;
-        }
+        }*/
     }
 }
