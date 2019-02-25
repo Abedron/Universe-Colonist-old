@@ -1,12 +1,6 @@
-﻿using Game.DataModel.Storage;
-using Game.Services.Definitions;
-
-namespace Game.DataModel.Runtime
+﻿namespace Game.DataModel.Runtime
 {
-    public class ResourceObservatoryData : BuildingDataBase<ResourceObservatoryDefinition, ResourceObservatory>
+    public class ResourceObservatoryData : BuildingDataBase
     {
-        public ResourceObservatoryData(ResourceObservatoryDefinition[] definition, ResourceObservatory resourceObservatory) : base(definition, resourceObservatory)
-        {
-        }
     }
 }

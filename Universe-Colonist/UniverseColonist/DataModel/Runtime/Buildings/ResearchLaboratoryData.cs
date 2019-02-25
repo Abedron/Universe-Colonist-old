@@ -1,12 +1,6 @@
-﻿using Game.DataModel.Storage;
-using Game.Services.Definitions;
-
-namespace Game.DataModel.Runtime
+﻿namespace Game.DataModel.Runtime
 {
-    public class ResearchLaboratoryData : BuildingDataBase<ResearchLaboratoryDefinition, ResearchLaboratory>
+    public class ResearchLaboratoryData : BuildingDataBase
     {
-        public ResearchLaboratoryData(ResearchLaboratoryDefinition[] definition, ResearchLaboratory researchLaboratory) : base(definition, researchLaboratory)
-        {
-        }
     }
 }

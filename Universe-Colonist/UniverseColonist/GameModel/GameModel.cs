@@ -4,20 +4,22 @@ using Game.Items;
 using Game.DataModel.Runtime;
 using Game.GameModel;
 using Game.Services.Definitions;
+using Game.DataModel.Storage;
 
 namespace Game.GameModels
 {
     public class GameModel
     {
         public Dictionary<RaisingType, IRaising> AllGoods { get; }
-
+        public GameplayStorage GameplayStorage { get; }
         private GameplayData GameplayData { get; }
         private AllDefinitions AllDefinitions { get; }
 
-        public GameModel(GameplayData gameplayData, AllDefinitions definitions)
+        public GameModel(AllDefinitions definitions, GameplayStorage gameplayStorage)
         {
-            GameplayData = gameplayData;
+            GameplayStorage = gameplayStorage;
             AllDefinitions = definitions;
+            GameplayData = new GameplayData(definitions, gameplayStorage);
 
             //AllGoods = GetAllGoods();
         }

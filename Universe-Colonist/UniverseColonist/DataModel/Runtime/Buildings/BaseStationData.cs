@@ -1,12 +1,6 @@
-﻿using Game.DataModel.Storage;
-using Game.Services.Definitions;
-
-namespace Game.DataModel.Runtime
+﻿namespace Game.DataModel.Runtime
 {
-    public class BaseStationData : BuildingDataBase<BaseStationDefinition, BaseStation>
+    public class BaseStationData : BuildingDataBase
     {
-        public BaseStationData(BaseStationDefinition[] definition, BaseStation baseStation) : base(definition, baseStation)
-        {
-        }
     }
 }

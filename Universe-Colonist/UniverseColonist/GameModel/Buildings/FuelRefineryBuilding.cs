@@ -1,10 +1,12 @@
 ﻿using Game.DataModel.Runtime;
+using Game.DataModel.Storage;
+using Game.Services.Definitions;
 
 namespace Game.GameModels.Buildings
 {
-    public class FuelRefineryBuilding : BuildingBase<FuelRefineryData>
+    public class FuelRefineryBuilding : BuildingBase<FuelRefineryData, FuelRefineryDefinition, FuelRefinery>
     {
-        public FuelRefineryBuilding(FuelRefineryData data) : base(data)
+        public FuelRefineryBuilding(FuelRefineryData data, FuelRefineryDefinition[] definitions, FuelRefinery fuelRefinery) : base(data, definitions, fuelRefinery)
         {
         }
     }
