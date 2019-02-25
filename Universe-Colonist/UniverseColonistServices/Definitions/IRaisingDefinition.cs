@@ -1,6 +1,6 @@
 ﻿namespace Game.Services.Definitions
 {
-    public interface IBuildingDefinition
+    public interface IRaisingDefinition
     {
         int Xp { get; }
         int Level { get; }

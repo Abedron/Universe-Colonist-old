@@ -13,10 +13,10 @@ namespace Game.GameModels
         public PlayerGoods PlayerGoods { get; internal set; }
         public Dictionary<GoodsType, IRaising> AllGoods { get; }
 
-        private PlayData PlayData { get; }
+        private GameplayData PlayData { get; }
         private AllDefinitions Definitions { get; }
 
-        public GameModel(PlayData playData, AllDefinitions definitions)
+        public GameModel(GameplayData playData, AllDefinitions definitions)
         {
             PlayData = playData;
             Definitions = definitions;
@@ -65,7 +65,7 @@ namespace Game.GameModels
             allGoods.Add(GoodsType.BaseStation, new BaseStationBuilding(level, Definitions.Buildings.BaseStation));
 
             level = GetLevel(GoodsType.AntimatterCatcher);
-            allGoods.Add(GoodsType.AntimatterCatcher, new AntimatterCatcherBuilding(level, Definitions.Buildings.AntimatterCatcher));
+            allGoods.Add(GoodsType.AntimatterCatcher, new AntimatterCatcherBuilding(Definitions.Buildings.AntimatterCatcher, ));
 
             level = GetLevel(GoodsType.FuelRefinery);
             allGoods.Add(GoodsType.FuelRefinery, new FuelRefineryBuilding(level, Definitions.Buildings.FuelRefinery));

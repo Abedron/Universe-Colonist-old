@@ -5,7 +5,7 @@ using Game.Services.Definitions;
 
 namespace Game.GameModel
 {
-    public class Raising<TDefinition, TStorage> : IRaising where TDefinition : IBuildingDefinition where TStorage : IBuildingStorage
+    public class Raising<TDefinition, TStorage> : IRaising where TDefinition : IRaisingDefinition where TStorage : IRaisingStorage
     {
         protected TDefinition[] Definitions { get; }
         protected TStorage Storage { get; }
@@ -39,7 +39,7 @@ namespace Game.GameModel
             int length = definitions.Length;
             for (int i = 0; i < length; i++)
             {
-                IBuildingDefinition definition = null;
+                IRaisingDefinition definition = null;
                 definition = definitions[i];
 
                 if (definition.Xp > xp)

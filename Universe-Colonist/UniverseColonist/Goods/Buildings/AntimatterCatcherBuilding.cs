@@ -1,10 +1,11 @@
-﻿using Game.Services.Definitions;
+﻿using Game.DataModel.Storage;
+using Game.Services.Definitions;
 
 namespace Game.GameModel.Buildings
 {
-    public class AntimatterCatcherBuilding : Raising
+    public class AntimatterCatcherBuilding : Raising<AntimatterCatcherDefinition, AntimatterCatcher>
     {
-        public AntimatterCatcherBuilding(int level, IRaiseDefinition[] raiseDefinition) : base(level, raiseDefinition)
+        public AntimatterCatcherBuilding(AntimatterCatcherDefinition[] definition, AntimatterCatcher antimatterCatcher) : base(definition, antimatterCatcher)
         {
         }
     }

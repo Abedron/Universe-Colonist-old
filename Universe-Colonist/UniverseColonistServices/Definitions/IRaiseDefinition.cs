@@ -1,4 +1,4 @@
-﻿namespace Game.Services.Definitions.Definitions
+﻿namespace Game.Services.Definitions
 {
     public interface IRaiseDefinition
     {
