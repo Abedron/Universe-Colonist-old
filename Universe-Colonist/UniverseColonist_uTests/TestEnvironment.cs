@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Game.Configurations;
+using Game.Items;
 using Game.Services.Definitions;
 using Moq;
 
@@ -94,35 +94,35 @@ namespace UniverseColonistTests
         {
             var goods = new List<IGoods>();
             var goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.Player);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.Player);
             goodsMock.Setup(d => d.Level).Returns(gameGoodsLevel);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.AntimatterCatcher);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.AntimatterCatcher);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.BaseStation);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.BaseStation);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.FuelRefinery);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.FuelRefinery);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.LaunchTower);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.LaunchTower);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.RecruitmentOfColonist);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.RecruitmentOfColonist);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.ResearchLaboratory);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.ResearchLaboratory);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
             goodsMock = MockRepository.Create<IGoods>();
-            goodsMock.Setup(d => d.BuildingType).Returns((int)GoodsType.ResourceObservatory);
+            goodsMock.Setup(d => d.BuildingType).Returns((int)RaisingType.ResourceObservatory);
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
 

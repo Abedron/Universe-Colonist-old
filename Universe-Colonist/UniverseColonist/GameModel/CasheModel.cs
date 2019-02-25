@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Reflection;
-using Game.Configurations;
+using Game.Items;
 using Game.DataModel.Runtime;
 
 namespace Game.GameModels
 {
-    public class WalletModel
+    public class CasheModel
     {
-        private IWallet WalletData { get; }
+        private ICashData WalletData { get; }
 
-        public WalletModel(IWallet walletData)
+        public CasheModel(ICashData walletData)
         {
             WalletData = walletData;
         }

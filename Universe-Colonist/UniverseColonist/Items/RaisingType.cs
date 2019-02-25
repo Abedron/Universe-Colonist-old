@@ -1,6 +1,6 @@
-﻿namespace Game.Configurations
+﻿namespace Game.Items
 {
-    public enum GoodsType
+    public enum RaisingType
     {
         None,
         Player,

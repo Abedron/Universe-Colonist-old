@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Xunit;
-using Game.Configurations;
+using Game.Items;
 using Game.DataModel.Runtime;
 using UniverseColonistTests;
 
@@ -20,7 +20,7 @@ namespace Game.GameModels.Tests
         {
             // Arrange
             int expectedValue = 10213300;
-            var walletModel = new WalletModel(TestEnvironment.SetupWalletData(expectedValue));
+            var walletModel = new CasheModel(TestEnvironment.SetupWalletData(expectedValue));
 
             // Act
             int money = walletModel.GetCurrentMoney(currencyType);
@@ -41,7 +41,7 @@ namespace Game.GameModels.Tests
         {
             // Arrange
             IWallet wallet = TestEnvironment.SetupWalletData(0);
-            var walletModel = new WalletModel(wallet);
+            var walletModel = new CasheModel(wallet);
 
             // Act
             walletModel.AddMoney(currencyType, 1000);
@@ -63,7 +63,7 @@ namespace Game.GameModels.Tests
         {
             // Arrange
             IWallet wallet = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new WalletModel(wallet);
+            var walletModel = new CasheModel(wallet);
 
             // Act
             walletModel.TryDrawMoney(currencyType, money);
@@ -83,7 +83,7 @@ namespace Game.GameModels.Tests
         {
             // Arrange
             IWallet wallet = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new WalletModel(wallet);
+            var walletModel = new CasheModel(wallet);
 
             // Act
             bool wasDraw = walletModel.TryDrawMoney(CurrencyType.Stars, money);

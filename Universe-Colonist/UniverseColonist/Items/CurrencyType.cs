@@ -1,4 +1,4 @@
-﻿namespace Game.Configurations
+﻿namespace Game.Items
 {
     public enum CurrencyType
     {
