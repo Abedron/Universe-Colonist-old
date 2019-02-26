@@ -4,11 +4,13 @@ namespace Game.GameModel
 {
     public class LevelUpArgs : EventArgs
     {
-        public int LevelDifference { get; }
+        public int OldLevel { get; }
+        public int NewLevel { get; }
 
-        public LevelUpArgs(int levelDifference)
+        public LevelUpArgs(int oldLevel, int newLevel)
         {
-            LevelDifference = levelDifference;
+            OldLevel = oldLevel;
+            NewLevel = newLevel;
         }
     }
 }

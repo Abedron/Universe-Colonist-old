@@ -7,6 +7,8 @@ namespace Game.GameModel
 {
     public class Raising<TDefinition, TStorage> : IRaising where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
     {
+        public event EventHandler<LevelUpArgs> OnLevelUp;
+
         protected TDefinition[] Definitions { get; }
         protected TStorage Storage { get; }
 
@@ -21,7 +23,9 @@ namespace Game.GameModel
             int level = GetCalculateLevel(Definitions, xp);
             if (Storage.Level < level)
             {
+                int oldlevel = Storage.Level;
                 SetToLevel(level);
+                OnLevelUp.Invoke(this, new LevelUpArgs(oldlevel, level));
                 return true;
             }
 
@@ -60,7 +64,6 @@ namespace Game.GameModel
 
         internal void SetToLevel(int level)
         {
-            int levelDifference = level - Storage.Level;
             Storage.Level = level;
         }
     }
