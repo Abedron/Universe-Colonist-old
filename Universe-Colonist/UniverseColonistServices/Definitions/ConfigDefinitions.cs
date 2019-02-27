@@ -15,10 +15,11 @@ namespace Game.Services.Definitions
         [JsonProperty]
         public string Player { get; internal set; }
         [JsonProperty]
-        public BuildingsPaths BuildingsPaths { get; internal set; }
+        public BuildingPaths BuildingPaths { get; internal set; }
+        public BuildingPaths PlanetPaths { get; internal set; }
     }
 
-    internal sealed class BuildingsPaths
+    internal sealed class BuildingPaths
     {
         [JsonProperty]
         public string BaseStation { get; internal set; }
@@ -34,5 +35,21 @@ namespace Game.Services.Definitions
         public string ResearchLaboratory { get; internal set; }
         [JsonProperty]
         public string ResourceObservatory { get; internal set; }
+    }
+
+    internal sealed class PlanetPaths
+    {
+        [JsonProperty]
+        public string AntuelDefinition { get; internal set; }
+        [JsonProperty]
+        public string AsteroidsDefinition { get; internal set; }
+        [JsonProperty]
+        public string JupiterDefinition { get; internal set; }
+        [JsonProperty]
+        public string MarsDefinition { get; internal set; }
+        [JsonProperty]
+        public string MercuryDefinition { get; internal set; }
+        [JsonProperty]
+        public string VenusDefinition { get; internal set; }
     }
 }

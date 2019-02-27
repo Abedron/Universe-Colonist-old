@@ -19,20 +19,33 @@ namespace Game.Services
 
             json = Load(ConfigDefinitions.DefinitionPaths.Player);
             AllDefinitions.Player = JsonConvert.DeserializeObject<PlayerDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.BaseStation);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.BaseStation);
             AllDefinitions.Buildings.BaseStation = JsonConvert.DeserializeObject<BaseStationDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.AntimatterCatcher);
             AllDefinitions.Buildings.AntimatterCatcher = JsonConvert.DeserializeObject<AntimatterCatcherDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.FuelRefinery);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.FuelRefinery);
             AllDefinitions.Buildings.FuelRefinery = JsonConvert.DeserializeObject<FuelRefineryDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.LaunchTowerRockets);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.LaunchTowerRockets);
             AllDefinitions.Buildings.LaunchTower = JsonConvert.DeserializeObject<LaunchTowerDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.RecruitmentOfColonist);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.RecruitmentOfColonist);
             AllDefinitions.Buildings.RecruitmentOfColonist = JsonConvert.DeserializeObject<RecruitmentOfColonistDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.ResearchLaboratory);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.ResearchLaboratory);
             AllDefinitions.Buildings.ResearchLaboratory = JsonConvert.DeserializeObject<ResearchLaboratoryDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingsPaths.ResourceObservatory);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.ResourceObservatory);
             AllDefinitions.Buildings.ResourceObservatory = JsonConvert.DeserializeObject<ResourceObservatoryDefinition[]>(json);
+
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Antuel = JsonConvert.DeserializeObject<AntuelDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Asteroids = JsonConvert.DeserializeObject<AsteroidsDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Jupiter = JsonConvert.DeserializeObject<JupiterDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Mars = JsonConvert.DeserializeObject<MarsDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Mercury = JsonConvert.DeserializeObject<MercuryDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            AllDefinitions.Planets.Venus = JsonConvert.DeserializeObject<VenusDefinition[]>(json);
         }
 
         public string Load(string path)

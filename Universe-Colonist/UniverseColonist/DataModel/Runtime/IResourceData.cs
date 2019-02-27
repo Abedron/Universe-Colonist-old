@@ -1,6 +1,6 @@
 ﻿namespace Game.DataModel.Runtime
 {
-    public interface ICashData
+    public interface IResourceData
     {
         int Stars { get; set; }
         int HyperMetal { get; set; }

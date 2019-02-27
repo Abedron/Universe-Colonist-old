@@ -1,6 +1,6 @@
 ﻿namespace Game.DataModel.Runtime
 {
-    public class CashData : ICashData
+    public class ResourceData : IResourceData
     {
         public int Stars { get; set; }
         public int HyperMetal { get; set; }

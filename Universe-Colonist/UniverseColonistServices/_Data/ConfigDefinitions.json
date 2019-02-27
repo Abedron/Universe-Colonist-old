@@ -1,15 +1,23 @@
 {
 	"Version": "2019.41.20",
-	"DefinitionPaths": {
-		"Player": "_Data/Definitions/Player.json",
-		"BuildingsPaths": {
-			"BaseStation": "_Data/Definitions/Buildings/BaseStation.json",
-			"AntimatterCatcher": "_Data/Definitions/Buildings/AntimatterCatcher.json",
-			"FuelRefinery": "_Data/Definitions/Buildings/FuelRefinery.json",
-			"LaunchTowerRockets": "_Data/Definitions/Buildings/LaunchTowerRockets.json",
-			"RecruitmentOfColonist": "_Data/Definitions/Buildings/RecruitmentOfColonist.json",
-			"ResearchLaboratory": "_Data/Definitions/Buildings/ResearchLaboratory.json",
-			"ResourceObservatory": "_Data/Definitions/Buildings/ResourceObservatory.json"
-		}
-	}
+  "DefinitionPaths": {
+    "Player": "_Data/Definitions/Player.json",
+    "BuildingPaths": {
+      "BaseStation": "_Data/Definitions/Buildings/BaseStation.json",
+      "AntimatterCatcher": "_Data/Definitions/Buildings/AntimatterCatcher.json",
+      "FuelRefinery": "_Data/Definitions/Buildings/FuelRefinery.json",
+      "LaunchTowerRockets": "_Data/Definitions/Buildings/LaunchTowerRockets.json",
+      "RecruitmentOfColonist": "_Data/Definitions/Buildings/RecruitmentOfColonist.json",
+      "ResearchLaboratory": "_Data/Definitions/Buildings/ResearchLaboratory.json",
+      "ResourceObservatory": "_Data/Definitions/Buildings/ResourceObservatory.json"
+    },
+    "PlanetPaths": {
+      "Antuel": "_Data/Definitions/Planet/Antuel.json",
+      "Asteroids": "_Data/Definitions/Planet/Asteroids.json",
+      "Jupiter": "_Data/Definitions/Buildings/Jupiter.json",
+      "Mars": "_Data/Definitions/Planet/Mars.json",
+      "Mercury": "_Data/Definitions/Planet/Mercury.json",
+      "Venus": "_Data/Definitions/Planet/Venus.json"
+    }
+  }
 }

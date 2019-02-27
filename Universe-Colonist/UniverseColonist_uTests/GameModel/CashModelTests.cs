@@ -4,7 +4,7 @@ using Game.Items;
 using Game.DataModel.Runtime;
 using UniverseColonistTests;
 
-namespace Game.GameModels.Tests
+namespace Game.GameModel.Tests
 {
     public class CashModelTests
     {
@@ -20,7 +20,7 @@ namespace Game.GameModels.Tests
         {
             // Arrange
             int expectedValue = 10213300;
-            var walletModel = new CasheModel(TestEnvironment.SetupWalletData(expectedValue));
+            var walletModel = new ResourceModel(TestEnvironment.SetupWalletData(expectedValue));
 
             // Act
             int money = walletModel.GetCurrentMoney(currencyType);
@@ -40,8 +40,8 @@ namespace Game.GameModels.Tests
         public void AddMoney(CurrencyType currencyType)
         {
             // Arrange
-            ICashData cashData = TestEnvironment.SetupWalletData(0);
-            var walletModel = new CasheModel(cashData);
+            IResourceData cashData = TestEnvironment.SetupWalletData(0);
+            var walletModel = new ResourceModel(cashData);
 
             // Act
             walletModel.AddMoney(currencyType, 1000);
@@ -62,8 +62,8 @@ namespace Game.GameModels.Tests
         public void DrawMoney_1000Currency_RemainMoney(CurrencyType currencyType, int money, int expected)
         {
             // Arrange
-            ICashData cashData = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new CasheModel(cashData);
+            IResourceData cashData = TestEnvironment.SetupWalletData(1000);
+            var walletModel = new ResourceModel(cashData);
 
             // Act
             walletModel.TryDrawMoney(currencyType, money);
@@ -82,8 +82,8 @@ namespace Game.GameModels.Tests
         public void DrawMoney_1000Currency_WasDraw(int money, bool expected)
         {
             // Arrange
-            ICashData cashData = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new CasheModel(cashData);
+            IResourceData cashData = TestEnvironment.SetupWalletData(1000);
+            var walletModel = new ResourceModel(cashData);
 
             // Act
             bool wasDraw = walletModel.TryDrawMoney(CurrencyType.Stars, money);

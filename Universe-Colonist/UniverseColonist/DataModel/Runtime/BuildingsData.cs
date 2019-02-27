@@ -13,15 +13,15 @@ namespace Game.DataModel.Runtime
         public ResearchLaboratoryData ResearchLaboratory { get; }
         public ResourceObservatoryData ResourceObservatory { get; }
 
-        public BuildingsData(BuildingsDefinitions buildingsDefinitions, Buildings buildings)
+        public BuildingsData()
         {
-            BaseStation = new BaseStationData(buildingsDefinitions.BaseStation, buildings.BaseStation);
-            AntimatterCatcher = new AntimatterCatcherData(buildingsDefinitions.AntimatterCatcher, buildings.AntimatterCatcher);
-            FuelRefinery = new FuelRefineryData(buildingsDefinitions.FuelRefinery, buildings.FuelRefinery);
-            LaunchTower = new LaunchTowerData(buildingsDefinitions.LaunchTower, buildings.LaunchTower);
-            RecruitmentOfColonist = new RecruitmentOfColonistData(buildingsDefinitions.RecruitmentOfColonist, buildings.RecruitmentOfColonist);
-            ResearchLaboratory = new ResearchLaboratoryData(buildingsDefinitions.ResearchLaboratory, buildings.ResearchLaboratory);
-            ResourceObservatory = new ResourceObservatoryData(buildingsDefinitions.ResourceObservatory, buildings.ResourceObservatory);
+            BaseStation = new BaseStationData();
+            AntimatterCatcher = new AntimatterCatcherData();
+            FuelRefinery = new FuelRefineryData();
+            LaunchTower = new LaunchTowerData();
+            RecruitmentOfColonist = new RecruitmentOfColonistData();
+            ResearchLaboratory = new ResearchLaboratoryData();
+            ResourceObservatory = new ResourceObservatoryData();
         }
     }
 }

@@ -1,21 +1,17 @@
 [
   {
-     "Xp":1100
-    ,"Level":1
-    ,"Value":"0"
+    "Xp": 1100,
+    "Level":1
   },
   {
-     "Xp":1600
-    ,"Level":2
-    ,"Value":"0"
+    "Xp": 1600,
+    "Level":2
   },
   {
-     "Xp":7400
-    ,"Level":3
-    ,"Value":"0"
+    "Xp": 7400,
+    "Level":3
   },
   {
-     "Xp":189000
-    ,"Level":4
-    ,"Value":"0"
+    "Xp": 189000,
+    "Level":4
   }]

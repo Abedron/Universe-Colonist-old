@@ -1,9 +1,8 @@
 ﻿using Game.DataModel.Storage;
-using Game.GameModel;
 using Game.Services.Definitions;
 using System;
 
-namespace Game.GameModels.Buildings
+namespace Game.GameModel.Buildings
 {
     public class BuildingBase<TData, TDefinition, TStorage> : Raising<TDefinition, TStorage> where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
     {

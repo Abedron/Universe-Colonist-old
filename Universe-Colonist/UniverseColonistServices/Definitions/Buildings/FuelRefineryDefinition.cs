@@ -2,5 +2,6 @@
 {
     public class FuelRefineryDefinition : BuildingDefinitionBase
     {
+        public float RocketSpeed { get; internal set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Game.DataModel.Runtime;
 using Game.DataModel.Storage;
-using Game.GameModels.Buildings;
+using Game.GameModel.Buildings;
 using Game.Items;
 using Game.Services.Definitions;
 using System;
@@ -22,12 +22,12 @@ namespace Game.GameModel
         public ResearchLaboratoryBuilding ResearchLaboratoryBuilding { get; }
         public ResourceObservatoryBuilding ResourceObservatoryBuilding { get; }
 
-
         public IDictionary<RaisingType, IRaising> AllRaisingArticles = new Dictionary<RaisingType, IRaising>();
 
         public RaisingArticles(GameplayData gameplayData, AllDefinitions allDefinitions, GameplayStorage gameplayStorage)
         {
             PlayerModel = new PlayerModel(gameplayData.PlayerData, allDefinitions.Player, gameplayStorage.Player);
+            PlayerModel.OnLevelUp += (a, b) => OnLevelUp.Invoke(a, b);
             AllRaisingArticles.Add(RaisingType.Player, PlayerModel);
 
             AntimatterCatcherBuilding = new AntimatterCatcherBuilding(gameplayData.BuildingsData.AntimatterCatcher, allDefinitions.Buildings.AntimatterCatcher, gameplayStorage.Buildings.AntimatterCatcher);

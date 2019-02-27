@@ -7,16 +7,16 @@ namespace Game.DataModel.Runtime
     {
         public PlayerData PlayerData { get; }
         public BuildingsData BuildingsData { get; }
-        public CashData Cash { get; } = new CashData();
+        public ResourceData Resource { get; } = new ResourceData();
 
         // Items
         public PlanetsData Planets { get; } = new PlanetsData();
         public RocketData[] Rockets { get; } = new RocketData[0];
 
-        public GameplayData(AllDefinitions allDefinitions, GameplayStorage play)
+        public GameplayData()
         {
-            PlayerData = new PlayerData(allDefinitions.Player, play.Player);
-            BuildingsData = new BuildingsData(allDefinitions.Buildings, play.Buildings);
+            PlayerData = new PlayerData();
+            BuildingsData = new BuildingsData();
         }
     }
 }

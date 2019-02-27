@@ -2,7 +2,7 @@
 using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
-namespace Game.GameModels.Buildings
+namespace Game.GameModel.Buildings
 {
     public class RecruitmentOfColonistBuilding : BuildingBase<RecruitmentOfColonistData, RecruitmentOfColonistDefinition, RecruitmentOfColonist>
     {
