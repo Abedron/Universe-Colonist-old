@@ -2,7 +2,7 @@
 {
     public class RocketData
     {
-        public string Name { get; set; }
-        public int Level { get; set; }
+        public BlueLightData BlueLight { get; } = new BlueLightData();
+        public NeoVData NeoV { get; } = new NeoVData();
     }
 }

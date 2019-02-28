@@ -1,8 +1,7 @@
 ﻿using Game.DataModel.Storage;
 using Game.Services.Definitions;
-using System;
 
-namespace Game.GameModel.Buildings
+namespace Game.GameModel.Planets
 {
     public class PlanetBase<TData, TDefinition, TStorage> : RaisingBase<TDefinition, TStorage> where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
     {

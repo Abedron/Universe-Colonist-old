@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Game.Items;
+using Game.Articles;
 using Game.DataModel.Runtime;
-using Game.GameModel;
 using Game.Services.Definitions;
 using Game.DataModel.Storage;
 

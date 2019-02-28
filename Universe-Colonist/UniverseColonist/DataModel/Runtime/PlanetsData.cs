@@ -2,11 +2,11 @@
 {
     public class PlanetsData
     {
-        public AntuelData AntuelData { get; }
-        public AsteroidsData AsteroidsData { get; }
-        public JupiterData JupiterData { get; }
-        public MarsData MarsData { get; }
-        public MercuryData MercuryData { get; }
-        public VenusData VenusData { get; }
+        public AntuelData Antuel { get; } = new AntuelData();
+        public AsteroidsData Asteroids { get; } = new AsteroidsData();
+        public JupiterData Jupiter { get; } = new JupiterData();
+        public MarsData Mars { get; } = new MarsData();
+        public MercuryData Mercury { get; } = new MercuryData();
+        public VenusData Venus { get; } = new VenusData();
     }
 }

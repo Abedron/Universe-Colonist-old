@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Xunit;
-using Game.Items;
+using Game.Articles;
 using Game.DataModel.Runtime;
 using UniverseColonistTests;
 
@@ -9,14 +9,14 @@ namespace Game.GameModel.Tests
     public class CashModelTests
     {
         [Theory]
-        [InlineData(CurrencyType.Stars)]
-        [InlineData(CurrencyType.HyperMetal)]
-        [InlineData(CurrencyType.Fuel)]
-        [InlineData(CurrencyType.Ore)]
-        [InlineData(CurrencyType.Minerals)]
-        [InlineData(CurrencyType.Food)]
-        [InlineData(CurrencyType.Colonist)]
-        public void GetCurrentMoney_ExpectedValue(CurrencyType currencyType)
+        [InlineData(ResourceType.Stars)]
+        [InlineData(ResourceType.HyperMetal)]
+        [InlineData(ResourceType.Fuel)]
+        [InlineData(ResourceType.Ore)]
+        [InlineData(ResourceType.Minerals)]
+        [InlineData(ResourceType.Food)]
+        [InlineData(ResourceType.Colonist)]
+        public void GetCurrentMoney_ExpectedValue(ResourceType currencyType)
         {
             // Arrange
             int expectedValue = 10213300;
@@ -30,14 +30,14 @@ namespace Game.GameModel.Tests
         }
 
         [Theory]
-        [InlineData(CurrencyType.Stars)]
-        [InlineData(CurrencyType.HyperMetal)]
-        [InlineData(CurrencyType.Fuel)]
-        [InlineData(CurrencyType.Ore)]
-        [InlineData(CurrencyType.Minerals)]
-        [InlineData(CurrencyType.Food)]
-        [InlineData(CurrencyType.Colonist)]
-        public void AddMoney(CurrencyType currencyType)
+        [InlineData(ResourceType.Stars)]
+        [InlineData(ResourceType.HyperMetal)]
+        [InlineData(ResourceType.Fuel)]
+        [InlineData(ResourceType.Ore)]
+        [InlineData(ResourceType.Minerals)]
+        [InlineData(ResourceType.Food)]
+        [InlineData(ResourceType.Colonist)]
+        public void AddMoney(ResourceType currencyType)
         {
             // Arrange
             IResourceData cashData = TestEnvironment.SetupWalletData(0);
@@ -52,14 +52,14 @@ namespace Game.GameModel.Tests
         }
 
         [Theory]
-        [InlineData(CurrencyType.Stars, 200, 800)]
-        [InlineData(CurrencyType.HyperMetal, 500, 500)]
-        [InlineData(CurrencyType.Fuel, 1000, 0)]
-        [InlineData(CurrencyType.Ore, 2000, 1000)]
-        [InlineData(CurrencyType.Minerals, 0, 1000)]
-        [InlineData(CurrencyType.Food, 100, 900)]
-        [InlineData(CurrencyType.Colonist, 200, 800)]
-        public void DrawMoney_1000Currency_RemainMoney(CurrencyType currencyType, int money, int expected)
+        [InlineData(ResourceType.Stars, 200, 800)]
+        [InlineData(ResourceType.HyperMetal, 500, 500)]
+        [InlineData(ResourceType.Fuel, 1000, 0)]
+        [InlineData(ResourceType.Ore, 2000, 1000)]
+        [InlineData(ResourceType.Minerals, 0, 1000)]
+        [InlineData(ResourceType.Food, 100, 900)]
+        [InlineData(ResourceType.Colonist, 200, 800)]
+        public void DrawMoney_1000Currency_RemainMoney(ResourceType currencyType, int money, int expected)
         {
             // Arrange
             IResourceData cashData = TestEnvironment.SetupWalletData(1000);
@@ -86,7 +86,7 @@ namespace Game.GameModel.Tests
             var walletModel = new ResourceModel(cashData);
 
             // Act
-            bool wasDraw = walletModel.TryDrawMoney(CurrencyType.Stars, money);
+            bool wasDraw = walletModel.TryDrawMoney(ResourceType.Stars, money);
 
             // Assert
             Assert.Equal(expected, wasDraw);

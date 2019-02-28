@@ -8,6 +8,6 @@
 
         // Items
         public Planets Planets { get; } = new Planets();
-        public Rocket[] Rockets { get; } = new Rocket[0];
+        public Rocket Rockets { get; } = new Rocket();
     }
 }

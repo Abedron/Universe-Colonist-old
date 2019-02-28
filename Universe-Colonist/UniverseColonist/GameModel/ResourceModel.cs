@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using Game.Items;
+using Game.Articles;
 using Game.DataModel.Runtime;
 
 namespace Game.GameModel
@@ -14,7 +14,7 @@ namespace Game.GameModel
             ResourceData = resourceData;
         }
 
-        public int GetCurrentMoney(CurrencyType currencyType)
+        public int GetCurrentMoney(ResourceType currencyType)
         {
             PropertyInfo property = ResourceData.GetType().GetProperty(currencyType.ToString());
             if (property == null)
@@ -25,7 +25,7 @@ namespace Game.GameModel
             return (int) property.GetValue(ResourceData);
         }
 
-        public void AddMoney(CurrencyType currencyType, int value)
+        public void AddMoney(ResourceType currencyType, int value)
         {
             PropertyInfo propertyInfo = ResourceData.GetType().GetProperty(currencyType.ToString());
             if (propertyInfo == null)
@@ -39,7 +39,7 @@ namespace Game.GameModel
             propertyInfo.SetValue(ResourceData, Convert.ChangeType(newValue, propertyInfo.PropertyType), null);
         }
 
-        public bool TryDrawMoney(CurrencyType currencyType, int value)
+        public bool TryDrawMoney(ResourceType currencyType, int value)
         {
             PropertyInfo propertyInfo = ResourceData.GetType().GetProperty(currencyType.ToString());
             if (propertyInfo == null)

@@ -6,6 +6,7 @@
         public PlayerDefinition[] Player { get; internal set; }
         public BuildingsDefinitions Buildings { get; } = new BuildingsDefinitions();
         public PlanetDefinitions Planets { get; } = new PlanetDefinitions();
+        public RocketDefinitions Rockets { get; } = new RocketDefinitions();
     }
 
     public sealed class BuildingsDefinitions
@@ -27,5 +28,11 @@
         public MarsDefinition[] Mars { get; internal set; }
         public MercuryDefinition[] Mercury { get; internal set; }
         public VenusDefinition[] Venus { get; internal set; }
+    }
+
+    public class RocketDefinitions
+    {
+        public NeoVDefinition[] NeoV { get; internal set; }
+        public BlueLightDefinition[] BlueLight { get; internal set; }
     }
 }

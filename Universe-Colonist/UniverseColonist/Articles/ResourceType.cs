@@ -1,6 +1,6 @@
-﻿namespace Game.Items
+﻿namespace Game.Articles
 {
-    public enum CurrencyType
+    public enum ResourceType
     {
         None,
         Stars,

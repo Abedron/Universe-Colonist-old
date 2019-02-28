@@ -2,7 +2,7 @@
 using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
-namespace Game.GameModel.Buildings
+namespace Game.GameModel.Planets
 {
     public class AsteroidsPlanet : PlanetBase<AsteroidsData, AsteroidsDefinition, Asteroids>
     {

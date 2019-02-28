@@ -18,6 +18,10 @@
       "Mars": "_Data/Definitions/Planet/Mars.json",
       "Mercury": "_Data/Definitions/Planet/Mercury.json",
       "Venus": "_Data/Definitions/Planet/Venus.json"
+    },
+    "RocketPaths": {
+      "NeoV": "_Data/Definitions/Rockets/NeoV.json",
+      "BlueLight": "_Data/Definitions/Rockets/BlueLight.json"
     }
   }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Game.Items;
+using Game.Articles;
 using Game.Services.Definitions;
 using Moq;
 

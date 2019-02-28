@@ -34,18 +34,23 @@ namespace Game.Services
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.ResourceObservatory);
             AllDefinitions.Buildings.ResourceObservatory = JsonConvert.DeserializeObject<ResourceObservatoryDefinition[]>(json);
 
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Antuel);
             AllDefinitions.Planets.Antuel = JsonConvert.DeserializeObject<AntuelDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Asteroids);
             AllDefinitions.Planets.Asteroids = JsonConvert.DeserializeObject<AsteroidsDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Jupiter);
             AllDefinitions.Planets.Jupiter = JsonConvert.DeserializeObject<JupiterDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Mars);
             AllDefinitions.Planets.Mars = JsonConvert.DeserializeObject<MarsDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Mercury);
             AllDefinitions.Planets.Mercury = JsonConvert.DeserializeObject<MercuryDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.AntimatterCatcher);
+            json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Venus);
             AllDefinitions.Planets.Venus = JsonConvert.DeserializeObject<VenusDefinition[]>(json);
+
+            json = Load(ConfigDefinitions.DefinitionPaths.RocketPaths.NeoV);
+            AllDefinitions.Rockets.NeoV = JsonConvert.DeserializeObject<NeoVDefinition[]>(json);
+            json = Load(ConfigDefinitions.DefinitionPaths.RocketPaths.BlueLight);
+            AllDefinitions.Rockets.BlueLight = JsonConvert.DeserializeObject<BlueLightDefinition[]>(json);
         }
 
         public string Load(string path)

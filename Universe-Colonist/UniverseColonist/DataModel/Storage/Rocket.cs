@@ -2,7 +2,7 @@
 {
     public class Rocket
     {
-        public string Name { get; set; }
-        public int Level { get; set; }
+        public BlueLight BlueLight { get; } = new BlueLight();
+        public NeoV NeoV { get; } = new NeoV();
     }
 }

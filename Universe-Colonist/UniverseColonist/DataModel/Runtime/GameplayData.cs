@@ -5,18 +5,12 @@ namespace Game.DataModel.Runtime
 {
     public class GameplayData
     {
-        public PlayerData PlayerData { get; }
-        public BuildingsData BuildingsData { get; }
+        public PlayerData PlayerData { get; } = new PlayerData();
+        public BuildingsData BuildingsData { get; } = new BuildingsData();
         public ResourceData Resource { get; } = new ResourceData();
 
         // Items
         public PlanetsData Planets { get; } = new PlanetsData();
-        public RocketData[] Rockets { get; } = new RocketData[0];
-
-        public GameplayData()
-        {
-            PlayerData = new PlayerData();
-            BuildingsData = new BuildingsData();
-        }
+        public RocketData Rockets { get; } = new RocketData();
     }
 }

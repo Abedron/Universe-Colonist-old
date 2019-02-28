@@ -1,27 +1,13 @@
-﻿using Game.DataModel.Storage;
-using Game.Services.Definitions;
-
-namespace Game.DataModel.Runtime
+﻿namespace Game.DataModel.Runtime
 {
     public class BuildingsData
     {
-        public BaseStationData BaseStation { get; }
-        public AntimatterCatcherData AntimatterCatcher { get; }
-        public FuelRefineryData FuelRefinery { get; }
-        public LaunchTowerData LaunchTower { get; }
-        public RecruitmentOfColonistData RecruitmentOfColonist { get; }
-        public ResearchLaboratoryData ResearchLaboratory { get; }
-        public ResourceObservatoryData ResourceObservatory { get; }
-
-        public BuildingsData()
-        {
-            BaseStation = new BaseStationData();
-            AntimatterCatcher = new AntimatterCatcherData();
-            FuelRefinery = new FuelRefineryData();
-            LaunchTower = new LaunchTowerData();
-            RecruitmentOfColonist = new RecruitmentOfColonistData();
-            ResearchLaboratory = new ResearchLaboratoryData();
-            ResourceObservatory = new ResourceObservatoryData();
-        }
+        public BaseStationData BaseStation { get; } = new BaseStationData();
+        public AntimatterCatcherData AntimatterCatcher { get; } = new AntimatterCatcherData();
+        public FuelRefineryData FuelRefinery { get; } = new FuelRefineryData();
+        public LaunchTowerData LaunchTower { get; } = new LaunchTowerData();
+        public RecruitmentOfColonistData RecruitmentOfColonist { get; } = new RecruitmentOfColonistData();
+        public ResearchLaboratoryData ResearchLaboratory { get; } = new ResearchLaboratoryData();
+        public ResourceObservatoryData ResourceObservatory { get; } = new ResourceObservatoryData();
     }
 }
