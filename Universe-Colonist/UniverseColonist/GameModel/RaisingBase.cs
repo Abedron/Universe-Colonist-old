@@ -5,14 +5,14 @@ using Game.Services.Definitions;
 
 namespace Game.GameModel
 {
-    public class Raising<TDefinition, TStorage> : IRaising where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
+    public class RaisingBase<TDefinition, TStorage> : IRaising where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
     {
         public event EventHandler<LevelUpArgs> OnLevelUp;
 
         protected TDefinition[] Definitions { get; }
         protected TStorage Storage { get; }
 
-        public Raising(TDefinition[] definitions, TStorage storage)
+        public RaisingBase(TDefinition[] definitions, TStorage storage)
         {
             Definitions = definitions;
             Storage = storage;

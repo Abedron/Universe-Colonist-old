@@ -4,7 +4,7 @@ using Game.Services.Definitions;
 
 namespace Game.GameModel
 {
-    public class PlayerModel : Raising<PlayerDefinition, Player>
+    public class PlayerModel : RaisingBase<PlayerDefinition, Player>
     {
         public PlayerData Data { get; }
 

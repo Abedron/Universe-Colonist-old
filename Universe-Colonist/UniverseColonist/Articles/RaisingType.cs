@@ -10,6 +10,12 @@
         FuelRefinery,
         ResearchLaboratory,
         AntimatterCatcher,
-        ResourceObservatory
+        ResourceObservatory,
+        Antuel,
+        Asteroids,
+        Jupiter,
+        Mars,
+        Mercury,
+        Venus
     }
 }

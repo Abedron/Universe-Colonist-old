@@ -22,6 +22,13 @@ namespace Game.GameModel
         public ResearchLaboratoryBuilding ResearchLaboratoryBuilding { get; }
         public ResourceObservatoryBuilding ResourceObservatoryBuilding { get; }
 
+        public AntuelPlanet AntuelPlanet { get; }
+        public AsteroidsPlanet AsteroidsPlanet { get; }
+        public JupiterPlanet JupiterPlanet { get; }
+        public MarsPlanet MarsPlanet { get; }
+        public MercuryPlanet MercuryPlanet { get; }
+        public VenusPlanet VenusPlanet { get; }
+
         public IDictionary<RaisingType, IRaising> AllRaisingArticles = new Dictionary<RaisingType, IRaising>();
 
         public RaisingArticles(GameplayData gameplayData, AllDefinitions allDefinitions, GameplayStorage gameplayStorage)
@@ -44,6 +51,19 @@ namespace Game.GameModel
             AllRaisingArticles.Add(RaisingType.ResearchLaboratory, ResearchLaboratoryBuilding);
             ResourceObservatoryBuilding = new ResourceObservatoryBuilding(gameplayData.BuildingsData.ResourceObservatory, allDefinitions.Buildings.ResourceObservatory, gameplayStorage.Buildings.ResourceObservatory);
             AllRaisingArticles.Add(RaisingType.ResourceObservatory, ResourceObservatoryBuilding);
+
+            AntuelPlanet = new AntuelPlanet(gameplayData.Planets.AntuelData, allDefinitions.Planets.Antuel, gameplayStorage.Planets.Antuel);
+            AllRaisingArticles.Add(RaisingType.Antuel, AntuelPlanet);
+            AsteroidsPlanet = new AsteroidsPlanet(gameplayData.Planets.AsteroidsData, allDefinitions.Planets.Asteroids, gameplayStorage.Planets.Asteroids);
+            AllRaisingArticles.Add(RaisingType.Asteroids, AsteroidsPlanet);
+            JupiterPlanet = new JupiterPlanet(gameplayData.Planets.JupiterData, allDefinitions.Planets.Jupiter, gameplayStorage.Planets.Jupiter);
+            AllRaisingArticles.Add(RaisingType.Jupiter, JupiterPlanet);
+            MarsPlanet = new MarsPlanet(gameplayData.Planets.MarsData, allDefinitions.Planets.Mars, gameplayStorage.Planets.Mars);
+            AllRaisingArticles.Add(RaisingType.Mars, MarsPlanet);
+            MercuryPlanet = new MercuryPlanet(gameplayData.Planets.MercuryData, allDefinitions.Planets.Mercury, gameplayStorage.Planets.Mercury);
+            AllRaisingArticles.Add(RaisingType.Mercury, MercuryPlanet);
+            VenusPlanet = new VenusPlanet(gameplayData.Planets.VenusData, allDefinitions.Planets.Venus, gameplayStorage.Planets.Venus);
+            AllRaisingArticles.Add(RaisingType.Venus, VenusPlanet);
 
             foreach (IRaising raisingArticle in AllRaisingArticles.Values)
             {

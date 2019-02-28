@@ -15,7 +15,7 @@ namespace UniverseColonistTests.Buildings
         public void TryRaiseLevel_WithBaseStationDefinitions_IsLevelUpByXp(int xp, int currentLevel, bool isLevelUpExpected)
         {
             // Arrange
-            var baseStation = new Raising(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
+            var baseStation = new RaisingBase(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
 
             // Act
             bool isLevelUp = baseStation.TryRaiseLevel(xp);
@@ -33,7 +33,7 @@ namespace UniverseColonistTests.Buildings
         public void TryRaiseLevel_WithBaseStationDefinitions_OnLevelUpInvoke(int xp, int currentLevel, int levelDiffExpected, bool isLevelUpExpected)
         {
             // Arrange
-            var raising = new Raising(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
+            var raising = new RaisingBase(currentLevel, TestEnvironment.BaseStationDefinitionsFake);
             bool raisingLevelUp = false;
             int levelDifference = 0;
             raising.OnLevelUp += (sender, arg) => {
@@ -59,7 +59,7 @@ namespace UniverseColonistTests.Buildings
         public void TryRaiseLevel_WithFuelRefineryDefinitions_RaiseLevelUpByXp(int xp, int currentLevel, int expectedLevel)
         {
             // Arrange
-            var baseStation = new Raising(currentLevel, TestEnvironment.AllDefinitionsFake.Buildings.FuelRefinery);
+            var baseStation = new RaisingBase(currentLevel, TestEnvironment.AllDefinitionsFake.Buildings.FuelRefinery);
 
             // Act
             baseStation.TryRaiseLevel(xp);
@@ -81,7 +81,7 @@ namespace UniverseColonistTests.Buildings
             IRaiseDefinition[] buildingDefinitions = TestEnvironment.BaseStationDefinitionsFake;
 
             // Act
-            int level = Raising.GetCalculateLevel(buildingDefinitions, xp);
+            int level = RaisingBase.GetCalculateLevel(buildingDefinitions, xp);
 
             // Assert
             Assert.Equal(expectedLevel, level);
