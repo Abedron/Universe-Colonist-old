@@ -6,7 +6,7 @@ namespace Game.GameModel.Buildings
 {
     public class ResearchLaboratoryBuilding : BuildingBase<ResearchLaboratoryData, ResearchLaboratoryDefinition, ResearchLaboratory>
     {
-        public ResearchLaboratoryBuilding(ResearchLaboratoryData data, ResearchLaboratoryDefinition[] definitions, ResearchLaboratory researchLaboratory) : base(data, definitions, researchLaboratory)
+        public ResearchLaboratoryBuilding(ResearchLaboratoryData data, ResearchLaboratoryDefinition[] definitions, ResearchLaboratory storage) : base(data, definitions, storage)
         {
         }
     }

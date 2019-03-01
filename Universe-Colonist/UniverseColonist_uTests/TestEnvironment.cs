@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Game.Articles;
+using Game.DataModel.Runtime;
+using Game.DataModel.Storage;
 using Game.Services.Definitions;
 using Moq;
 
@@ -126,16 +128,16 @@ namespace UniverseColonistTests
             goodsMock.Setup(d => d.Level).Returns(0);
             goods.Add(goodsMock.Object);
 
-            var configurationPlayData = SetupPlayDataXp(0);
+            var configurationPlayData = SetupPlayerXp(0);
             Mock.Get(configurationPlayData).Setup(d => d.Goods).Returns(goods.ToArray);
-            Mock.Get(configurationPlayData).Setup(d => d.Wallet).Returns(SetupWalletData(1000));
+            Mock.Get(configurationPlayData).Setup(d => d.Wallet).Returns(SetupResourceDataData(1000));
 
             return configurationPlayData;
         }
 
-        public static IWallet SetupWalletData(int money)
+        public static IResourceData SetupResourceDataData(int money)
         {
-            var wallet = new Wallet()
+            var resourceData = new ResourceData()
             {
                 Stars = money,
                 Colonist = money,
@@ -146,15 +148,15 @@ namespace UniverseColonistTests
                 Fuel = money
             };
 
-            return wallet;
+            return resourceData;
         }
 
-        public static IPlayData SetupPlayDataXp(int xp)
+        public static Player SetupPlayerXp(int xp)
         {
-            var configurationPlayDataMock = MockRepository.Create<IPlayData>();
-            configurationPlayDataMock.Setup(d => d.Xp).Returns(xp);
+            var player = new Player();
+            player.Xp = xp;
 
-            return configurationPlayDataMock.Object;
+            return player;
         }
     }
 }

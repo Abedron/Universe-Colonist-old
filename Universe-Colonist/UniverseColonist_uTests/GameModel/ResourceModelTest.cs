@@ -6,7 +6,7 @@ using UniverseColonistTests;
 
 namespace Game.GameModel.Tests
 {
-    public class CashModelTests
+    public class ResourceModelTest
     {
         [Theory]
         [InlineData(ResourceType.Stars)]
@@ -20,10 +20,10 @@ namespace Game.GameModel.Tests
         {
             // Arrange
             int expectedValue = 10213300;
-            var walletModel = new ResourceModel(TestEnvironment.SetupWalletData(expectedValue));
+            var resourceModel = new ResourceModel(TestEnvironment.SetupResourceDataData(expectedValue));
 
             // Act
-            int money = walletModel.GetCurrentMoney(currencyType);
+            int money = resourceModel.GetCurrentMoney(currencyType);
 
             // Assert
             Assert.Equal(expectedValue, money);
@@ -40,15 +40,15 @@ namespace Game.GameModel.Tests
         public void AddMoney(ResourceType currencyType)
         {
             // Arrange
-            IResourceData cashData = TestEnvironment.SetupWalletData(0);
-            var walletModel = new ResourceModel(cashData);
+            IResourceData resourceData = TestEnvironment.SetupResourceDataData(0);
+            var resourceModel = new ResourceModel(resourceData);
 
             // Act
-            walletModel.AddMoney(currencyType, 1000);
-            walletModel.AddMoney(currencyType, 500);
+            resourceModel.AddMoney(currencyType, 1000);
+            resourceModel.AddMoney(currencyType, 500);
 
             // Assert
-            Assert.Equal(1500, walletModel.GetCurrentMoney(currencyType));
+            Assert.Equal(1500, resourceModel.GetCurrentMoney(currencyType));
         }
 
         [Theory]
@@ -62,14 +62,14 @@ namespace Game.GameModel.Tests
         public void DrawMoney_1000Currency_RemainMoney(ResourceType currencyType, int money, int expected)
         {
             // Arrange
-            IResourceData cashData = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new ResourceModel(cashData);
+            IResourceData resourceData = TestEnvironment.SetupResourceDataData(1000);
+            var resourceModel = new ResourceModel(resourceData);
 
             // Act
-            walletModel.TryDrawMoney(currencyType, money);
+            resourceModel.TryDrawMoney(currencyType, money);
 
             // Assert
-            Assert.Equal(expected, walletModel.GetCurrentMoney(currencyType));
+            Assert.Equal(expected, resourceModel.GetCurrentMoney(currencyType));
         }
 
         [Theory]
@@ -82,11 +82,11 @@ namespace Game.GameModel.Tests
         public void DrawMoney_1000Currency_WasDraw(int money, bool expected)
         {
             // Arrange
-            IResourceData cashData = TestEnvironment.SetupWalletData(1000);
-            var walletModel = new ResourceModel(cashData);
+            IResourceData resourceData = TestEnvironment.SetupResourceDataData(1000);
+            var resourceModel = new ResourceModel(resourceData);
 
             // Act
-            bool wasDraw = walletModel.TryDrawMoney(ResourceType.Stars, money);
+            bool wasDraw = resourceModel.TryDrawMoney(ResourceType.Stars, money);
 
             // Assert
             Assert.Equal(expected, wasDraw);

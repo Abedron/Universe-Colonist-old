@@ -6,7 +6,7 @@ namespace Game.GameModel.Buildings
 {
     public class AntimatterCatcherBuilding: BuildingBase<AntimatterCatcherData, AntimatterCatcherDefinition, AntimatterCatcher>
     {
-        public AntimatterCatcherBuilding(AntimatterCatcherData data, AntimatterCatcherDefinition[] definition, AntimatterCatcher antimatterCatcher) : base(data, definition, antimatterCatcher)
+        public AntimatterCatcherBuilding(AntimatterCatcherData data, AntimatterCatcherDefinition[] definition, AntimatterCatcher storage) : base(data, definition, storage)
         {
         }
     }
