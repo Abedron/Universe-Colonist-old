@@ -16,8 +16,6 @@
         Jupiter,
         Mars,
         Mercury,
-        Venus,
-        NeoV,
-        BlueLight
+        Venus
     }
 }

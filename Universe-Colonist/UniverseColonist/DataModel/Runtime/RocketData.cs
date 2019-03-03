@@ -1,8 +1,9 @@
-﻿namespace Game.DataModel.Runtime
+﻿using System.Collections.Generic;
+
+namespace Game.DataModel.Runtime
 {
     public class RocketData
     {
-        public BlueLightData BlueLight { get; } = new BlueLightData();
-        public NeoVData NeoV { get; } = new NeoVData();
+        public IList<RocketDataBase> Rockets = new List<RocketDataBase>();
     }
 }
