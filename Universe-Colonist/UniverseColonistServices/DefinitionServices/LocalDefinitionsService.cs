@@ -25,7 +25,7 @@ namespace Game.Services
             AllDefinitions.Buildings.AntimatterCatcher = JsonConvert.DeserializeObject<AntimatterCatcherDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.FuelRefinery);
             AllDefinitions.Buildings.FuelRefinery = JsonConvert.DeserializeObject<FuelRefineryDefinition[]>(json);
-            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.LaunchTowerRockets);
+            json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.LaunchTower);
             AllDefinitions.Buildings.LaunchTower = JsonConvert.DeserializeObject<LaunchTowerDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.BuildingPaths.RecruitmentOfColonist);
             AllDefinitions.Buildings.RecruitmentOfColonist = JsonConvert.DeserializeObject<RecruitmentOfColonistDefinition[]>(json);

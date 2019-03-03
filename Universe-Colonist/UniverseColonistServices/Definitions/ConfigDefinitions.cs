@@ -31,7 +31,7 @@ namespace Game.Services.Definitions
         [JsonProperty]
         public string FuelRefinery { get; internal set; }
         [JsonProperty]
-        public string LaunchTowerRockets { get; internal set; }
+        public string LaunchTower { get; internal set; }
         [JsonProperty]
         public string RecruitmentOfColonist { get; internal set; }
         [JsonProperty]

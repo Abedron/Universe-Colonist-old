@@ -6,7 +6,7 @@
       "BaseStation": "_Data/Definitions/Buildings/BaseStation.json",
       "AntimatterCatcher": "_Data/Definitions/Buildings/AntimatterCatcher.json",
       "FuelRefinery": "_Data/Definitions/Buildings/FuelRefinery.json",
-      "LaunchTowerRockets": "_Data/Definitions/Buildings/LaunchTowerRockets.json",
+      "LaunchTower": "_Data/Definitions/Buildings/LaunchTower.json",
       "RecruitmentOfColonist": "_Data/Definitions/Buildings/RecruitmentOfColonist.json",
       "ResearchLaboratory": "_Data/Definitions/Buildings/ResearchLaboratory.json",
       "ResourceObservatory": "_Data/Definitions/Buildings/ResourceObservatory.json"
