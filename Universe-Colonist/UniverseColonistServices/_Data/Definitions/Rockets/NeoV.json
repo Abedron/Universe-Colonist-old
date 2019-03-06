@@ -1,13 +1,1 @@
-[
-  {
-    "Xp": 0,
-    "Level": 1,
-    "MaxCount": 1,
-    "HyperMetal": 10,
-    "Fuel": 0,
-    "Ore": 0,
-    "Minerals": 0,
-    "Food": 0,
-    "Colonist": 100
-  }
-]
+[{"Level":1,"Cargo":1,"Colonist":100,"HyperMetal":0,"Fuel":10,"Ore":0,"Minerals":5,"Food":0},{"Level":2,"Cargo":2,"Colonist":200,"HyperMetal":0,"Fuel":30,"Ore":0,"Minerals":10,"Food":0},{"Level":3,"Cargo":3,"Colonist":400,"HyperMetal":0,"Fuel":60,"Ore":0,"Minerals":20,"Food":0},{"Level":4,"Cargo":4,"Colonist":700,"HyperMetal":0,"Fuel":120,"Ore":0,"Minerals":40,"Food":0}]

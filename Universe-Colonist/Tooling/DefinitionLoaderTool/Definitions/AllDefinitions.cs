@@ -32,6 +32,7 @@
 
     public class RocketDefinitions
     {
+        public AccessRocketsDefinition AccessRockets { get; set; }
         public NeoVDefinition[] NeoV { get; set; }
         public BlueLightDefinition[] BlueLight { get; set; }
     }

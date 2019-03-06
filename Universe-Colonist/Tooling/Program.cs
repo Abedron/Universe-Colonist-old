@@ -15,7 +15,8 @@ namespace Tooling
                 var definitionLoader = new DefinitionLoader();
                 definitionLoader.LoadAll();
 
-                Console.WriteLine("Loaded All");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine($"\nLoaded {definitionLoader.CountDefinitions} definitions");
             }
 
             Console.ReadLine();
