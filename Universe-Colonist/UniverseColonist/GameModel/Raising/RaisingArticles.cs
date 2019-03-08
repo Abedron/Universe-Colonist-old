@@ -32,8 +32,8 @@ namespace Game.GameModel
         public MercuryPlanet MercuryPlanet { get; }
         public VenusPlanet VenusPlanet { get; }
 
-        public NeoVRocket NeoVRocket { get; }
-        public BlueLightRocket BlueLightRocket { get; }
+        public RocketModel NeoVRocket { get; }
+        public RocketModel BlueLightRocket { get; }
 
         public IDictionary<RaisingType, IRaising> AllRaisingArticles = new Dictionary<RaisingType, IRaising>();
 
@@ -71,10 +71,10 @@ namespace Game.GameModel
             VenusPlanet = new VenusPlanet(gameplayData.Planets.Venus, allDefinitions.Planets.Venus, gameplayStorage.Planets.Venus);
             AllRaisingArticles.Add(RaisingType.Venus, VenusPlanet);
 
-            NeoVRocket = new NeoVRocket(gameplayData.Rockets.NeoV, allDefinitions.Rockets.NeoV, gameplayStorage.Rockets.NeoV);
-            AllRaisingArticles.Add(RaisingType.NeoV, NeoVRocket);
-            BlueLightRocket = new BlueLightRocket(gameplayData.Rockets.BlueLight, allDefinitions.Rockets.BlueLight, gameplayStorage.Rockets.BlueLight);
-            AllRaisingArticles.Add(RaisingType.BlueLight, BlueLightRocket);
+            //NeoVRocket = new RocketModel(gameplayData.Rockets.Rockets., allDefinitions.Rockets.NeoV, gameplayStorage.Rockets.NeoV);
+            //AllRaisingArticles.Add(RaisingType.NeoV, NeoVRocket);
+            //BlueLightRocket = new RocketModel(gameplayData.Rockets.BlueLight, allDefinitions.Rockets.BlueLight, gameplayStorage.Rockets.BlueLight);
+            //AllRaisingArticles.Add(RaisingType.BlueLight, BlueLightRocket);
 
             foreach (IRaising raisingArticle in AllRaisingArticles.Values)
             {

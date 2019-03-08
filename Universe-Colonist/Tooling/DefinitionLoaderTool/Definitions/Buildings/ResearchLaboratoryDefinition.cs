@@ -2,6 +2,6 @@
 {
     public class ResearchLaboratoryDefinition : BuildingDefinitionBase
     {
-        public string Value { get; set; }
+        public string Upgrade { get; set; }
     }
 }

@@ -16,10 +16,7 @@ namespace Game.GameModel.Rockets
 
         public void SendRocketTo(RocketTarget rocketTarget)
         {
-            if (Data.Rockets)
-            {
 
-            }
         }
     }
 }

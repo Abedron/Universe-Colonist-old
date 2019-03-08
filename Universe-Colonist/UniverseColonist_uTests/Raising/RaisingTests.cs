@@ -6,7 +6,7 @@ namespace UniverseColonistTests.Buildings
 {
     public class RaisingTests
     {
-        [Theory]
+        /*[Theory]
         [InlineData(1000, 0, false)]
         [InlineData(1110, 0, true)]
         [InlineData(1190, 1, false)]
@@ -85,6 +85,6 @@ namespace UniverseColonistTests.Buildings
 
             // Assert
             Assert.Equal(expectedLevel, level);
-        }
+        }*/
     }
 }
