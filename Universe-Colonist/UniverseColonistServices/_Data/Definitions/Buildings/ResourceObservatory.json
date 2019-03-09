@@ -1,1 +1,1 @@
-[{"Planets":"Mars,Venus","Xp":1100,"Level":1},{"Planets":"Mercury,Vesta","Xp":1300,"Level":2},{"Planets":"Ceres,Asteroids","Xp":1600,"Level":3},{"Planets":"Jupiter,Antuel","Xp":2100,"Level":4}]
+[{"Planets":"Mars,Venus","AccessFromLevel":1,"Level":1},{"Planets":"Mercury,Vesta","AccessFromLevel":3,"Level":2},{"Planets":"Ceres,Asteroids","AccessFromLevel":5,"Level":3},{"Planets":"Jupiter,Antuel","AccessFromLevel":8,"Level":4}]

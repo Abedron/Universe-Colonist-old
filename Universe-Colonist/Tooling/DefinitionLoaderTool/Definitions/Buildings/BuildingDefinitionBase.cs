@@ -2,7 +2,7 @@
 {
     public class BuildingDefinitionBase : IRaiseDefinition
     {
-        public int Xp { get; set; }
+        public int AccessFromLevel { get; set; }
         public int Level { get; set; }
     }
 }

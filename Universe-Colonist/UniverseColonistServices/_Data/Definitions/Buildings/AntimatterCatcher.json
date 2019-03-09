@@ -1,1 +1,1 @@
-[{"HarvesterCount":1,"Xp":1100,"Level":1},{"HarvesterCount":2,"Xp":1300,"Level":2},{"HarvesterCount":3,"Xp":1600,"Level":3},{"HarvesterCount":4,"Xp":2100,"Level":4},{"HarvesterCount":5,"Xp":3400,"Level":5},{"HarvesterCount":6,"Xp":7400,"Level":6}]
+[{"HarvesterCount":1,"AccessFromLevel":1,"Level":1},{"HarvesterCount":2,"AccessFromLevel":3,"Level":2},{"HarvesterCount":3,"AccessFromLevel":5,"Level":3},{"HarvesterCount":4,"AccessFromLevel":8,"Level":4},{"HarvesterCount":5,"AccessFromLevel":13,"Level":5},{"HarvesterCount":6,"AccessFromLevel":21,"Level":6}]

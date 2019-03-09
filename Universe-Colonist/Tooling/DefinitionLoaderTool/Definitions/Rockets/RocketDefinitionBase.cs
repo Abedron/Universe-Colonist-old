@@ -2,6 +2,7 @@
 {
     public class RocketDefinitionBase : IRaiseDefinition
     {
+        public int AccessFromLevel { get; set; }
         public int Level { get; set; }
         public int Cargo { get; set; }
         public int Colonist { get; set; }

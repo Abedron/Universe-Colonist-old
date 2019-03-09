@@ -2,7 +2,7 @@
 {
     public class PlanetDefinitionBase : IRaiseDefinition
     {
-        public int Xp { get; set; }
+        public int AccessFromLevel { get; set; }
         public int Level { get; set; }
         public string CargoMultiplier { get; set; }
         public string ResourceType { get; set; }

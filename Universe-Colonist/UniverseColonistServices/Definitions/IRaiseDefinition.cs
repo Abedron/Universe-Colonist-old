@@ -2,7 +2,7 @@
 {
     public interface IRaiseDefinition
     {
-        int Xp { get; }
+        int AccessFromLevel { get; }
         int Level { get; }
     }
 }

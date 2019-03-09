@@ -19,10 +19,13 @@ namespace Tooling.DefinitionLoaderTool
 
         public DefinitionLoader()
         {
-            definitionVos.Add(new DefinitionVo("https://docs.google.com/spreadsheets/d/1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY/export?format=csv&id=1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY&gid=707072616",
+            definitionVos.Add(new DefinitionVo("https://docs.google.com/spreadsheets/u/0/d/1hCZfTEoG5BYMq-GgBAkdahiM-RZXBYOJk7Sx-jwm6Uo/export?format=csv&id=1hCZfTEoG5BYMq-GgBAkdahiM-RZXBYOJk7Sx-jwm6Uo&gid=0",
                 @"C:\Development\Universe-Colonist\Universe-Colonist\UniverseColonistServices\_Data\Definitions\Player.json"));
 
             // Buildings
+            definitionVos.Add(new DefinitionVo("https://docs.google.com/spreadsheets/d/1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY/export?format=csv&id=1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY&gid=985158547",
+                @"C:\Development\Universe-Colonist\Universe-Colonist\UniverseColonistServices\_Data\Definitions\Buildings\AccessBuildings.json"));
+
             definitionVos.Add(new DefinitionVo("https://docs.google.com/spreadsheets/d/1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY/export?format=csv&id=1ns13nyAM4D4tDIieb975JBDQ5fQgK76dwiQMC8PMgsY&gid=1679462485",
                 @"C:\Development\Universe-Colonist\Universe-Colonist\UniverseColonistServices\_Data\Definitions\Buildings\AntimatterCatcher.json"));
 
@@ -79,6 +82,9 @@ namespace Tooling.DefinitionLoaderTool
                     {
                         case "Player":
                             json = WriteJson<PlayerDefinition>(definitionVo, csv);
+                            break;
+                        case "AccessBuildings":
+                            json = WriteJson<AccessBuildingsDefinition>(definitionVo, csv);
                             break;
                         case "AntimatterCatcher":
                             json = WriteJson<AntimatterCatcherDefinition>(definitionVo, csv);
