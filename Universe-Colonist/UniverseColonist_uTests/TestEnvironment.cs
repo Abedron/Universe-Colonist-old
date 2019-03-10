@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Game.Articles;
-using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
+﻿using Game.DataModel.Runtime;
 using Game.Services.Definitions;
 using Moq;
 
@@ -9,14 +6,32 @@ namespace UniverseColonistTests
 {
     public static class TestEnvironment
     {
-        private static MockRepository MockRepository { get; } = new MockRepository(MockBehavior.Default){DefaultValue = DefaultValue.Mock};
+        private static MockRepository MockRepository { get; } = new MockRepository(MockBehavior.Default) { DefaultValue = DefaultValue.Mock };
 
         public static BaseStationDefinition[] BaseStationDefinitionsFake { get; } =
         {
-            new BaseStationDefinition() {Xp = 1100, Level = 1},
-            new BaseStationDefinition() {Xp = 1600, Level = 2},
-            new BaseStationDefinition() {Xp = 7400, Level = 3},
-            new BaseStationDefinition() {Xp = 189000, Level = 4}
+            new BaseStationDefinition{AccessFromLevel = 1, Level = 1},
+            new BaseStationDefinition{AccessFromLevel = 3, Level = 2},
+            new BaseStationDefinition{AccessFromLevel = 5, Level = 3},
+            new BaseStationDefinition{AccessFromLevel = 8, Level = 4},
+            new BaseStationDefinition{AccessFromLevel = 13,Level = 5},
+            new BaseStationDefinition{AccessFromLevel = 21,Level = 6},
+            new BaseStationDefinition{AccessFromLevel = 34,Level = 7},
+            new BaseStationDefinition{AccessFromLevel = 55,Level = 8},
+            new BaseStationDefinition{AccessFromLevel = 89,Level = 9}
+        };
+
+        public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake { get; } =
+        {
+            new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, FlyingRocketCount = 1},
+            new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, FlyingRocketCount = 2},
+            new LaunchTowerDefinition() { BaseStationLevel = 3, Level = 3, FlyingRocketCount = 3},
+            new LaunchTowerDefinition() { BaseStationLevel = 4, Level = 4, FlyingRocketCount = 4},
+            new LaunchTowerDefinition() { BaseStationLevel = 5, Level = 5, FlyingRocketCount = 5},
+            new LaunchTowerDefinition() { BaseStationLevel = 6, Level = 6, FlyingRocketCount = 8},
+            new LaunchTowerDefinition() { BaseStationLevel = 7, Level = 7, FlyingRocketCount = 13},
+            new LaunchTowerDefinition() { BaseStationLevel = 8, Level = 8, FlyingRocketCount = 21},
+            new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9, FlyingRocketCount = 34}
         };
 
         public static AllDefinitions AllDefinitionsFake { get; } = new AllDefinitions()
@@ -38,7 +53,7 @@ namespace UniverseColonistTests
             Buildings =
             {
                 BaseStation = BaseStationDefinitionsFake,
-                AntimatterCatcher = new []
+               /* AntimatterCatcher = new []
                 {
                     new AntimatterCatcherDefinition() {Xp = 1100, Level = 1},
                     new AntimatterCatcherDefinition() {Xp = 1200, Level = 2},
@@ -88,7 +103,7 @@ namespace UniverseColonistTests
                     new RecruitmentOfColonistDefinition() {Xp = 7400, Level = 3, RecruitmentPerMinute = 3},
                     new RecruitmentOfColonistDefinition() {Xp = 189000, Level = 4, RecruitmentPerMinute = 5},
                     new RecruitmentOfColonistDefinition() {Xp = 4830000, Level = 5, RecruitmentPerMinute = 8}
-                },
+                },*/
             }
         };
 

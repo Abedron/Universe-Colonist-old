@@ -1,6 +1,5 @@
 ﻿using Game.Articles;
 using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
 namespace Game.GameModel.Rockets
@@ -9,7 +8,7 @@ namespace Game.GameModel.Rockets
     {
         public RocketData Data { get; }
 
-        public RocketModel(RocketData data, RocketDefinitions rocketDefinitions, DataModel.Storage.Rockets storage)
+        public RocketModel(RocketData data, RocketDefinitions rocketDefinitions)
         {
             Data = data;
         }

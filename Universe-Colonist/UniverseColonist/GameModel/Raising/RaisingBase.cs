@@ -18,9 +18,9 @@ namespace Game.GameModel
             Storage = storage;
         }
 
-        public virtual bool TryRaiseLevel(int xp)
+        public virtual bool TryRaiseLevel(int playerLevel)
         {
-            int level = GetCalculateLevel(Definitions, xp);
+            int level = GetCalculateLevel(Definitions, playerLevel);
             if (Storage.Level < level)
             {
                 int oldlevel = Storage.Level;
@@ -32,10 +32,10 @@ namespace Game.GameModel
             return false;
         }
 
-        internal static int GetCalculateLevel(TDefinition[] definitions, int xp)
+        internal static int GetCalculateLevel(TDefinition[] definitions, int playerLevel)
         {
-            int minXp = definitions.Min(d => d.Xp);
-            if (minXp > xp)
+            int minLevel = definitions.Min(d => d.BaseStationLevel);
+            if (minLevel > playerLevel)
             {
                 return 0;
             }
@@ -46,7 +46,7 @@ namespace Game.GameModel
                 IRaiseDefinition definition = null;
                 definition = definitions[i];
 
-                if (definition.Xp > xp)
+                if (definition.BaseStationLevel > playerLevel)
                 {
 
                     definition = definitions[Math.Max(0, i - 1)];

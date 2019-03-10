@@ -1,30 +1,43 @@
 ﻿using Game.Articles;
 using Game.DataModel.Runtime;
 using Game.DataModel.Storage;
+using Game.GameModel.Rockets;
 using Game.Services.Definitions;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Game.GameModel.Buildings
 {
-    public class LaunchTowerBuilding : BuildingBase<LaunchTowerData, LaunchTowerDefinition, LaunchTower>
+    public class LaunchTowerBuilding //: BuildingBase<LaunchTowerData, LaunchTowerDefinition, LaunchTower>
     {
-        private IList<RocketBase> flyingRockets = new List<RocketBase>();
+        public LaunchTowerData Data { get; }
+        public LaunchTowerDefinition[] Definitions { get; }
 
-        public LaunchTowerBuilding(LaunchTowerData data, LaunchTowerDefinition[] definitions, LaunchTower storage) : base(data, definitions, storage)
+        public LaunchTowerBuilding(LaunchTowerData data, LaunchTowerDefinition[] definitions)
         {
+            Data = data;
+            Definitions = definitions;
+        }
+
+        public bool TryRaiseLevel(int baseStationLevel)
+        {
+            var definition = Definitions.LastOrDefault(d => d.BaseStationLevel <= baseStationLevel) ?? Definitions[0];
+            bool isRaisedLevel = definition.Level != Data.Level;
+
+            Data.Level = definition.Level;
+
+            return isRaisedLevel;
         }
 
         public RocketBase SendRocketTo(RocketType rocketType, RocketTarget rocketTarget)
         {
-            var definition = Definitions.FirstOrDefault(d => d.Level == Storage.Level);
-            if (Data.NumberOfRocketFlying >= definition.FlyingRocketCount)
+            var definition = Definitions.FirstOrDefault(d => d.Level == Data.Level);
+            if (Data.FlyingRockets.Count >= definition.FlyingRocketCount)
             {
                 return RocketBase.NullRocket;
             }
 
-            RocketBase rocket = new RocketBase(rocketType, rocketTarget);
-            flyingRockets.Add(rocket);
+            RocketModel rocket = new RocketModel(rocketType, rocketTarget);
+            Data.FlyingRockets.Add(rocket);
 
             return rocket;
         }

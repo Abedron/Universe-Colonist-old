@@ -4,12 +4,12 @@ using Game.Services.Definitions;
 
 namespace Game.GameModel.Players
 {
-    public class PlayerModel : RaisingBase<PlayerDefinition, Player>
+    public class PlayerModel
     {
         public PlayerData Data { get; }
 
-        public PlayerModel(PlayerData data, PlayerDefinition[] definitions, Player player) : base(definitions, player)
-        {
+        public PlayerModel(PlayerData data)
+        { 
             Data = data;
         }
     }

@@ -39,18 +39,18 @@ namespace Game.GameModel
 
         public RaisingArticles(GameplayData gameplayData, AllDefinitions allDefinitions, GameplayStorage gameplayStorage)
         {
-            PlayerModel = new PlayerModel(gameplayData.PlayerData, allDefinitions.Player, gameplayStorage.Player);
-            PlayerModel.OnLevelUp += (a, b) => OnLevelUp.Invoke(a, b);
-            AllRaisingArticles.Add(RaisingType.Player, PlayerModel);
+            //PlayerModel = new PlayerModel(gameplayData.PlayerData, allDefinitions.Player, gameplayStorage.Player);
+            //PlayerModel.OnLevelUp += (a, b) => OnLevelUp.Invoke(a, b);
+            //AllRaisingArticles.Add(RaisingType.Player, PlayerModel);
 
             AntimatterCatcherBuilding = new AntimatterCatcherBuilding(gameplayData.BuildingsData.AntimatterCatcher, allDefinitions.Buildings.AntimatterCatcher, gameplayStorage.Buildings.AntimatterCatcher);
             AllRaisingArticles.Add(RaisingType.Player, AntimatterCatcherBuilding);
-            BaseStationBuilding = new BaseStationBuilding(gameplayData.BuildingsData.BaseStation, allDefinitions.Buildings.BaseStation, gameplayStorage.Buildings.BaseStation);
-            AllRaisingArticles.Add(RaisingType.BaseStation, BaseStationBuilding);
+            //BaseStationBuilding = new BaseStationBuilding(gameplayData.BuildingsData.BaseStation, allDefinitions.Buildings.BaseStation, gameplayStorage.Buildings.BaseStation);
+            //AllRaisingArticles.Add(RaisingType.BaseStation, BaseStationBuilding);
             FuelRefineryBuilding = new FuelRefineryBuilding(gameplayData.BuildingsData.FuelRefinery, allDefinitions.Buildings.FuelRefinery, gameplayStorage.Buildings.FuelRefinery);
             AllRaisingArticles.Add(RaisingType.FuelRefinery, FuelRefineryBuilding);
-            LaunchTowerBuilding = new LaunchTowerBuilding(gameplayData.BuildingsData.LaunchTower, allDefinitions.Buildings.LaunchTower, gameplayStorage.Buildings.LaunchTower);
-            AllRaisingArticles.Add(RaisingType.LaunchTower, LaunchTowerBuilding);
+            //LaunchTowerBuilding = new LaunchTowerBuilding(gameplayData.BuildingsData.LaunchTower, allDefinitions.Buildings.LaunchTower, gameplayStorage.Buildings.LaunchTower);
+            //AllRaisingArticles.Add(RaisingType.LaunchTower, LaunchTowerBuilding);
             RecruitmentOfColonistBuilding = new RecruitmentOfColonistBuilding(gameplayData.BuildingsData.RecruitmentOfColonist, allDefinitions.Buildings.RecruitmentOfColonist, gameplayStorage.Buildings.RecruitmentOfColonist);
             AllRaisingArticles.Add(RaisingType.RecruitmentOfColonist, RecruitmentOfColonistBuilding);
             ResearchLaboratoryBuilding = new ResearchLaboratoryBuilding(gameplayData.BuildingsData.ResearchLaboratory, allDefinitions.Buildings.ResearchLaboratory, gameplayStorage.Buildings.ResearchLaboratory);

@@ -2,7 +2,7 @@
 {
     public class BuildingDefinitionBase : IRaiseDefinition
     {
-        public int AccessFromLevel { get; internal set; }
+        public int BaseStationLevel { get; internal set; }
         public int Level { get; internal set; }
     }
 }

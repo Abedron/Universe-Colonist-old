@@ -2,7 +2,7 @@
 {
     public class RocketDefinitionBase : IRaiseDefinition
     {
-        public int AccessFromLevel { get; internal set; }
+        public int BaseStationLevel { get; internal set; }
         public int Level { get; internal set; }
         public int Cargo { get; internal set; }
         public int Colonist { get; internal set; }
