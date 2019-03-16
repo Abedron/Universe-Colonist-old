@@ -2,6 +2,6 @@
 {
     public class LaunchTowerDefinition : BuildingDefinitionBase
     {
-        public int FlyingRocketCount { get; set; }
+        public int Capacity { get; set; }
     }
 }

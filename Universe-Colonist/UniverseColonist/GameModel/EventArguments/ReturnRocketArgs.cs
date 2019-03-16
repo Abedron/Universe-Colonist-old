@@ -5,9 +5,9 @@ namespace Game.GameModel
 {
     public class ReturnRocketArgs : EventArgs
     {
-        public RocketTarget FromTarget { get; }
+        public PlanetType FromTarget { get; }
 
-        public ReturnRocketArgs(RocketTarget fromTarget)
+        public ReturnRocketArgs(PlanetType fromTarget)
         {
             FromTarget = fromTarget;
         }

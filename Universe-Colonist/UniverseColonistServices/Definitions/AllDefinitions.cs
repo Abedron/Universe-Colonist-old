@@ -22,17 +22,18 @@
 
     public sealed class PlanetDefinitions
     {
-        public AntuelDefinition[] Antuel { get; internal set; }
-        public AsteroidsDefinition[] Asteroids { get; internal set; }
-        public JupiterDefinition[] Jupiter { get; internal set; }
-        public MarsDefinition[] Mars { get; internal set; }
-        public MercuryDefinition[] Mercury { get; internal set; }
-        public VenusDefinition[] Venus { get; internal set; }
+        public PlanetDefinition[] Antuel { get; internal set; }
+        public PlanetDefinition[] Asteroids { get; internal set; }
+        public PlanetDefinition[] Jupiter { get; internal set; }
+        public PlanetDefinition[] Mars { get; internal set; }
+        public PlanetDefinition[] Mercury { get; internal set; }
+        public PlanetDefinition[] Venus { get; internal set; }
     }
 
     public class RocketDefinitions
     {
-        public NeoVDefinition[] NeoV { get; internal set; }
-        public BlueLightDefinition[] BlueLight { get; internal set; }
+        public AccessRocketsDefinition[] AccessRocketsDefinitions { get; internal set; }
+        public RocketDefinitionBase[] NeoV { get; internal set; }
+        public RocketDefinitionBase[] BlueLight { get; internal set; }
     }
 }

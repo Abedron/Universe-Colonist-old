@@ -111,10 +111,10 @@ namespace Tooling.DefinitionLoaderTool
                             json = WriteJson<AccessRocketsDefinition>(definitionVo, csv);
                             break;
                         case "NeoV":
-                            json = WriteJson<NeoVDefinition>(definitionVo, csv);
+                            json = WriteJson<RocketDefinitionBase>(definitionVo, csv);
                             break;
                         case "BlueLight":
-                            json = WriteJson<BlueLightDefinition>(definitionVo, csv);
+                            json = WriteJson<RocketDefinitionBase>(definitionVo, csv);
                             break;
                         case "AccessPlanets":
                             json = WriteJson<AccessPlanetDefinition>(definitionVo, csv);

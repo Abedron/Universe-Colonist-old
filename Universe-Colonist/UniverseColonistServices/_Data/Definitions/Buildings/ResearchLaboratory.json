@@ -1,1 +1,1 @@
-[{"Upgrade":"Stage2","AccessFromLevel":21,"Level":1},{"Upgrade":"Stage1","AccessFromLevel":24,"Level":2},{"Upgrade":"Reusable","AccessFromLevel":31,"Level":3}]
+[{"Upgrade":"Stage2","BaseStationLevel":5,"Level":1},{"Upgrade":"Stage1","BaseStationLevel":6,"Level":2},{"Upgrade":"Reusable","BaseStationLevel":7,"Level":3}]

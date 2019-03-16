@@ -35,17 +35,17 @@ namespace Game.Services
             AllDefinitions.Buildings.ResourceObservatory = JsonConvert.DeserializeObject<ResourceObservatoryDefinition[]>(json);
 
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Antuel);
-            AllDefinitions.Planets.Antuel = JsonConvert.DeserializeObject<AntuelDefinition[]>(json);
+            AllDefinitions.Planets.Antuel = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Asteroids);
-            AllDefinitions.Planets.Asteroids = JsonConvert.DeserializeObject<AsteroidsDefinition[]>(json);
+            AllDefinitions.Planets.Asteroids = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Jupiter);
-            AllDefinitions.Planets.Jupiter = JsonConvert.DeserializeObject<JupiterDefinition[]>(json);
+            AllDefinitions.Planets.Jupiter = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Mars);
-            AllDefinitions.Planets.Mars = JsonConvert.DeserializeObject<MarsDefinition[]>(json);
+            AllDefinitions.Planets.Mars = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Mercury);
-            AllDefinitions.Planets.Mercury = JsonConvert.DeserializeObject<MercuryDefinition[]>(json);
+            AllDefinitions.Planets.Mercury = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
             json = Load(ConfigDefinitions.DefinitionPaths.PlanetPaths.Venus);
-            AllDefinitions.Planets.Venus = JsonConvert.DeserializeObject<VenusDefinition[]>(json);
+            AllDefinitions.Planets.Venus = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
 
             json = Load(ConfigDefinitions.DefinitionPaths.RocketPaths.NeoV);
             AllDefinitions.Rockets.NeoV = JsonConvert.DeserializeObject<NeoVDefinition[]>(json);

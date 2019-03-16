@@ -1,4 +1,5 @@
-﻿using Game.DataModel.Runtime;
+﻿using Game.Articles;
+using Game.DataModel.Runtime;
 using Game.Services.Definitions;
 using Moq;
 
@@ -23,21 +24,21 @@ namespace UniverseColonistTests
 
         public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake { get; } =
         {
-            new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, FlyingRocketCount = 1},
-            new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, FlyingRocketCount = 2},
-            new LaunchTowerDefinition() { BaseStationLevel = 3, Level = 3, FlyingRocketCount = 3},
-            new LaunchTowerDefinition() { BaseStationLevel = 4, Level = 4, FlyingRocketCount = 4},
-            new LaunchTowerDefinition() { BaseStationLevel = 5, Level = 5, FlyingRocketCount = 5},
-            new LaunchTowerDefinition() { BaseStationLevel = 6, Level = 6, FlyingRocketCount = 8},
-            new LaunchTowerDefinition() { BaseStationLevel = 7, Level = 7, FlyingRocketCount = 13},
-            new LaunchTowerDefinition() { BaseStationLevel = 8, Level = 8, FlyingRocketCount = 21},
-            new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9, FlyingRocketCount = 34}
+            new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, Capacity = 1},
+            new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, Capacity = 2},
+            new LaunchTowerDefinition() { BaseStationLevel = 3, Level = 3, Capacity = 3},
+            new LaunchTowerDefinition() { BaseStationLevel = 4, Level = 4, Capacity = 4},
+            new LaunchTowerDefinition() { BaseStationLevel = 5, Level = 5, Capacity = 5},
+            new LaunchTowerDefinition() { BaseStationLevel = 6, Level = 6, Capacity = 8},
+            new LaunchTowerDefinition() { BaseStationLevel = 7, Level = 7, Capacity = 13},
+            new LaunchTowerDefinition() { BaseStationLevel = 8, Level = 8, Capacity = 21},
+            new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9, Capacity = 34}
         };
 
         public static AllDefinitions AllDefinitionsFake { get; } = new AllDefinitions()
         {
             Version = "2019.41.1472",
-            Player = new []
+            Player = new[]
             {
                 new PlayerDefinition() {Xp = 1100, Level = 1},
                 new PlayerDefinition() {Xp = 1200, Level = 2},
@@ -49,6 +50,58 @@ namespace UniverseColonistTests
                 new PlayerDefinition() {Xp = 2100, Level = 8},
                 new PlayerDefinition() {Xp = 2300, Level = 9},
                 new PlayerDefinition() {Xp = 2500, Level = 10}
+            },
+            Rockets =
+            {
+                AccessRocketsDefinitions = new[]
+                {
+                    new AccessRocketsDefinition()
+                    {
+                        AccessFromLevel = 1,
+                        RocketType = 1,
+                        MaxCount = 2
+                    },
+                    new AccessRocketsDefinition()
+                    {
+                        AccessFromLevel = 3,
+                        RocketType = 2,
+                        MaxCount = 2
+                    }
+                },
+                BlueLight = new[]
+                {
+                    new  RocketDefinitionBase()
+                    {
+                        BaseStationLevel = 1,
+                        Level = 1,
+                        Cargo = 1,
+                        Colonist = 100,
+                        Coins = 0,
+                        Stars = 0,
+                        HyperMetal = 0,
+                        Fuel = 0,
+                        Ore = 0,
+                        Minerals = 0,
+                        Food = 0
+                    }
+                },
+                NeoV = new[]
+                {
+                    new  RocketDefinitionBase()
+                    {
+                        BaseStationLevel = 1,
+                        Level = 1,
+                        Cargo = 1,
+                        Colonist = 100,
+                        Coins = 0,
+                        Stars = 0,
+                        HyperMetal = 0,
+                        Fuel = 0,
+                        Ore = 0,
+                        Minerals = 0,
+                        Food = 0
+                    }
+                }
             },
             Buildings =
             {
@@ -104,7 +157,38 @@ namespace UniverseColonistTests
                     new RecruitmentOfColonistDefinition() {Xp = 189000, Level = 4, RecruitmentPerMinute = 5},
                     new RecruitmentOfColonistDefinition() {Xp = 4830000, Level = 5, RecruitmentPerMinute = 8}
                 },*/
+            },
+
+            Planets =
+            {
+                Mercury = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 10, JourneyTime = 10, Ore = 10}},
+                Venus = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 10, JourneyTime = 10, HyperMetal = 10}},
+                Mars = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 10, JourneyTime = 10, Minerals = 10}},
+                Asteroids = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 10, JourneyTime = 10, Minerals = 10}},
+                Jupiter = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 10, JourneyTime = 10, Fuel = 10}},
+                Antuel = new []{new PlanetDefinition() {BaseStationLevel = 1, Level = 1, CargoMultiplier = 30, JourneyTime = 20, HyperMetal = 10},}
             }
+        };
+
+
+
+        public static PlanetData MercuryPlanetData { get; } = new PlanetData(PlanetType.Mercury, AllDefinitionsFake.Planets.Mercury)
+        {
+            IsActivated = true,
+            Colonist = 1,
+            Level = 1
+        };
+
+        public static LaunchTowerData LaunchTowerData { get; } = new LaunchTowerData()
+        {
+            IsActivate = true,
+            Level = 1
+        };
+
+        public static RocketData NeoVRocketData = new RocketData(RocketType.NeoV)
+        {
+            Level = 1,
+            IsActivated = true
         };
 
         public static IResourceData SetupResourceDataData(int money)

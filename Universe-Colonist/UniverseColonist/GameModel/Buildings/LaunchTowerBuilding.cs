@@ -1,7 +1,4 @@
-﻿using Game.Articles;
-using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
-using Game.GameModel.Rockets;
+﻿using Game.DataModel.Runtime;
 using Game.Services.Definitions;
 using System.Linq;
 
@@ -11,6 +8,8 @@ namespace Game.GameModel.Buildings
     {
         public LaunchTowerData Data { get; }
         public LaunchTowerDefinition[] Definitions { get; }
+
+        private LaunchTowerDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Data.Level) ?? Definitions[0];
 
         public LaunchTowerBuilding(LaunchTowerData data, LaunchTowerDefinition[] definitions)
         {
@@ -28,18 +27,10 @@ namespace Game.GameModel.Buildings
             return isRaisedLevel;
         }
 
-        public RocketBase SendRocketTo(RocketType rocketType, RocketTarget rocketTarget)
+        public bool TryIncreaseSlots()
         {
-            var definition = Definitions.FirstOrDefault(d => d.Level == Data.Level);
-            if (Data.FlyingRockets.Count >= definition.FlyingRocketCount)
-            {
-                return RocketBase.NullRocket;
-            }
 
-            RocketModel rocket = new RocketModel(rocketType, rocketTarget);
-            Data.FlyingRockets.Add(rocket);
-
-            return rocket;
+            return false;
         }
     }
 }

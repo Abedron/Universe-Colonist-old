@@ -1,13 +1,13 @@
-﻿using Game.Articles;
-
-namespace Game.Services.Definitions
+﻿namespace Game.Services.Definitions
 {
-    public class RocketDefinitionBase : IRaiseDefinition
+    public class PlanetDefinition
     {
         public int BaseStationLevel { get; internal set; }
         public int Level { get; internal set; }
-        public int Cargo { get; internal set; }
-        public int Colonist { get; internal set; }
+        public int CargoMultiplier { get; internal set; }
+        public string ResourceType { get; internal set; }
+        public int Count { get; internal set; }
+        public int JourneyTime { get; internal set; }
         public int Coins { get; internal set; }
         public int Stars { get; internal set; }
         public int HyperMetal { get; internal set; }
