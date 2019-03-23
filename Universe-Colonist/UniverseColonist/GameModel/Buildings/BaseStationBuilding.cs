@@ -4,22 +4,20 @@ using System.Linq;
 
 namespace Game.GameModel.Buildings
 {
-    public class BaseStationBuilding //: BuildingBase<BaseStationData, BaseStationDefinition, BaseStation>
+    public class BaseStationBuilding : BuildingBase
     {
-        public BaseStationData Data { get; }
-        public BaseStationDefinition[] Definitions { get; }
+        public BaseStationData<ILevelUpByPlayerDefinition> Data { get; }
 
-        public BaseStationBuilding(BaseStationData data, BaseStationDefinition[] definitions)
+        public BaseStationBuilding(BaseStationData<ILevelUpByPlayerDefinition> data)
         {
             Data = data;
-            Definitions = definitions;
         }
 
-        public bool TryRaiseLevel(int playerLevel)
+        public override bool TryLevelUp(int playerLevel)
         {
-            var definition = Definitions.LastOrDefault(d => d.AccessFromLevel <= playerLevel) ?? Definitions[0];
+            ILevelUpByPlayerDefinition definition = Data.Definitions
+                    .LastOrDefault(d => d.AccessFromPlayerLevel <= playerLevel) ?? Data.Definitions[0];
             bool isRaisedLevel = definition.Level != Data.Level;
-
             Data.Level = definition.Level;
 
             return isRaisedLevel;

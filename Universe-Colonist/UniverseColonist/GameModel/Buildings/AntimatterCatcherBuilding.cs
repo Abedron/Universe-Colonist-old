@@ -1,12 +1,11 @@
 ﻿using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
 namespace Game.GameModel.Buildings
 {
-    public class AntimatterCatcherBuilding: BuildingBase<AntimatterCatcherData, AntimatterCatcherDefinition, AntimatterCatcher>
+    public class AntimatterCatcherBuilding : StandardBuildingBase
     {
-        public AntimatterCatcherBuilding(AntimatterCatcherData data, AntimatterCatcherDefinition[] definition, AntimatterCatcher storage) : base(data, definition, storage)
+        public AntimatterCatcherBuilding(BuildingDataBase<ILevelUpByBaseStationDefinition> data) : base(data)
         {
         }
     }

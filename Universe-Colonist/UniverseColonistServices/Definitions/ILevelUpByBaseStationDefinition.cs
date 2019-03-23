@@ -1,8 +1,7 @@
 ﻿namespace Game.Services.Definitions
 {
-    public interface IRaiseDefinition
+    public interface ILevelUpByBaseStationDefinition : ILevelUpDefinition
     {
         int BaseStationLevel { get; }
-        int Level { get; }
     }
 }

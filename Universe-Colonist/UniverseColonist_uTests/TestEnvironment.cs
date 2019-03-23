@@ -11,15 +11,15 @@ namespace UniverseColonistTests
 
         public static BaseStationDefinition[] BaseStationDefinitionsFake { get; } =
         {
-            new BaseStationDefinition{AccessFromLevel = 1, Level = 1},
-            new BaseStationDefinition{AccessFromLevel = 3, Level = 2},
-            new BaseStationDefinition{AccessFromLevel = 5, Level = 3},
-            new BaseStationDefinition{AccessFromLevel = 8, Level = 4},
-            new BaseStationDefinition{AccessFromLevel = 13,Level = 5},
-            new BaseStationDefinition{AccessFromLevel = 21,Level = 6},
-            new BaseStationDefinition{AccessFromLevel = 34,Level = 7},
-            new BaseStationDefinition{AccessFromLevel = 55,Level = 8},
-            new BaseStationDefinition{AccessFromLevel = 89,Level = 9}
+            new BaseStationDefinition{AccessFromPlayerLevel = 1, Level = 1},
+            new BaseStationDefinition{AccessFromPlayerLevel = 3, Level = 2},
+            new BaseStationDefinition{AccessFromPlayerLevel = 5, Level = 3},
+            new BaseStationDefinition{AccessFromPlayerLevel = 8, Level = 4},
+            new BaseStationDefinition{AccessFromPlayerLevel = 13,Level = 5},
+            new BaseStationDefinition{AccessFromPlayerLevel = 21,Level = 6},
+            new BaseStationDefinition{AccessFromPlayerLevel = 34,Level = 7},
+            new BaseStationDefinition{AccessFromPlayerLevel = 55,Level = 8},
+            new BaseStationDefinition{AccessFromPlayerLevel = 89,Level = 9}
         };
 
         public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake { get; } =
@@ -179,7 +179,7 @@ namespace UniverseColonistTests
             Level = 1
         };
 
-        public static LaunchTowerData LaunchTowerData { get; } = new LaunchTowerData()
+        public static LaunchTowerData<ILevelUpByBaseStationDefinition> LaunchTowerData { get; } = new LaunchTowerData<ILevelUpByBaseStationDefinition>(LaunchTowerDefinitionsFake)
         {
             IsActivate = true,
             Level = 1

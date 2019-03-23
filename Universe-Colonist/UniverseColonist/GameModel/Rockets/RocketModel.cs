@@ -19,8 +19,9 @@ namespace Game.GameModel.Rockets
             Definitions = definitions;
         }
 
-        public bool TryRaiseLevel(CashData cashData)
+        public bool TryLevelUp(CashData cashData)
         {
+
 
             return false;
         }

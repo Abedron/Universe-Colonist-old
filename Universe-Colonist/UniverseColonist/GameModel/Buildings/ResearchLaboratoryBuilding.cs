@@ -1,12 +1,11 @@
 ﻿using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
 namespace Game.GameModel.Buildings
 {
-    public class ResearchLaboratoryBuilding : BuildingBase<ResearchLaboratoryData, ResearchLaboratoryDefinition, ResearchLaboratory>
+    public class ResearchLaboratoryBuilding : StandardBuildingBase
     {
-        public ResearchLaboratoryBuilding(ResearchLaboratoryData data, ResearchLaboratoryDefinition[] definitions, ResearchLaboratory storage) : base(data, definitions, storage)
+        public ResearchLaboratoryBuilding(BuildingDataBase<ILevelUpByBaseStationDefinition> data) : base(data)
         {
         }
     }

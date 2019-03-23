@@ -16,7 +16,7 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_SetLevelByDefinitions(int playerLevel, int expectedLevel)
         {
             // Arrange
-            var data = new BaseStationData();
+            var data = new BaseStationData(TestEnvironment.BaseStationDefinitionsFake);
             var building = new BaseStationBuilding(data, TestEnvironment.BaseStationDefinitionsFake);
 
             // Act

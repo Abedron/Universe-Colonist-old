@@ -2,7 +2,7 @@
 
 namespace Game.Services.Definitions
 {
-    public class RocketDefinitionBase : IRaiseDefinition
+    public class RocketDefinitionBase : ILevelUpByBaseStationDefinition
     {
         public int BaseStationLevel { get; internal set; }
         public int Level { get; internal set; }

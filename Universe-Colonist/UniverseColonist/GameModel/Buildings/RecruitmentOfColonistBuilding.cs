@@ -1,12 +1,11 @@
 ﻿using Game.DataModel.Runtime;
-using Game.DataModel.Storage;
 using Game.Services.Definitions;
 
 namespace Game.GameModel.Buildings
 {
-    public class RecruitmentOfColonistBuilding : BuildingBase<RecruitmentOfColonistData, RecruitmentOfColonistDefinition, RecruitmentOfColonist>
+    public class RecruitmentOfColonistBuilding : StandardBuildingBase
     {
-        public RecruitmentOfColonistBuilding(RecruitmentOfColonistData data, RecruitmentOfColonistDefinition[] definitions, RecruitmentOfColonist storage) : base(data, definitions, storage)
+        public RecruitmentOfColonistBuilding(BuildingDataBase<ILevelUpByBaseStationDefinition> data) : base(data)
         {
         }
     }

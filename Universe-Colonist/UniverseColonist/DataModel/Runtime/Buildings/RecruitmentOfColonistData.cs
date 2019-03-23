@@ -1,6 +1,11 @@
-﻿namespace Game.DataModel.Runtime
+﻿using Game.Services.Definitions;
+
+namespace Game.DataModel.Runtime
 {
-    public class RecruitmentOfColonistData : BuildingDataBase
+    public class RecruitmentOfColonistData<T> : BuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
     {
+        public RecruitmentOfColonistData(T[] definitions) : base(definitions)
+        {
+        }
     }
 }

@@ -5,7 +5,7 @@ using Game.Services.Definitions;
 
 namespace Game.GameModel
 {
-    public class RaisingBase<TDefinition, TStorage> : IRaising where TDefinition : IRaiseDefinition where TStorage : IRaiseStorage
+    public class RaisingBase<TDefinition, TStorage> : IRaising where TDefinition : ILevelUpByBaseStationDefinition where TStorage : IRaiseStorage
     {
         public event EventHandler<LevelUpArgs> OnLevelUp;
 
@@ -43,7 +43,7 @@ namespace Game.GameModel
             int length = definitions.Length;
             for (int i = 0; i < length; i++)
             {
-                IRaiseDefinition definition = null;
+                ILevelUpByBaseStationDefinition definition = null;
                 definition = definitions[i];
 
                 if (definition.BaseStationLevel > playerLevel)

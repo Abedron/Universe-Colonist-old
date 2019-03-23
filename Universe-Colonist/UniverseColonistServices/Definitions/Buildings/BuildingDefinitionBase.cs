@@ -1,8 +1,8 @@
 ﻿namespace Game.Services.Definitions
 {
-    public class BuildingDefinitionBase : IRaiseDefinition
+    public class BuildingDefinitionBase : ILevelUpByBaseStationDefinition, ILevelUpDefinition
     {
-        public int BaseStationLevel { get; internal set; }
         public int Level { get; internal set; }
+        public int BaseStationLevel { get; internal set; }
     }
 }
