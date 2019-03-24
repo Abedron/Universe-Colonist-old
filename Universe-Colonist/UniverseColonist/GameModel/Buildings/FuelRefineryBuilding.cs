@@ -5,8 +5,19 @@ namespace Game.GameModel.Buildings
 {
     public class FuelRefineryBuilding : StandardBuildingBase
     {
-        public FuelRefineryBuilding(BuildingDataBase<ILevelUpByBaseStationDefinition> data) : base(data)
+        public FuelRefineryData Data { get; }
+        private LevelUpModel LevelUp { get; }
+
+        public FuelRefineryBuilding(FuelRefineryData data)
         {
+            Data = data;
+            LevelUp = new LevelUpModel(data);
+        }
+
+        public override bool TryLevelUp(int baseStationLevel)
+        {
+            bool isLevelUp = LevelUp.TryLevelUp(Data.Definitions, baseStationLevel);
+            return isLevelUp;
         }
     }
 }

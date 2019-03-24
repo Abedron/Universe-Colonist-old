@@ -1,11 +1,15 @@
 ﻿using Game.Services.Definitions;
+using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class ResearchLaboratoryData<T> : StandardBuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
+    public class ResearchLaboratoryData : BuildingDataBase
     {
-        public ResearchLaboratoryData(T[] definitions) : base(definitions)
+        public ResearchLaboratoryDefinition[] Definitions { get; }
+        public ResearchLaboratoryDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
+        public ResearchLaboratoryData(ResearchLaboratoryDefinition[] definitions)
         {
+            Definitions = definitions;
         }
     }
 }

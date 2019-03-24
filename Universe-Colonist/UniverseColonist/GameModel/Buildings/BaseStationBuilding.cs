@@ -5,11 +5,10 @@ namespace Game.GameModel.Buildings
 {
     public class BaseStationBuilding : BuildingBase
     {
-        public BaseStationData<ILevelUpByPlayerDefinition> Data { get; }
-
+        public BaseStationData Data { get; }
         private LevelUpModel LevelUp { get; }
 
-        public BaseStationBuilding(BaseStationData<ILevelUpByPlayerDefinition> data)
+        public BaseStationBuilding(BaseStationData data)
         {
             Data = data;
             LevelUp = new LevelUpModel(data);

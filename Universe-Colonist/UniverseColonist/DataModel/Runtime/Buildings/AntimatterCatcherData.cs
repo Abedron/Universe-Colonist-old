@@ -1,12 +1,16 @@
 ﻿using Game.Services.Definitions;
+using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class AntimatterCatcherData<T> : StandardBuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
+    public class AntimatterCatcherData : BuildingDataBase
     {
         public int CurrentHarvesters { get; set; }
-        public AntimatterCatcherData(T[] definitions) : base(definitions)
+        public AntimatterCatcherDefinition[] Definitions { get; }
+        public AntimatterCatcherDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
+        public AntimatterCatcherData(AntimatterCatcherDefinition[] definitions)
         {
+            Definitions = definitions;
         }
     }
 }

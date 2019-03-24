@@ -1,12 +1,16 @@
 ﻿using Game.DataModel.Storage;
 using Game.Services.Definitions;
+using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class FuelRefineryData<T> : StandardBuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
+    public class FuelRefineryData : BuildingDataBase
     {
-        public FuelRefineryData(T[] definitions) : base(definitions)
+        public FuelRefineryDefinition[] Definitions { get; }
+        public FuelRefineryDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
+        public FuelRefineryData(FuelRefineryDefinition[] definitions)
         {
+            Definitions = definitions;
         }
     }
 }

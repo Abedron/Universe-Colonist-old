@@ -1,11 +1,15 @@
 ﻿using Game.Services.Definitions;
+using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class LaunchTowerData<D> : StandardBuildingDataBase<D> where D : ILevelUpByBaseStationDefinition
+    public class LaunchTowerData : BuildingDataBase
     {
-        public LaunchTowerData(D[] definitions) : base(definitions)
+        public LaunchTowerDefinition[] Definitions { get; }
+        public LaunchTowerDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
+        public LaunchTowerData(LaunchTowerDefinition[] definitions)
         {
+            Definitions = definitions;
         }
     }
 }
