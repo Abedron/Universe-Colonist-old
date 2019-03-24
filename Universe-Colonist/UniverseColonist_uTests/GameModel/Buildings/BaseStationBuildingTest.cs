@@ -2,6 +2,7 @@
 using Game.GameModel.Buildings;
 using Game.DataModel.Runtime;
 using Game.Services.Definitions;
+using System;
 
 namespace UniverseColonistTests.GameModel
 {
@@ -17,7 +18,7 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_SetLevelByDefinitions(int playerLevel, int expectedLevel)
         {
             // Arrange
-            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake) { Level = 1};
+            var data = new BaseStationData(TestEnvironment.BaseStationDefinitionsFake) { Level = 1 };
             var building = new BaseStationBuilding(data);
 
             // Act
@@ -37,7 +38,7 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_IsRaisedLevelByDefinitions(int playerLevel, int dataLevel, bool expectedRaisedLevel)
         {
             // Arrange
-            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake) { Level = dataLevel };
+            var data = new BaseStationData(TestEnvironment.BaseStationDefinitionsFake) { Level = dataLevel };
             var building = new BaseStationBuilding(data);
 
             // Act
@@ -48,3 +49,4 @@ namespace UniverseColonistTests.GameModel
         }
     }
 }
+ 

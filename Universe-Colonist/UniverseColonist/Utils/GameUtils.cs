@@ -2,7 +2,7 @@
 
 namespace Game.Utils
 {
-    public class GameUtils
+    public static class GameUtils
     {
         public static int ParseVersion(string version)
         {

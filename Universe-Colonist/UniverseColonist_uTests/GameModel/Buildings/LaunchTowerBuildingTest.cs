@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using Game.GameModel.Buildings;
-using Game.DataModel.Runtime;
 
 namespace UniverseColonistTests.GameModel
 {
@@ -10,9 +9,7 @@ namespace UniverseColonistTests.GameModel
         [InlineData(0, 1)]
         [InlineData(1, 1)]
         [InlineData(2, 2)]
-        [InlineData(3, 3)]
-        [InlineData(4, 4)]
-        [InlineData(5, 5)]
+        [InlineData(30, 2)]
         public void TryRaiseLevel_SetLevelByDefinitions(int baseStationLevel, int expectedLevel)
         {
             // Arrange

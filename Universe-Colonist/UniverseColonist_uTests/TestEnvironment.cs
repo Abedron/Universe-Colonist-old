@@ -9,7 +9,7 @@ namespace UniverseColonistTests
     {
         private static MockRepository MockRepository { get; } = new MockRepository(MockBehavior.Default) { DefaultValue = DefaultValue.Mock };
 
-        public static BaseStationDefinition[] BaseStationDefinitionsFake { get; } =
+        public static BaseStationDefinition[] BaseStationDefinitionsFake => new[]
         {
             new BaseStationDefinition{AccessFromPlayerLevel = 1,  Level = 1},
             new BaseStationDefinition{AccessFromPlayerLevel = 3,  Level = 2},
@@ -22,7 +22,7 @@ namespace UniverseColonistTests
             new BaseStationDefinition{AccessFromPlayerLevel = 89, Level = 9}
         };
 
-        public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake { get; } =
+        public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake => new []
         {
             new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, Capacity = 1},
             new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, Capacity = 2},
@@ -35,7 +35,7 @@ namespace UniverseColonistTests
             new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9, Capacity = 34}
         };
 
-        public static AllDefinitions AllDefinitionsFake { get; } = new AllDefinitions()
+        public static AllDefinitions AllDefinitionsFake => new AllDefinitions()
         {
             Version = "2019.41.1472",
             Player = new[]
@@ -106,16 +106,16 @@ namespace UniverseColonistTests
             Buildings =
             {
                 BaseStation = BaseStationDefinitionsFake,
-               /* AntimatterCatcher = new []
+                AntimatterCatcher = new []
                 {
-                    new AntimatterCatcherDefinition() {Xp = 1100, Level = 1},
-                    new AntimatterCatcherDefinition() {Xp = 1200, Level = 2},
-                    new AntimatterCatcherDefinition() {Xp = 1600, Level = 3},
-                    new AntimatterCatcherDefinition() {Xp = 2100, Level = 4},
-                    new AntimatterCatcherDefinition() {Xp = 3400, Level = 5},
-                    new AntimatterCatcherDefinition() {Xp = 7400, Level = 6}
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 1, Level = 1, HarvesterCount = 1, HarvestingTime = 10, Resources = 100 },
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 2, Level = 2, HarvesterCount = 2, HarvestingTime = 10, Resources = 100 },
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 3, Level = 3, HarvesterCount = 3, HarvestingTime = 10, Resources = 100 },
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 4, Level = 4, HarvesterCount = 4, HarvestingTime = 10, Resources = 100 },
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 5, Level = 5, HarvesterCount = 5, HarvestingTime = 10, Resources = 100 },
+                    new AntimatterCatcherDefinition() { BaseStationLevel = 6, Level = 6, HarvesterCount = 6, HarvestingTime = 10, Resources = 100 }
                 },
-                FuelRefinery = new []
+                /*FuelRefinery = new []
                 {
                     new FuelRefineryDefinition() {Xp = 1600, Level = 1, RocketSpeed = 0.8f},
                     new FuelRefineryDefinition() {Xp = 2100, Level = 2, RocketSpeed = 1.2f},
@@ -174,26 +174,26 @@ namespace UniverseColonistTests
 
 
 
-        public static PlanetData MercuryPlanetData { get; } = new PlanetData(PlanetType.Mercury, AllDefinitionsFake.Planets.Mercury)
+        public static PlanetData MercuryPlanetData => new PlanetData(PlanetType.Mercury, AllDefinitionsFake.Planets.Mercury)
         {
             IsActivated = true,
             Colonist = 1,
             Level = 1
         };
 
-        public static LaunchTowerData<ILevelUpByBaseStationDefinition> LaunchTowerData { get; } = new LaunchTowerData<ILevelUpByBaseStationDefinition>(LaunchTowerDefinitionsFake)
+        public static LaunchTowerData LaunchTowerData => new LaunchTowerData(LaunchTowerDefinitionsFake)
         {
             IsActivate = true,
             Level = 1
         };
 
-        public static BaseStationData<ILevelUpByPlayerDefinition> BaseStationData { get; } = new BaseStationData<ILevelUpByPlayerDefinition>(BaseStationDefinitionsFake)
+        public static BaseStationData BaseStationData => new BaseStationData(BaseStationDefinitionsFake)
         {
             IsActivate = true,
             Level = 1
         };
 
-        public static RocketData NeoVRocketData = new RocketData(RocketType.NeoV, AllDefinitionsFake.Rockets.NeoV)
+        public static RocketData NeoVRocketData => new RocketData(RocketType.NeoV, AllDefinitionsFake.Rockets.NeoV)
         {
             Level = 1,
             IsActivated = true
