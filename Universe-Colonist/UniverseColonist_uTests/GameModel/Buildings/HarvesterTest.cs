@@ -12,7 +12,7 @@ namespace UniverseColonistTests.GameModel
         [InlineData(5, 50)]
         [InlineData(10, 100)]
         [InlineData(2000, 100)]
-        public void GetHarvestResources_CustomTime_ResourcesByElapsedTime(int harvestingTime, int expectedResource)
+        public void CurrentCollectedResources_CustomTime_ResourcesByElapsedTime(int harvestingTime, int expectedResource)
         {
             // Arrange
             var definition = TestEnvironment.AllDefinitionsFake.Buildings.AntimatterCatcher[0];
@@ -20,10 +20,25 @@ namespace UniverseColonistTests.GameModel
             var currentTime = new DateTime().AddSeconds(harvestingTime);
 
             // Act
-            int resource = harvester.GetHarvestResources(currentTime);
+            int resource = harvester.CurrentCollectedResources(currentTime);
 
             // Assert
             Assert.Equal(resource, expectedResource);
+        }
+
+        [Fact]
+        public void PickCollectedResources_CustomTime_ResourcesByElapsedTime()
+        {
+            // Arrange
+            var definition = TestEnvironment.AllDefinitionsFake.Buildings.AntimatterCatcher[0];
+            var harvester = new Harvester(definition, new DateTime());
+            var currentTime = new DateTime().AddSeconds(10);
+
+            // Act
+            harvester.PickCollectedResources(currentTime);
+
+            // Assert
+            Assert.Equal(harvester.StartTime, currentTime);
         }
     }
 }

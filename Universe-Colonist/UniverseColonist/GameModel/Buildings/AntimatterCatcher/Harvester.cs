@@ -16,7 +16,15 @@ namespace Game.GameModel.Buildings
             StartTime = startTime;
         }
 
-        public int GetHarvestResources(DateTime currentTime)
+        public int PickCollectedResources(DateTime currentTime)
+        {
+            var resources = CurrentCollectedResources(currentTime);
+            StartTime = currentTime;
+
+            return resources;
+        }
+
+        public int CurrentCollectedResources(DateTime currentTime)
         {
             var time = currentTime - StartTime;
             var ratio = Mathg.Clamp(time.TotalSeconds / Definition.HarvestingTime, 0, 1);
