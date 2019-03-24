@@ -11,7 +11,7 @@ namespace UniverseColonistTests.GameModel
         public void TrySendTo_SetupRocketData()
         {
             // Arrange
-            var rocket = new RocketModel(TestEnvironment.NeoVRocketData, TestEnvironment.AllDefinitionsFake.Rockets.NeoV);
+            var rocket = new RocketModel(TestEnvironment.NeoVRocketData);
             var startTime = new DateTime();
             var endTime = startTime.AddSeconds(TestEnvironment.MercuryPlanetData.Definition.JourneyTime);
 
@@ -29,7 +29,7 @@ namespace UniverseColonistTests.GameModel
         public void BoostFinish_SetupToDefaultRocketData()
         {
             // Arrange
-            var rocket = new RocketModel(TestEnvironment.NeoVRocketData, TestEnvironment.AllDefinitionsFake.Rockets.NeoV);
+            var rocket = new RocketModel(TestEnvironment.NeoVRocketData);
             var startTime = new DateTime();
 
             rocket.TrySendTo(TestEnvironment.MercuryPlanetData, startTime);

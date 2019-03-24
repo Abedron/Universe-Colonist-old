@@ -1,11 +1,10 @@
-﻿using Game.GameModel.Rockets;
-using Game.Services.Definitions;
+﻿using Game.Services.Definitions;
 
 namespace Game.DataModel.Runtime
 {
-    public class LaunchTowerData<T> : BuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
+    public class LaunchTowerData<D> : StandardBuildingDataBase<D> where D : ILevelUpByBaseStationDefinition
     {
-        public LaunchTowerData<T>(T[] definitions) : base(definitions)
+        public LaunchTowerData(D[] definitions) : base(definitions)
         {
         }
     }

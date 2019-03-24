@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using Game.GameModel.Buildings;
 using Game.DataModel.Runtime;
+using Game.Services.Definitions;
 
 namespace UniverseColonistTests.GameModel
 {
@@ -16,11 +17,11 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_SetLevelByDefinitions(int playerLevel, int expectedLevel)
         {
             // Arrange
-            var data = new BaseStationData(TestEnvironment.BaseStationDefinitionsFake);
-            var building = new BaseStationBuilding(data, TestEnvironment.BaseStationDefinitionsFake);
+            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake);
+            var building = new BaseStationBuilding(data);
 
             // Act
-            building.TryRaiseLevel(playerLevel);
+            building.TryLevelUp(playerLevel);
 
             // Assert
             Assert.Equal(expectedLevel, data.Level);
@@ -36,11 +37,11 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_IsRaisedLevelByDefinitions(int playerLevel, int dataLevel, bool expectedRaisedLevel)
         {
             // Arrange
-            var data = new BaseStationData() { Level = dataLevel };
-            var building = new BaseStationBuilding(data, TestEnvironment.BaseStationDefinitionsFake);
+            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake) { Level = dataLevel };
+            var building = new BaseStationBuilding(data);
 
             // Act
-            bool isRaisedLevel = building.TryRaiseLevel(playerLevel);
+            bool isRaisedLevel = building.TryLevelUp(playerLevel);
 
             // Assert
             Assert.Equal(expectedRaisedLevel, isRaisedLevel);

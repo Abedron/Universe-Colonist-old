@@ -16,10 +16,10 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_SetLevelByDefinitions(int baseStationLevel, int expectedLevel)
         {
             // Arrange
-            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData, TestEnvironment.LaunchTowerDefinitionsFake);
+            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData);
 
             // Act
-            building.TryRaiseLevel(baseStationLevel);
+            building.TryLevelUp(baseStationLevel);
 
             // Assert
             Assert.Equal(expectedLevel, building.Data.Level);
@@ -35,11 +35,11 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_IsRaisedLevelByDefinitions(int baseStationLevel, int dataLevel, bool expectedRaisedLevel)
         {
             // Arrange
-            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData, TestEnvironment.LaunchTowerDefinitionsFake);
+            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData);
             building.Data.Level = dataLevel;
 
             // Act
-            bool isRaisedLevel = building.TryRaiseLevel(baseStationLevel);
+            bool isRaisedLevel = building.TryLevelUp(baseStationLevel);
 
             // Assert
             Assert.Equal(expectedRaisedLevel, isRaisedLevel);

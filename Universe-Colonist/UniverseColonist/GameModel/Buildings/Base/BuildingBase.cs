@@ -1,6 +1,6 @@
 ﻿namespace Game.GameModel.Buildings
 {
-    public class BuildingBase : IBuilding
+    public class BuildingBase : ILevelUp
     {
         public virtual bool TryLevelUp(int dependencyLevel)
         {

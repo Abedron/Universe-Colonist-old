@@ -2,7 +2,7 @@
 
 namespace Game.DataModel.Runtime
 {
-    public class AntimatterCatcherData<T> : BuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
+    public class AntimatterCatcherData<T> : StandardBuildingDataBase<T> where T : ILevelUpByBaseStationDefinition
     {
         public AntimatterCatcherData(T[] definitions) : base(definitions)
         {

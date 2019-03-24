@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Game.GameModel.Planets
 {
-    public class Planet
+    public class Planet : ILevelUp
     {
         public PlanetData Data { get; }
         public PlanetDefinition[] Definitions { get; }
@@ -18,14 +18,14 @@ namespace Game.GameModel.Planets
             PlanetType = planetType;
         }
 
-        public bool TryRaiseLevel(int playerLevel)
+        public bool TryLevelUp(int baseStationLevel)
         {
-            var definition = Definitions.LastOrDefault(d => d.BaseStationLevel <= playerLevel) ?? Definitions[0];
-            bool isRaisedLevel = definition.Level != Data.Level;
+            var definition = Definitions.LastOrDefault(d => d.BaseStationLevel <= baseStationLevel) ?? Definitions[0];
+            bool isLevelUp = definition.Level != Data.Level;
 
             Data.Level = definition.Level;
 
-            return isRaisedLevel;
+            return isLevelUp;
         }
     }
 }

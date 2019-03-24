@@ -12,12 +12,12 @@
       "ResourceObservatory": "_Data/Definitions/Buildings/ResourceObservatory.json"
     },
     "PlanetPaths": {
-      "Antuel": "_Data/Definitions/Planet/Antuel.json",
-      "Asteroids": "_Data/Definitions/Planet/Asteroids.json",
-      "Jupiter": "_Data/Definitions/Buildings/Jupiter.json",
-      "Mars": "_Data/Definitions/Planet/Mars.json",
-      "Mercury": "_Data/Definitions/Planet/Mercury.json",
-      "Venus": "_Data/Definitions/Planet/Venus.json"
+      "Antuel": "_Data/Definitions/Planets/Antuel.json",
+      "Asteroids": "_Data/Definitions/Planets/Asteroids.json",
+      "Jupiter": "_Data/Definitions/Planets/Jupiter.json",
+      "Mars": "_Data/Definitions/Planets/Mars.json",
+      "Mercury": "_Data/Definitions/Planets/Mercury.json",
+      "Venus": "_Data/Definitions/Planets/Venus.json"
     },
     "RocketPaths": {
       "NeoV": "_Data/Definitions/Rockets/NeoV.json",

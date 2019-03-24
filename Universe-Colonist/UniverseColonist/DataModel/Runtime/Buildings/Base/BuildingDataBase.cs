@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class BuildingDataBase<T> where T : ILevelUpDefinition
+    public class BuildingDataBase<T> : ILevelUpData where T: ILevelUpDefinition
     {
         public int Level { get; set; }
         public bool IsActivate { get; set; }

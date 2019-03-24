@@ -1,9 +1,8 @@
-﻿using System;
-using Game.Services.Definitions;
+﻿using Game.Services.Definitions;
 
 namespace Game.DataModel.Runtime
 {
-    public class BaseStationData<T> : BuildingDataBase<T> where T : ILevelUpDefinition
+    public class BaseStationData<T> : BuildingDataBase<T> where T : ILevelUpByPlayerDefinition
     {
         public BaseStationData(T[] definitions):base(definitions)
         {

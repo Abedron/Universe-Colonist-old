@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class PlanetData
+    public class PlanetData : ILevelUpData
     {
         private PlanetDefinition[] Definitions { get; }
         public PlanetDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];

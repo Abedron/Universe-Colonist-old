@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Game.DataModel.Runtime
 {
-    public class PlayerData
+    public class PlayerData : ILevelUpData
     {
         public int Level { get; set; }
         public bool Enabled { get; set; }

@@ -6,7 +6,7 @@ namespace Game.GameModel.Buildings
 {
     public class StandardBuildingBase : BuildingBase
     {
-        protected BuildingDataBase<ILevelUpByBaseStationDefinition> Data { get; }
+        public BuildingDataBase<ILevelUpByBaseStationDefinition> Data { get; }
 
         public StandardBuildingBase(BuildingDataBase<ILevelUpByBaseStationDefinition> data)
         {
