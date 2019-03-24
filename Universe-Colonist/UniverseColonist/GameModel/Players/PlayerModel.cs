@@ -1,5 +1,4 @@
 ﻿using Game.DataModel.Runtime;
-using System.Linq;
 
 namespace Game.GameModel.Players
 {
@@ -7,18 +6,17 @@ namespace Game.GameModel.Players
     {
         public PlayerData Data { get; }
 
+        private LevelUpModel LevelUp { get; }
+
         public PlayerModel(PlayerData data)
-        { 
+        {
             Data = data;
+            LevelUp = new LevelUpModel(data);
         }
 
         public bool TryLevelUp(int xp)
         {
-            var definition = Data.Definitions.LastOrDefault(d => d.Xp <= xp) ?? Data.Definitions[0];
-            bool isLevelUp = definition.Level != Data.Level;
-
-            Data.Level = definition.Level;
-
+            bool isLevelUp = LevelUp.TryLevelUp(Data.Definitions, xp);
             return isLevelUp;
         }
     }

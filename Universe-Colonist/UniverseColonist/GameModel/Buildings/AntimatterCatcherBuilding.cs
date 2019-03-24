@@ -7,6 +7,14 @@ namespace Game.GameModel.Buildings
     {
         public AntimatterCatcherBuilding(BuildingDataBase<ILevelUpByBaseStationDefinition> data) : base(data)
         {
+
+        }
+
+        public bool TryAddHarvester()
+        {
+            AntimatterCatcherData<ILevelUpByBaseStationDefinition> data = (AntimatterCatcherData <ILevelUpByBaseStationDefinition> )Data;
+            
+            return false;
         }
     }
 }

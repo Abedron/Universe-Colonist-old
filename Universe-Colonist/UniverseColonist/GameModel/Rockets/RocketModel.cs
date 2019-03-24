@@ -1,8 +1,6 @@
 ﻿using Game.Articles;
 using Game.DataModel.Runtime;
-using Game.Services.Definitions;
 using System;
-using System.Linq;
 
 namespace Game.GameModel.Rockets
 {
@@ -10,18 +8,18 @@ namespace Game.GameModel.Rockets
     {
         public RocketData Data { get; }
 
+        private LevelUpModel LevelUp { get; }
+
         public RocketModel(RocketData data)
         {
             Data = data;
+            LevelUp = new LevelUpModel(data);
         }
 
         public bool TryLevelUp(int baseStationLevel)
         {
-            ILevelUpByBaseStationDefinition definition = Data.Definitions.LastOrDefault(d => d.BaseStationLevel <= baseStationLevel) ?? Data.Definitions[0];
-            bool isRaisedLevel = definition.Level != Data.Level;
-            Data.Level = definition.Level;
-
-            return isRaisedLevel;
+            bool isLevelUp = LevelUp.TryLevelUp(Data.Definitions, baseStationLevel);
+            return isLevelUp;
         }
 
         public bool TrySendTo(PlanetData planetData, DateTime startTime)

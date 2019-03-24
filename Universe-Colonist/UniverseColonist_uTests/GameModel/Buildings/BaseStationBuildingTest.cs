@@ -10,14 +10,14 @@ namespace UniverseColonistTests.GameModel
         [Theory]
         [InlineData(0, 1)]
         [InlineData(1, 1)]
-        [InlineData(7, 3)]
-        [InlineData(8, 4)]
-        [InlineData(9, 4)]
-        [InlineData(99, 9)]
+        [InlineData(7, 2)]
+        [InlineData(8, 2)]
+        [InlineData(9, 2)]
+        [InlineData(99, 2)]
         public void TryRaiseLevel_SetLevelByDefinitions(int playerLevel, int expectedLevel)
         {
             // Arrange
-            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake);
+            var data = new BaseStationData<ILevelUpByPlayerDefinition>(TestEnvironment.BaseStationDefinitionsFake) { Level = 1};
             var building = new BaseStationBuilding(data);
 
             // Act

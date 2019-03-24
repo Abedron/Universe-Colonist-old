@@ -6,7 +6,7 @@ namespace Game.DataModel.Runtime
 {
     public class PlanetData : ILevelUpData
     {
-        private PlanetDefinition[] Definitions { get; }
+        public PlanetDefinition[] Definitions { get; }
         public PlanetDefinition Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
 
         public PlanetType PlanetType { get; }

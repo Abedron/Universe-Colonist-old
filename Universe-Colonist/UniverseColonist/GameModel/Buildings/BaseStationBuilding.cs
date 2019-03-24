@@ -1,6 +1,5 @@
 ﻿using Game.DataModel.Runtime;
 using Game.Services.Definitions;
-using System.Linq;
 
 namespace Game.GameModel.Buildings
 {
@@ -8,19 +7,19 @@ namespace Game.GameModel.Buildings
     {
         public BaseStationData<ILevelUpByPlayerDefinition> Data { get; }
 
+        private LevelUpModel LevelUp { get; }
+
         public BaseStationBuilding(BaseStationData<ILevelUpByPlayerDefinition> data)
         {
             Data = data;
+            LevelUp = new LevelUpModel(data);
         }
 
         public override bool TryLevelUp(int playerLevel)
         {
-            ILevelUpByPlayerDefinition definition = Data.Definitions
-                    .LastOrDefault(d => d.AccessFromPlayerLevel <= playerLevel) ?? Data.Definitions[0];
-            bool isRaisedLevel = definition.Level != Data.Level;
-            Data.Level = definition.Level;
 
-            return isRaisedLevel;
+            bool isLevelUp = LevelUp.TryLevelUp(Data.Definitions, playerLevel);
+            return isLevelUp;
         }
     }
 }

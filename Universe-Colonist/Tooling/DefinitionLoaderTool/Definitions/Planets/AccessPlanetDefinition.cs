@@ -2,7 +2,7 @@
 {
     public class AccessPlanetDefinition
     {
-        public int AccessFromLevel { get; set; }
+        public int AccessFromPlayerLevel { get; set; }
         public string Planet { get; set; }
     }
 }

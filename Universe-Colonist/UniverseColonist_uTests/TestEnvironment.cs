@@ -172,6 +172,8 @@ namespace UniverseColonistTests
 
 
 
+
+
         public static PlanetData MercuryPlanetData { get; } = new PlanetData(PlanetType.Mercury, AllDefinitionsFake.Planets.Mercury)
         {
             IsActivated = true,
@@ -191,7 +193,7 @@ namespace UniverseColonistTests
             Level = 1
         };
 
-        public static RocketData NeoVRocketData = new RocketData(RocketType.NeoV)
+        public static RocketData NeoVRocketData = new RocketData(RocketType.NeoV, AllDefinitionsFake.Rockets.NeoV)
         {
             Level = 1,
             IsActivated = true

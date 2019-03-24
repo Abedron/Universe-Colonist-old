@@ -22,12 +22,12 @@
 
     public sealed class PlanetDefinitions
     {
-        public AntuelDefinition[] Antuel { get; set; }
-        public AsteroidsDefinition[] Asteroids { get; set; }
-        public JupiterDefinition[] Jupiter { get; set; }
-        public MarsDefinition[] Mars { get; set; }
-        public MercuryDefinition[] Mercury { get; set; }
-        public VenusDefinition[] Venus { get; set; }
+        public PlanetDefinition[] Antuel { get; set; }
+        public PlanetDefinition[] Asteroids { get; set; }
+        public PlanetDefinition[] Jupiter { get; set; }
+        public PlanetDefinition[] Mars { get; set; }
+        public PlanetDefinition[] Mercury { get; set; }
+        public PlanetDefinition[] Venus { get; set; }
     }
 
     public class RocketDefinitions

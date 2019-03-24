@@ -2,7 +2,7 @@
 {
     public class BaseStationDefinition
     {
-        public int AccessFromLevel { get; set; }
+        public int AccessFromPlayerLevel { get; set; }
         public int Level { get; set; }
     }
 }
