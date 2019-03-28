@@ -2,6 +2,7 @@
 using Game.DataModel.Runtime;
 using Game.Services.Definitions;
 using Moq;
+using System.Collections.Generic;
 
 namespace UniverseColonistTests
 {
@@ -22,7 +23,7 @@ namespace UniverseColonistTests
             new BaseStationDefinition{AccessFromPlayerLevel = 89, Level = 9}
         };
 
-        public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake => new []
+        public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake => new[]
         {
             new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, Capacity = 1},
             new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, Capacity = 2},
@@ -57,49 +58,58 @@ namespace UniverseColonistTests
                 {
                     new AccessRocketsDefinition()
                     {
-                        AccessFromLevel = 1,
-                        RocketType = 1,
+                        AccessFromPlayerLevel = 1,
+                        RocketType = "NeoV",
                         MaxCount = 2
                     },
                     new AccessRocketsDefinition()
                     {
-                        AccessFromLevel = 3,
-                        RocketType = 2,
+                        AccessFromPlayerLevel = 3,
+                        RocketType = "BlueLight",
                         MaxCount = 2
                     }
                 },
-                BlueLight = new[]
+                Rocket = new Dictionary<RocketType, RocketDefinitionBase[]>
                 {
-                    new  RocketDefinitionBase()
                     {
-                        BaseStationLevel = 1,
-                        Level = 1,
-                        Cargo = 1,
-                        Colonist = 100,
-                        Coins = 0,
-                        Stars = 0,
-                        HyperMetal = 0,
-                        Fuel = 0,
-                        Ore = 0,
-                        Minerals = 0,
-                        Food = 0
-                    }
-                },
-                NeoV = new[]
-                {
-                    new  RocketDefinitionBase()
+                        RocketType.NeoV,
+                        new[]
+                        {
+                            new  RocketDefinitionBase()
+                            {
+                                BaseStationLevel = 1,
+                                Level = 1,
+                                Cargo = 1,
+                                Colonist = 100,
+                                Coins = 0,
+                                Stars = 0,
+                                HyperMetal = 0,
+                                Fuel = 0,
+                                Ore = 0,
+                                Minerals = 0,
+                                Food = 0
+                            }
+                        }
+                    },
                     {
-                        BaseStationLevel = 1,
-                        Level = 1,
-                        Cargo = 1,
-                        Colonist = 100,
-                        Coins = 0,
-                        Stars = 0,
-                        HyperMetal = 0,
-                        Fuel = 0,
-                        Ore = 0,
-                        Minerals = 0,
-                        Food = 0
+                        RocketType.BlueLight,
+                        new[]
+                        {
+                            new  RocketDefinitionBase()
+                            {
+                                BaseStationLevel = 1,
+                                Level = 1,
+                                Cargo = 1,
+                                Colonist = 100,
+                                Coins = 0,
+                                Stars = 0,
+                                HyperMetal = 0,
+                                Fuel = 0,
+                                Ore = 0,
+                                Minerals = 0,
+                                Food = 0
+                            }
+                        }
                     }
                 }
             },
@@ -193,7 +203,7 @@ namespace UniverseColonistTests
             Level = 1
         };
 
-        public static RocketData NeoVRocketData => new RocketData(RocketType.NeoV, AllDefinitionsFake.Rockets.NeoV)
+        public static RocketData NeoVRocketData => new RocketData(RocketType.NeoV, AllDefinitionsFake.Rockets.Rocket[RocketType.NeoV], 1)
         {
             Level = 1,
             IsActivated = true

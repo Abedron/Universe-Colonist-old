@@ -1,4 +1,8 @@
-﻿namespace Game.Services.Definitions
+﻿using Game.Articles;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Game.Services.Definitions
 {
     public sealed class AllDefinitions
     {
@@ -33,7 +37,7 @@
     public class RocketDefinitions
     {
         public AccessRocketsDefinition[] AccessRocketsDefinitions { get; internal set; }
-        public RocketDefinitionBase[] NeoV { get; internal set; }
-        public RocketDefinitionBase[] BlueLight { get; internal set; }
+
+        public Dictionary<RocketType, RocketDefinitionBase[]> Rocket { get; internal set; } = new Dictionary<RocketType, RocketDefinitionBase[]>();
     }
 }

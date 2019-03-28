@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using Game.GameModel.Rockets;
+using Game.GameModel.Buildings;
 using System;
 using Game.Articles;
 

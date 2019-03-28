@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using Game.Articles;
 using Game.Services.Definitions;
 using Newtonsoft.Json;
 
@@ -48,9 +50,9 @@ namespace Game.Services
             AllDefinitions.Planets.Venus = JsonConvert.DeserializeObject<PlanetDefinition[]>(json);
 
             json = Load(ConfigDefinitions.DefinitionPaths.RocketPaths.NeoV);
-            AllDefinitions.Rockets.NeoV = JsonConvert.DeserializeObject<NeoVDefinition[]>(json);
+            AllDefinitions.Rockets.Rocket.Add(RocketType.NeoV, JsonConvert.DeserializeObject<NeoVDefinition[]>(json));
             json = Load(ConfigDefinitions.DefinitionPaths.RocketPaths.BlueLight);
-            AllDefinitions.Rockets.BlueLight = JsonConvert.DeserializeObject<BlueLightDefinition[]>(json);
+            AllDefinitions.Rockets.Rocket.Add(RocketType.BlueLight, JsonConvert.DeserializeObject<BlueLightDefinition[]>(json));
         }
 
         public string Load(string path)

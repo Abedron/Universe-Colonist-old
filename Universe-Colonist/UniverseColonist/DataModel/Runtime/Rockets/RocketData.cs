@@ -7,11 +7,12 @@ namespace Game.DataModel.Runtime
 {
     public class RocketData : ILevelUpData
     {
-        public static RocketData NullRocket { get; } = new RocketData(RocketType.None, new RocketDefinitionBase[0]);
+        public static RocketData NullRocket => new RocketData(RocketType.None, new RocketDefinitionBase[0], 0);
 
-        public int Id { get; set; }
+        public int Id { get; }
         public RocketType RocketType { get; }
         public PlanetType PlanetTarget { get; set; }
+        public RocketState State { get; set; }
         public bool IsActivated { get; set; }
         public int Level { get; set; }
         public DateTime StartTime { get; set; }
@@ -19,10 +20,11 @@ namespace Game.DataModel.Runtime
         public RocketDefinitionBase[] Definitions { get; }
         public RocketDefinitionBase Definition => Definitions.FirstOrDefault(d => d.Level == Level) ?? Definitions[0];
 
-        public RocketData(RocketType rocketType, RocketDefinitionBase[] definitions)
+        public RocketData(RocketType rocketType, RocketDefinitionBase[] definitions, int id)
         {
             RocketType = rocketType;
             Definitions = definitions;
+            Id = id;
         }
 
         public bool IsFlying(DateTime currentTime)
