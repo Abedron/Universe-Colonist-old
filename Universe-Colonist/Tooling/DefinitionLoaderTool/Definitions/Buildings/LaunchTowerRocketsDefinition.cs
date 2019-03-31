@@ -2,6 +2,5 @@
 {
     public class LaunchTowerDefinition : BuildingDefinitionBase
     {
-        public int Capacity { get; set; }
     }
 }

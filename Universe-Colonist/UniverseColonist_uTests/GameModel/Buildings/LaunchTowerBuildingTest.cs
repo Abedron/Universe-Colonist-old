@@ -1,5 +1,7 @@
 ﻿using Xunit;
 using Game.GameModel.Buildings;
+using System.Collections.Generic;
+using Game.GameModel;
 
 namespace UniverseColonistTests.GameModel
 {
@@ -13,7 +15,7 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_SetLevelByDefinitions(int baseStationLevel, int expectedLevel)
         {
             // Arrange
-            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData);
+            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData, new List<RocketModel>());
 
             // Act
             building.TryLevelUp(baseStationLevel);
@@ -32,7 +34,7 @@ namespace UniverseColonistTests.GameModel
         public void TryRaiseLevel_IsRaisedLevelByDefinitions(int baseStationLevel, int dataLevel, bool expectedRaisedLevel)
         {
             // Arrange
-            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData);
+            var building = new LaunchTowerBuilding(TestEnvironment.LaunchTowerData, new List<RocketModel>());
             building.Data.Level = dataLevel;
 
             // Act

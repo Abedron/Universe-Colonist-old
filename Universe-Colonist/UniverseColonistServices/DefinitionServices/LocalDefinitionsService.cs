@@ -66,7 +66,7 @@ namespace Game.Services
             }
             catch (Exception e)
             {
-                Log.Error(e.Message);
+                Console.WriteLine(e.Message);
                 throw;
             }
 

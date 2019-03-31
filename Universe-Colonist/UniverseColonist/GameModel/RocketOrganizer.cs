@@ -1,10 +1,10 @@
 ﻿using Game.Articles;
-using Game.GameModel.Buildings;
+using Game.DataModel.Runtime;
 using Game.Services.Definitions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Game.DataModel.Runtime
+namespace Game.GameModel
 {
     public class RocketsOrganizer
     {
@@ -13,10 +13,7 @@ namespace Game.DataModel.Runtime
         public LaunchTowerData LaunchTowerData { get; }
         public RocketDefinitions RocketDefinitions { get; }
 
-        public RocketsOrganizer(IList<RocketModel> rockets,
-            PlayerData playerData,
-            LaunchTowerData launchTowerData,
-            RocketDefinitions rocketDefinitions)
+        public RocketsOrganizer(IList<RocketModel> rockets, PlayerData playerData, LaunchTowerData launchTowerData, RocketDefinitions rocketDefinitions)
         {
             Rockets = rockets;
             PlayerData = playerData;
@@ -26,14 +23,14 @@ namespace Game.DataModel.Runtime
 
         public bool TryAddRocket(RocketType rocketType)
         {
-            if (Rockets.Count >= LaunchTowerData.Definition.Capacity)
-                return false;
-
             var accessRocket = RocketDefinitions.AccessRocketsDefinitions.FirstOrDefault(d => d.RocketType == rocketType.ToString());
             if (accessRocket == null || accessRocket.MaxCount <= RocketsByType(rocketType).Length)
                 return false;
 
-            int id = Rockets.Max(d => d.Data.Id) + 1;
+            int id = 1;
+            if(Rockets.Count > 0)
+                id = Rockets.Max(d => d.Data.Id) + 1;
+
             var rocketData = new RocketData(rocketType, RocketDefinitions.Rocket[rocketType], id);
             var rocketModel = new RocketModel(rocketData);
             Rockets.Add(rocketModel);
@@ -41,7 +38,12 @@ namespace Game.DataModel.Runtime
             return true;
         }
 
-        public (int, int) GetRocketOccupation(RocketType rocketType)
+        public void ChangeState(RocketModel rocketModel, RocketState rocketState)
+        {
+            rocketModel.Data.State = rocketState;
+        }
+
+        public (int Count, int Max) GetRocketOccupation(RocketType rocketType)
         {
             int count = 0;
             int max = 0;
@@ -49,12 +51,12 @@ namespace Game.DataModel.Runtime
             return (count, max);
         }
 
-        private RocketModel[] RocketsByState(RocketState rocketState)
+        public RocketModel[] RocketsByState(RocketState rocketState)
         {
             return Rockets.Where(d => d.Data.State == rocketState).ToArray();
         }
 
-        private RocketModel[] RocketsByType(RocketType rocketType)
+        public RocketModel[] RocketsByType(RocketType rocketType)
         {
             return Rockets.Where(d => d.Data.RocketType == rocketType).ToArray();
         }

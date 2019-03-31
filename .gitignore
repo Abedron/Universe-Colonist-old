@@ -36,3 +36,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Universe-Colonist-Game/Assets/Libraries/GameModel

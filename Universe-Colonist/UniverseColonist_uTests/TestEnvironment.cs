@@ -10,6 +10,13 @@ namespace UniverseColonistTests
     {
         private static MockRepository MockRepository { get; } = new MockRepository(MockBehavior.Default) { DefaultValue = DefaultValue.Mock };
 
+        public static PlayerData PlayerData => new PlayerData(AllDefinitionsFake.Player)
+        {
+            Enabled = true,
+            IsActivate = true,
+            Level = 1
+        };
+
         public static BaseStationDefinition[] BaseStationDefinitionsFake => new[]
         {
             new BaseStationDefinition{AccessFromPlayerLevel = 1,  Level = 1},
@@ -25,15 +32,15 @@ namespace UniverseColonistTests
 
         public static LaunchTowerDefinition[] LaunchTowerDefinitionsFake => new[]
         {
-            new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1, Capacity = 1},
-            new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2, Capacity = 2},
-            new LaunchTowerDefinition() { BaseStationLevel = 3, Level = 3, Capacity = 3},
-            new LaunchTowerDefinition() { BaseStationLevel = 4, Level = 4, Capacity = 4},
-            new LaunchTowerDefinition() { BaseStationLevel = 5, Level = 5, Capacity = 5},
-            new LaunchTowerDefinition() { BaseStationLevel = 6, Level = 6, Capacity = 8},
-            new LaunchTowerDefinition() { BaseStationLevel = 7, Level = 7, Capacity = 13},
-            new LaunchTowerDefinition() { BaseStationLevel = 8, Level = 8, Capacity = 21},
-            new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9, Capacity = 34}
+            new LaunchTowerDefinition() { BaseStationLevel = 1, Level = 1},
+            new LaunchTowerDefinition() { BaseStationLevel = 2, Level = 2},
+            new LaunchTowerDefinition() { BaseStationLevel = 3, Level = 3},
+            new LaunchTowerDefinition() { BaseStationLevel = 4, Level = 4},
+            new LaunchTowerDefinition() { BaseStationLevel = 5, Level = 5},
+            new LaunchTowerDefinition() { BaseStationLevel = 6, Level = 6},
+            new LaunchTowerDefinition() { BaseStationLevel = 7, Level = 7},
+            new LaunchTowerDefinition() { BaseStationLevel = 8, Level = 8},
+            new LaunchTowerDefinition() { BaseStationLevel = 9, Level = 9}
         };
 
         public static AllDefinitions AllDefinitionsFake => new AllDefinitions()
@@ -208,6 +215,11 @@ namespace UniverseColonistTests
             Level = 1,
             IsActivated = true
         };
+
+        //public static IList<RocketModel> GetRocketModels()
+        //{
+
+        //}
 
         public static IResourceData SetupResourceDataData(int money)
         {

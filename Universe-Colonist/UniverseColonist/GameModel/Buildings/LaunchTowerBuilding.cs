@@ -1,5 +1,4 @@
 ﻿using Game.DataModel.Runtime;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,31 +24,6 @@ namespace Game.GameModel.Buildings
         {
             bool isLevelUp = LevelUp.TryLevelUp(Data.Definitions, baseStationLevel);
             return isLevelUp;
-        }
-
-        public bool TryAddRocket(RocketData data, DateTime currentTime)
-        {
-            if (Rockets.Count >= Data.Definition.Capacity)
-                return false;
-
-            if (data.IsFlying(currentTime))
-                return false;
-
-            RocketModel[] rocketsIn = GetRocketsOutTower();
-            if (rocketsIn.Length <= MAX_ROCKETS_OUTSIDE)
-            {
-                data.State = RocketState.LaunchTowerOut;
-            }
-            else
-            {
-                data.State = RocketState.LaunchTowerOut;
-            }
-
-            data.StartTime = currentTime;
-
-            Rockets.Add(new RocketModel(data));
-
-            return true;
         }
 
         private RocketModel[] GetRocketsInTower()

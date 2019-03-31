@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using Game.GameModel.Buildings;
 using System;
 using Game.Articles;
+using Game.GameModel;
 
 namespace UniverseColonistTests.GameModel
 {

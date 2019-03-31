@@ -2,7 +2,7 @@
 using Game.DataModel.Runtime;
 using System;
 
-namespace Game.GameModel.Buildings
+namespace Game.GameModel
 {
     public class RocketModel : ILevelUp
     {
